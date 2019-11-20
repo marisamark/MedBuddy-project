@@ -1,13 +1,14 @@
 import React from "react";
+import NavAfterLogin from "../components/Nav (afterlogin)/index";
 
 
 function Dashboard({}) {
     return (
-        <div>
+        <Container fluid>
+        <NavAfterLogin>
 
-
-
-        </div>
+        </NavAfterLogin>
+    </Container>
     )
 }
 
