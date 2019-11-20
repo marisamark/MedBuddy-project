@@ -1,11 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
-import Detail from "./pages/Detail";
-import NoMatch from "./pages/NoMatch";
-import Nav from "./components/Nav";
+import MedicationForm from "./pages/AddMedications";
+import Dashboard from "./pages/Dashboard";
+import Health from "./pages/Healthpage";
+import MyMedicatons from "./pages/MyMedicatonspage";
+import Signup from "./pages/Signup";
+// import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
-import FavoritesList from "./pages/FavoritesList";
+
 
 function App() {
   return (
@@ -16,8 +19,11 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
-            <Route exact path="/favorites" component={FavoritesList} />
-            <Route exact path="/posts/:id" component={Detail} />
+            <Route exact path="/medicationForm" component={MedicationForm} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/health" component={Health} />
+            <Route exact path="/mymedications" component={MyMedicatons} />
+            <Route exact path="/signup" component={Signup} />
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>

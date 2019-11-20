@@ -1,13 +1,11 @@
-// exports.configure = function(env) {
-//   return configs[env];
-// }
-
-
-// let configs =
+exports.configure = function(env) {
+  return configs[env];
+}
+let configs =
 {
   "development": {
     "username": "root",
-    "password": null,
+    "password": `${process.env.DB_PASSWORD}`,
     "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql",
