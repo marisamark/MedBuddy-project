@@ -1,7 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
     const Medicine = sequelize.define("Medicine", {
         medicinename : {
-            type : DataTypes.STRING
+            type : DataTypes.STRING,
+            validate : {
+                allowNull : false
+            }
         }
     });
     // need to fix models.MedRoutine when ready.
