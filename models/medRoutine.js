@@ -20,7 +20,7 @@ module.exports = function(sequelize, DataTypes) {
         }
     });
     // need to fix models.MedRoutine when ready.
-    Medicine.associate = function (models) {
+    MedRoutine.associate = function (models) {
         MedRoutine.belongsTo(models.Medicine, {
             foreignKey : {
                 alloNull : false
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
             }
         });
         //fix name once medlog is ready
-        MedRoutine.hasMany(models.Medlog, {
+        MedRoutine.hasMany(models.MedLog, {
             foreignKey : {
                 allowNull : false
             }
