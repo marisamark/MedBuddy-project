@@ -1,14 +1,15 @@
 import React from "react";
+import NavBar from "../components/Home/NavBar (public)/index";
 
-
-function Home({}) {
+const Home = () => {
     return (
-        <div>
+        <Container fluid>
+            <NavBar>
 
-
-
-        </div>
-    )
-}
+            </NavBar>
+        </Container>
+    );
+};
 
 export default Home;
+

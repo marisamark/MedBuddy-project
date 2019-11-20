@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS medbuddy;
+CREATE DATABASE medbuddy;
