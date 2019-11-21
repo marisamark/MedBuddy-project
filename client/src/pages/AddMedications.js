@@ -6,7 +6,7 @@ import MedicationForm from "../components/Add Medications/Add Meds Form/index"
 
 function AddMedications({}) {
     return (
-     <Container fluid>
+<>
         <NavAfterLogin>
 
         </NavAfterLogin>
@@ -14,7 +14,7 @@ function AddMedications({}) {
             
         </MedicationForm>
         
-    </Container>
+</>
     )
 }
 
