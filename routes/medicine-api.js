@@ -13,7 +13,9 @@ module.exports = function (app) {
     app.post("/api/medicine", function (req, res) {
         console.log(req.body);
         db.Medicine.create({
-            medicinename : req.body
+            medicinename : req.body,
+            createdAt: new Date(),
+            updatedAt: new Date()
         })
         .then(function(dbmedicine){
             res.json(dbmedicine);
