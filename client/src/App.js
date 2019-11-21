@@ -21,9 +21,9 @@ function App() {
             <Route exact path="/home" component={Home} />
             <Route exact path="/medicationForm" component={MedicationForm} />
             <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/health" component={Health} />
+            {/* <Route exact path="/health" component={Health} /> */}
             <Route exact path="/mymedications" component={MyMedicatons} />
-            <Route exact path="/signup" component={Signup} />
+            {/* <Route exact path="/signup" component={Signup} /> */}
             <Route component={NoMatch} />
           </Switch>
         </StoreProvider>
