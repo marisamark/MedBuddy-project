@@ -35,7 +35,17 @@ module.exports = function(app) {
     });
 
 // UPDATE medLog
-// "/api/user/:userId/medRoutine/:medRoutine_id/medLog/:medLog_id/"
-
+// "/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId/"
+    app.put("/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId", function (req, res) {
+        db.MedLog.update(
+            req.body,
+            {
+                where: {
+                    medLogId: req.body.id
+                }
+            }).then(function(dbMedLog) {
+                res.json(dbMedLog);
+        });
+    });
 
 }
