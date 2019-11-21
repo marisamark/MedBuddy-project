@@ -2,7 +2,7 @@ import React from "react";
 
 function InfoCards() {
     return (
-
+<>
             <div class="card w-50 float-left mt-4">
                 <div class="card-body">
                     <h5 class="card-title">Track your medications</h5>
@@ -15,7 +15,7 @@ function InfoCards() {
                     <p class="card-text">MedBuddy keeps track of all the medications you have taken in a data table you can reference at any time.</p>
                 </div>
             </div>
-
+</>
     )
 }
 
