@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Homepage";
 import MedicationForm from "./pages/AddMedications";
 import Dashboard from "./pages/Dashboard";
-import Health from "./pages/Healthpage";
+//import Health from "./pages/Healthpage";
 import MyMedicatons from "./pages/MyMedicationspage"
-import Signup from "./pages/Signup";
-import Nav from "./components/Nav";
+//import Signup from "./pages/Signup";
+//import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 
 
@@ -15,7 +15,7 @@ function App() {
     <Router>
       <div>
         <StoreProvider>
-          <Nav />
+          {/* <Nav /> */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/home" component={Home} />
@@ -24,7 +24,7 @@ function App() {
             {/* <Route exact path="/health" component={Health} /> */}
             <Route exact path="/mymedications" component={MyMedicatons} />
             {/* <Route exact path="/signup" component={Signup} /> */}
-            <Route component={NoMatch} />
+            {/* <Route component={NoMatch} /> */}
           </Switch>
         </StoreProvider>
       </div>
