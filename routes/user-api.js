@@ -1,8 +1,17 @@
+// DEPENDENCIES
+var db = require("../models");
 
+module.exports = function(app) {
 
-// GET all users 
+// GET specific users 
 // "/api/user/:userId"
-
+    app.get("/api/user/:userId", function (req,res) {
+        db.User.findOne({
+            where: {
+                userId: req.params.id
+            },
+        })
+    })
 
 
 // POST user
@@ -11,3 +20,5 @@
 
 // UPDATE user
 // "/api/user/:id
+
+}
