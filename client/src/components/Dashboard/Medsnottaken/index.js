@@ -21,3 +21,5 @@ function Medsnottaken(){
 
     )
 }
+
+export default Medsnottaken;
