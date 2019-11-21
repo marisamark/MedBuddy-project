@@ -5,7 +5,7 @@ module.exports = function(app) {
 
 // GET medLog for specific medRoutine (TAB: MY MEDICATION) & (TAB: DASHBOARD)
 // "/api/user/:userId/medRoutine/:id/medLog"
-    app.get("/api/user/:userId/medRoutine/:medRoutineId/medLog", function (req, res) {
+    app.get("/api/user/:userId/medRoutine/:MedRoutineId/medLog", function (req, res) {
         db.MedLog.findAll({
             where: {
                 id: req.params.id
@@ -22,7 +22,7 @@ module.exports = function(app) {
 // "/api/user/:userId/medRoutine/:id/medLog"
     app.post("/api/user/:userId/medRoutine/:medRoutineId/medLog/", function (req, res) {
         db.MedLog.create({
-            medRoutineId: req.params.id,
+            MedRoutineId: req.params.id,
             date: date,
             time: time,
             status: false
@@ -36,12 +36,12 @@ module.exports = function(app) {
 
 // UPDATE medLog
 // "/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId/"
-    app.put("/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId", function (req, res) {
+    app.put("/api/user/:userId/medRoutine/:medRoutineId/medLog/:MedLogId", function (req, res) {
         db.MedLog.update(
             req.body,
             {
                 where: {
-                    medLogId: req.body.id
+                    MedLogId: req.body.id
                 }
             }).then(function(dbMedLog) {
                 res.json(dbMedLog);
