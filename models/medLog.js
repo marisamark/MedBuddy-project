@@ -1,6 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
     var MedLog = sequelize.define("MedLog", {
-        
+
         //Date (INT)
         date: {
             type: DataTypes.DATE,
