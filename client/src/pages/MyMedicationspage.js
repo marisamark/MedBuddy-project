@@ -3,7 +3,7 @@ import NavAfterLogin from "../components/Nav (afterlogin)/index";
 import Meddata from "../components/My Medications/Med data/index";
 
 
-function MyMedications({}) {
+function MyMedications() {
     return (
      <>
         <NavAfterLogin></NavAfterLogin>

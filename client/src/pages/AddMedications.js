@@ -1,20 +1,19 @@
-
-import React, { useEffect } from "react";
+import React from "react";
 // import { useStoreContext } from "../utils/GlobalState";
 import NavAfterLogin from "../components/Nav (afterlogin)/index";
 import MedicationForm from "../components/Add Medications/Add Meds Form/index"
 
-function AddMedications({}) {
+function AddMedications() {
     return (
-<>
-        <NavAfterLogin>
+        <>
+            <NavAfterLogin>
 
-        </NavAfterLogin>
-        <MedicationForm>
-            
-        </MedicationForm>
-        
-</>
+            </NavAfterLogin>
+            <MedicationForm>
+
+            </MedicationForm>
+
+        </>
     )
 }
 

@@ -8,24 +8,23 @@ import Jumbotron from "../components/Home/Jumbotron/index"
 function Home() {
     return (
         <>
-        <NavBeforeLogin/>
+            <NavBeforeLogin />
 
-        <Jumbotron>
-            <div class="container">
-                <div class="row">
-                    <div class="col-11">
-                        <LoginForm/>
+            <Jumbotron>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-11">
+                            <LoginForm />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <InfoCards />
                     </div>
                 </div>
-                <div class="row">
-                    <InfoCards />
-                </div>
-            </div>
-
-        </Jumbotron>
+            </Jumbotron>
         </>
         // <GoodRxwidget></GoodRxwidget>
-         
+
     );
 };
 

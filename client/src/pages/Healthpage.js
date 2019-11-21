@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Health({}) {
+function Health() {
     return (
         <div>
 
