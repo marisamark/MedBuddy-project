@@ -5,10 +5,10 @@ import Meddata from "../components/My Medications/Med data/index";
 
 function MyMedications({}) {
     return (
-     <Container fluid>
+     <>
         <NavAfterLogin></NavAfterLogin>
         <Meddata></Meddata>
-    </Container>
+    </>
     )
 }
 

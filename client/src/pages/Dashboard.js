@@ -7,12 +7,12 @@ import Medsnottaken from "../components/Dashboard/Medsnottaken/index";
 
 function Dashboard({}) {
     return (
-        <Container fluid>
+    <>
         <NavAfterLogin></NavAfterLogin>
         <Calendarbar></Calendarbar>
         <Medstaken></Medstaken>
         <Medsnottaken></Medsnottaken>
-    </Container>
+    </>
     )
 }
 
