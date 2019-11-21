@@ -4,7 +4,7 @@ function LoginForm() {
 
     return (
         <div>
-            <form>
+            <form class="float-right mb-4">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username...">

@@ -7,13 +7,25 @@ import Jumbotron from "../components/Home/Jumbotron/index"
 
 function Home() {
     return (
-        <Container fluid>
-            <NavBeforeLogin></NavBeforeLogin>
-            <Jumbotron></Jumbotron>
-            <GoodRxwidget></GoodRxwidget>
-            <InfoCards></InfoCards>
-            <LoginForm></LoginForm>
-        </Container>
+        <>
+        <NavBeforeLogin/>
+
+        <Jumbotron>
+            <div class="container">
+                <div class="row">
+                    <div class="col-11">
+                        <LoginForm/>
+                    </div>
+                </div>
+                <div class="row">
+                    <InfoCards />
+                </div>
+            </div>
+
+        </Jumbotron>
+        </>
+        // <GoodRxwidget></GoodRxwidget>
+         
     );
 };
 
