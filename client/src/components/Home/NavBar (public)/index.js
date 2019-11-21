@@ -1,7 +1,7 @@
 import React from "react";
 // import { useStoreContext } from "../../utils/GlobalState";
 
-function Nav() {
+function NavBeforeLogin() {
 
 //add logo later
   return (
@@ -12,4 +12,4 @@ function Nav() {
   );
 }
 
-export default Nav;
+export default NavBeforeLogin;
