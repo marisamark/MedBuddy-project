@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Homepage";
 import MedicationForm from "./pages/AddMedications";
 import Dashboard from "./pages/Dashboard";
 import Health from "./pages/Healthpage";
-import MyMedicatons from "./pages/MyMedicatonspage";
+import MyMedicatons from "./pages/MyMedicationspage"
 import Signup from "./pages/Signup";
 // import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
