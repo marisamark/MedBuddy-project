@@ -6,10 +6,10 @@ module.exports = function(app) {
 
 // GET specific users 
 // "/api/user/:userId"
-    app.get("/api/user/:userId", function (req, res) {
-        db.User.findOne({
+    app.get("/api/user/:id", function (req, res) {
+        db.User.findAll({
             where: {
-                userId: req.params.id
+                id: req.params.id
             }
         }).then(function(dbUser){
             res.json(dbUser)
