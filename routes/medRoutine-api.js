@@ -2,11 +2,11 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-    app.get("/api/user/:userId/medRoutine/", function (req, res) {
+    app.get("/api/user/:id/medRoutine/", function (req, res) {
         console.log(req.body)
         db.MedRoutine.findAll({
             where: {
-                userId: req.params.id
+                id: req.params.id
             }
         })
             .then(function (dbmedroutine) {
@@ -14,12 +14,12 @@ module.exports = function (app) {
             })
     });
 
-    app.get("/api/user/:userId/medRoutine/:MedRoutineId", function (req, res) {
+    app.get("/api/user/:id/medRoutine/:MedRoutineId", function (req, res) {
         console.log(req.body)
         //need to check column name for userid under medroutine table
         db.MedRoutine.findAll({
             where: {
-                userId: req.params.id,
+                id: req.params.id,
                 MedRoutineId: req.params.MedRoutineId
             }
         })
@@ -28,7 +28,7 @@ module.exports = function (app) {
             })
     });
 
-    app.post("/api/user/:userId/medRoutine/:MedLogId", function (req, res) {
+    app.post("/api/user/:id/medRoutine/:MedLogId", function (req, res) {
         console.log(req);
         db.MedRoutine.create({
             datecount: req.body,
@@ -44,7 +44,7 @@ module.exports = function (app) {
         })
     });
 
-    app.put("/api/user/:userId/medRoutine/:MedRoutineId", function (req,res) {
+    app.put("/api/user/:id/medRoutine/:MedRoutineId", function (req,res) {
         db.MedRoutine.update(req.body, 
             {
                 where : {

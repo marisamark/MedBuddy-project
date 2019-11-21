@@ -6,7 +6,7 @@ import Dashboard from "./pages/Dashboard";
 import Health from "./pages/Healthpage";
 import MyMedicatons from "./pages/MyMedicationspage"
 import Signup from "./pages/Signup";
-// import Nav from "./components/Nav";
+import Nav from "./components/Nav";
 import { StoreProvider } from "./utils/GlobalState";
 
 
