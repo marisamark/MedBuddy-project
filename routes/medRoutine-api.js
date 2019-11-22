@@ -6,7 +6,7 @@ module.exports = function (app) {
         console.log(req.body)
         db.MedRoutine.findAll({
             where: {
-                id: req.params.id
+                UserId: req.params.id
             }
         }).then(function (dbmedroutine) {
             res.json(dbmedroutine);
@@ -23,7 +23,8 @@ module.exports = function (app) {
             where: {
                 UserId: req.params.id,
                 id: req.params.MedRoutineId
-            }
+            },
+            include: [db.MedLog]
         })
         .then(function (dbmedroutine) {
             res.json(dbmedroutine);
