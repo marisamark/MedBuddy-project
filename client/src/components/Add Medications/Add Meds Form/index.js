@@ -7,7 +7,7 @@ function MedicationForm() {
             
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Medication Name</label>
-                    <input type="text" class="form-control" id="" placeholder="Add the name of your medicaiton..." />
+                    <input type="text" class="form-control" id="" placeholder="Add the name of your medication..." />
                 </div>
 
                 <div class="form-group">
@@ -21,8 +21,8 @@ function MedicationForm() {
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">How many days do you need to take it?</label>
-                    <input type="text" class="form-control" id="" placeholder="10" /> days
+                    <label for="exampleFormControlInput1">How many consecutive days do you need to take it?</label>
+                    <input type="text" class="form-control" id="" placeholder="10" /> 
                 </div>
 
                 <div class="form-group">
