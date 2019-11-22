@@ -63,6 +63,8 @@ module.exports = function (app) {
                 }
             }).then(function (dbMedLog) {
                 res.json(dbMedLog);
+            }).catch(function (error) {
+                console.log(error);
             });
     });
 
