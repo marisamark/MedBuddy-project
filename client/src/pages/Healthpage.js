@@ -1,11 +1,11 @@
 import React from "react";
 import Healthtab from "../components/Home/NavBar (public)/Healthtab/index"
-import NavAfterLogin from "../components/Nav (afterlogin)";
+import NavBeforeLogin from "../components/Home/NavBar (public)/index"
 
 function Health() {
     return (
         <>
-        <NavAfterLogin/>
+       <NavBeforeLogin/>
         <Healthtab/>
 
         </>
