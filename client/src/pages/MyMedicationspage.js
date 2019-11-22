@@ -1,13 +1,13 @@
 import React from "react";
-// import NavAfterLogin from "../components/Nav (afterlogin)/index";
-// import Meddata from "../components/My Medications/Med data/index";
+import NavAfterLogin from "../components/Nav (afterlogin)/index";
+import Meddata from "../components/My Medications/Med data/index";
 
 
 function MyMedications() {
     return (
      <>
-    {/* //     <NavAfterLogin></NavAfterLogin>
-    //     <Meddata></Meddata> */}
+    <NavAfterLogin></NavAfterLogin>
+       <Meddata></Meddata> 
     </>
     )
 }
