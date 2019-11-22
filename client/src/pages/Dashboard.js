@@ -1,6 +1,6 @@
 import React from "react";
 import NavAfterLogin from "../components/Nav (afterlogin)/index";
-// import Calendarbar from "../components/Dashboard/Calendarbar";
+import Calendarbar from "../components/Dashboard/Calendarbar";
 import Medstaken from "../components/Dashboard/Medstaken/index";
 import Medsnottaken from "../components/Dashboard/Medsnottaken/index";
 
