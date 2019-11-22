@@ -5,7 +5,7 @@ import Medstaken from "../components/Dashboard/Medstaken/index";
 import Medsnottaken from "../components/Dashboard/Medsnottaken/index";
 
 
-function Dashboard({ }) {
+function Dashboard() {
     return (
         <>
         <div class="container">
