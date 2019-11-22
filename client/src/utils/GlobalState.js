@@ -20,3 +20,7 @@
 // 		name: "aspirin",
 // 		}
 // 	}]
+
+import React, { createContext, useReducer, useContext } from "react";
+const StoreContext = createContext();
+const { Provider } = StoreContext;

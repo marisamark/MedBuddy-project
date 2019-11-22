@@ -1,32 +1,32 @@
 // Dependencies
-var db = require ("../models");
+var db = require("../models");
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-// GET medLog for specific medRoutine (TAB: MY MEDICATION) & (TAB: DASHBOARD)
-// "/api/user/:userId/medRoutine/:id/medLog"
+    // GET medLog for specific medRoutine (TAB: MY MEDICATION) & (TAB: DASHBOARD)
+    // "/api/user/:userId/medRoutine/:id/medLog"
     app.get("/api/user/:id/medRoutine/:MedRoutineId/medLog", function (req, res) {
         db.MedLog.findAll({
             where: {
                 id: req.params.id
             },
             include: [db.MedRoutine]
-        }).then(function(dbMedLog) {
+        }).then(function (dbMedLog) {
             res.json(dbMedLog)
-        }).catch(function(error) {
+        }).catch(function (error) {
             console.log(error);
         });
     });
 
-// POST medLog
-// "/api/user/:userId/medRoutine/:id/medLog"
+    // POST medLog
+    // "/api/user/:userId/medRoutine/:id/medLog"
     app.post("/api/user/:id/medRoutine/:medRoutineId/medLog/", function (req, res) {
         db.MedLog.create({
             MedRoutineId: req.params.id,
             date: date,
             time: time,
             status: false
-        }).catch(function(error) {
+        }).catch(function (error) {
             console.log(error);
             res.status(500).send({
                 error: error
@@ -34,8 +34,8 @@ module.exports = function(app) {
         });
     });
 
-// UPDATE medLog
-// "/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId/"
+    // UPDATE medLog
+    // "/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId/"
     app.put("/api/user/:id/medRoutine/:medRoutineId/medLog/:MedLogId", function (req, res) {
         db.MedLog.update(
             req.body,
@@ -43,9 +43,9 @@ module.exports = function(app) {
                 where: {
                     MedLogId: req.body.id
                 }
-            }).then(function(dbMedLog) {
+            }).then(function (dbMedLog) {
                 res.json(dbMedLog);
-        });
+            });
     });
 
 }

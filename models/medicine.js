@@ -1,9 +1,9 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
     const Medicine = sequelize.define("Medicine", {
-        medicinename : {
-            type : DataTypes.STRING,
-            validate : {
-                allowNull : false
+        medicinename: {
+            type: DataTypes.STRING,
+            validate: {
+                allowNull: false
             }
         }
     });

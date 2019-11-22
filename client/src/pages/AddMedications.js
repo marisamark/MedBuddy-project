@@ -8,15 +8,10 @@ import MedicationForm from "../components/Add Medications/Add Meds Form/index"
 
 function AddMedications() {
     return (
-<>
-        <NavAfterLogin>
-
-        </NavAfterLogin>
-        <MedicationForm>
-            
-        </MedicationForm>
-        
-</>
+        <>
+            <NavAfterLogin />
+            <MedicationForm />
+        </>
     )
 }
 
