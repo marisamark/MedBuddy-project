@@ -2,21 +2,15 @@ module.exports = function (sequelize, DataTypes) {
     const MedRoutine = sequelize.define("MedRoutine", {
         datecount: {
             type: DataTypes.INTEGER,
-            validate: {
-                allowNull: false
-            }
+            allowNull: false
         },
         dosage: {
             type: DataTypes.STRING,
-            validate: {
-                allowNull: false
-            }
+            allowNull: false
         },
         dose: {
             type: DataTypes.STRING,
-            validate: {
-                allowNull: false
-            }
+            allowNull: false
         }
     });
     // need to fix models.MedRoutine when ready.

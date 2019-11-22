@@ -11,9 +11,9 @@ module.exports = function (app) {
     // POST medicine
     // need to check req.body
     app.post("/api/medicine", function (req, res) {
-        console.log(req.body);
+        console.log(req.body.medicinename);
         db.Medicine.create({
-            medicinename: req.body,
+            medicinename: req.body.medicinename,
         })
             .then(function (dbmedicine) {
                 res.json(dbmedicine);

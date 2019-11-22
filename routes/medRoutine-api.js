@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function (app) {
 
-    app.get("/api/user/:id/medRoutine/", function (req, res) {
+    app.get("/api/user/:id/medRoutine", function (req, res) {
         console.log(req.body)
         db.MedRoutine.findAll({
             where: {
@@ -28,27 +28,25 @@ module.exports = function (app) {
             })
     });
 
-    app.post("/api/user/:id/medRoutine/:MedLogId", function (req, res) {
-        console.log(req);
+    app.post("/api/user/:id/medRoutine", function (req, res) {
+        console.log(req.body);
         db.MedRoutine.create({
-            datecount: req.body,
-            dosage: req.body,
-            dose: req.body,
-            MedLogId: req.body,
-            userId: req.body,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            datecount: req.body.datecount,
+            dosage: req.body.dosage,
+            dose: req.body.dose,
+            MedicineId: req.body.medicineId,
+            UserId: req.params.id,
         })
-        then(results => {
-            res.json(results);
-        })
+        .then(function(dbMedRoutine) {
+            res.json(dbMedRoutine)
+        });
     });
 
     app.put("/api/user/:id/medRoutine/:MedRoutineId", function (req, res) {
         db.MedRoutine.update(req.body,
             {
                 where: {
-                    MedRoutineId: req.body.id
+                    MedRoutineId: req.params.id
                 }
             }).then(function (results) {
                 res.json(results);
