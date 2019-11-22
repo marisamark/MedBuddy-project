@@ -1,6 +1,6 @@
 import React from "react";
 
-function SinupForm(){
+function SignupForm(){
 
     return(
         <div>
@@ -33,4 +33,4 @@ function SinupForm(){
     )
 }
 
-export default SinupForm;
+export default SignupForm;

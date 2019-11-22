@@ -1,13 +1,14 @@
 import React from "react";
+import NavBeforeLogin from "../components/Nav (afterlogin)/index";
+import SignupForm from "../components/Home/Signup form/index";
 
 
-function Signup({}) {
+function Signup() {
     return (
-        <div>
-
-
-
-        </div>
+        <>
+        <NavBeforeLogin/>
+          <SignupForm/>
+        </>
     )
 }
 
