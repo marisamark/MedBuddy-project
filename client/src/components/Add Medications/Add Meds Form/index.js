@@ -1,7 +1,51 @@
-import React from "react";
+import React,{useState} from "react";
 
 
-function MedicationForm({ }) {
+function MedicationForm() {
+    const[userState, setUserState]=useState({
+        selectValue: "",
+      
+    });
+    let handleChange =(e) =>{
+        setUserState({selectValue:e.target.value});
+      }
+
+      let timesList = [];
+      let timeDivs = _.times(userState.selectValue, (i) => {
+        timesList.push(
+            <div key={i}>
+                <select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                        </select>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>00</option>
+                            <option>15</option>
+                            <option>30</option>
+                            <option>45</option>
+                        </select>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>AM</option>
+                            <option>PM</option>
+                        </select>
+                    </div>
+
+
+
+        );
+      });
+
+
     return (
         <div>
             <form>
@@ -35,39 +79,21 @@ function MedicationForm({ }) {
 
                 <div class="form-group">
                     <label for="exampleFormControlSelect1">How many times a day do you need to take it?</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
+                    <select 
+                    value={userState.selectValue} 
+                    onChange={handleChange} 
+                    class="form-control" id="exampleFormControlSelect1">
+                   
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
                     </select>
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">What time do you want to start taking it?</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
-                    </select>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>00</option>
-                        <option>15</option>
-                        <option>30</option>
-                        <option>45</option>
-                    </select>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>AM</option>
-                        <option>PM</option>
-                    </select>
+                    <label for="exampleFormControlInput1">What time do you want to start taking it?</label>                   
+                    {timeDivs}
                 </div>
 
             </form>
