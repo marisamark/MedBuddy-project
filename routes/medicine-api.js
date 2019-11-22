@@ -14,8 +14,6 @@ module.exports = function (app) {
         console.log(req.body);
         db.Medicine.create({
             medicinename: req.body,
-            createdAt: new Date(),
-            updatedAt: new Date()
         })
             .then(function (dbmedicine) {
                 res.json(dbmedicine);
