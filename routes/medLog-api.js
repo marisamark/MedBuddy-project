@@ -22,10 +22,12 @@ module.exports = function (app) {
     // "/api/user/:userId/medRoutine/:id/medLog"
     app.post("/api/user/:id/medRoutine/:medRoutineId/medLog/", function (req, res) {
         db.MedLog.create({
-            MedRoutineId: req.params.id,
-            date: date,
-            time: time,
+            MedRoutineId: req.params.medRoutineId,
+            date: req.body.date,
+            time: req.body.time,
             status: false
+        }).then(function(dbMedLog){
+            res.json(dbMedLog);
         }).catch(function (error) {
             console.log(error);
             res.status(500).send({
