@@ -6,6 +6,7 @@ function NavBeforeLogin() {
 //add logo later
   return (
 <nav class="nav justify-content-center">
+<a class="nav-link active" href="/home">Home</a>
   <a class="nav-link active" href="/health">Health and Wellness</a>
   <a class="nav-link" href="/signup">Signup</a>
 </nav>
