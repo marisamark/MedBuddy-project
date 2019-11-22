@@ -14,7 +14,7 @@ import React from "react";
 
 function Medsnottaken(){
     return(
-        <div class="col">
+        <div class="col-6">
             <h3 class="text-center">Medications I have to take</h3>
             <div id="medsnottaken"></div>
         </div>

@@ -6,7 +6,7 @@ import React from "react";
 
 function Medstaken(){
     return(
-        <div class="col">
+        <div class="col-6">
             <h3 class="text-center">Medications I've taken</h3>
             <div id="medstaken"></div>
         </div>

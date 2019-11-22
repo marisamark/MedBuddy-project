@@ -8,10 +8,16 @@ import Medsnottaken from "../components/Dashboard/Medsnottaken/index";
 function Dashboard({ }) {
     return (
         <>
-            <NavAfterLogin />
-            {/* <Calendarbar></Calendarbar> */}
+        <div class="container">
+             <NavAfterLogin />
+            <Calendarbar></Calendarbar>
+            <div class="row">
             <Medstaken />
             <Medsnottaken />
+            </div>
+        </div>
+           
+           
         </>
     )
 }
