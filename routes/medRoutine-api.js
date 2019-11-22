@@ -1,8 +1,8 @@
 var db = require("../models");
 
 module.exports = function (app) {
-
-    app.get("/api/user/:id/medRoutine/", function (req, res) {
+// get all medRoutine for users
+    app.get("/api/user/:id/medRoutine", function (req, res) {
         console.log(req.body)
         db.MedRoutine.findAll({
             where: {
@@ -14,13 +14,14 @@ module.exports = function (app) {
             })
     });
 
+// getting specific routine for users
     app.get("/api/user/:id/medRoutine/:MedRoutineId", function (req, res) {
         console.log(req.body)
         //need to check column name for userid under medroutine table
         db.MedRoutine.findAll({
             where: {
-                id: req.params.id,
-                MedRoutineId: req.params.MedRoutineId
+                UserId: req.params.id,
+                id: req.params.MedRoutineId
             }
         })
             .then(function (dbmedroutine) {
@@ -28,27 +29,27 @@ module.exports = function (app) {
             })
     });
 
-    app.post("/api/user/:id/medRoutine/:MedLogId", function (req, res) {
-        console.log(req);
+// posting medroutine for user
+    app.post("/api/user/:id/medRoutine", function (req, res) {
+        console.log(req.body);
         db.MedRoutine.create({
-            datecount: req.body,
-            dosage: req.body,
-            dose: req.body,
-            MedLogId: req.body,
-            userId: req.body,
-            createdAt: new Date(),
-            updatedAt: new Date()
+            datecount: req.body.datecount,
+            dosage: req.body.dosage,
+            dose: req.body.dose,
+            MedicineId: req.body.medicineId,
+            UserId: req.params.id,
         })
-        then(results => {
-            res.json(results);
-        })
+        .then(function(dbMedRoutine) {
+            res.json(dbMedRoutine)
+        });
     });
 
     app.put("/api/user/:id/medRoutine/:MedRoutineId", function (req, res) {
         db.MedRoutine.update(req.body,
             {
                 where: {
-                    MedRoutineId: req.body.id
+                    UserId: req.params.id,
+                    id: req.params.MedRoutineId
                 }
             }).then(function (results) {
                 res.json(results);
