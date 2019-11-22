@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function MedicationForm({ }) {
+function MedicationForm() {
     return (
         <div>
             <form>
