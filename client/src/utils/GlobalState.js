@@ -29,6 +29,7 @@ const { Provider } = StoreContext;
 
 const StoreProvider = ({ value = [], ...props}) => {
     const [state, dispatch] = useReducer(reducer, {
+        headline: [],
        user: {
         id: 0,
         	user: "",
