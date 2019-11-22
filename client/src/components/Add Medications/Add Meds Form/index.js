@@ -1,28 +1,28 @@
 import React from "react";
 
 
-function MedicationForm({ }) {
+function MedicationForm() {
     return (
         <div>
-            <form>
+            
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Medication Name</label>
-                    <input type="text" class="form-control" id="" placeholder="Add the name of your medicaiton..."></input>
+                    <input type="text" class="form-control" id="" placeholder="Add the name of your medicaiton..." />
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Dose</label>
-                    <input type="text" class="form-control" id="" placeholder="1 tablet..."></input>
+                    <input type="text" class="form-control" id="" placeholder="1 tablet..." />
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">When should you start to take it?</label>
-                    <input type="text" class="form-control" id="" placeholder="MM/DD/YYY"></input>
+                    <input type="text" class="form-control" id="" placeholder="MM/DD/YYY" />
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">How many days do you need to take it?</label>
-                    <input type="text" class="form-control" id="" placeholder="10"> days</input>
+                    <input type="text" class="form-control" id="" placeholder="10" /> days
                 </div>
 
                 <div class="form-group">
@@ -69,11 +69,8 @@ function MedicationForm({ }) {
                         <option>PM</option>
                     </select>
                 </div>
-
-            </form>
-
+            
         </div>
-
     )
 }
 

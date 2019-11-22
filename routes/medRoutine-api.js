@@ -44,13 +44,13 @@ module.exports = function (app) {
         })
     });
 
-    app.put("/api/user/:id/medRoutine/:MedRoutineId", function (req,res) {
-        db.MedRoutine.update(req.body, 
+    app.put("/api/user/:id/medRoutine/:MedRoutineId", function (req, res) {
+        db.MedRoutine.update(req.body,
             {
-                where : {
+                where: {
                     MedRoutineId: req.body.id
                 }
-            }).then (function (results){
+            }).then(function (results) {
                 res.json(results);
             })
     })
