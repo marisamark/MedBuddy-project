@@ -20,8 +20,8 @@ module.exports = function (app) {
         //need to check column name for userid under medroutine table
         db.MedRoutine.findAll({
             where: {
-                id: req.params.id,
-                MedRoutineId: req.body.medRoutineId
+                UserId: req.params.id,
+                id: req.params.MedRoutineId
             }
         })
             .then(function (dbmedroutine) {
