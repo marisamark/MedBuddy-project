@@ -6,9 +6,11 @@ module.exports = function (app) {
     // GET medLog for specific medRoutine (TAB: MY MEDICATION) & (TAB: DASHBOARD)
     // "/api/user/:userId/medRoutine/:id/medLog"
     app.get("/api/user/:id/medRoutine/:MedRoutineId/medLog", function (req, res) {
+        console.log(req.body);
         db.MedLog.findAll({
             where: {
-                id: req.params.id
+                // UserId: req.params.id,
+                id: req.params.MedRoutineId
             },
             include: [db.MedRoutine]
         }).then(function (dbMedLog) {
