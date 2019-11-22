@@ -48,7 +48,8 @@ module.exports = function (app) {
         db.MedRoutine.update(req.body,
             {
                 where: {
-                    MedRoutineId: req.params.id
+                    UserId: req.params.id,
+                    id: req.params.MedRoutineId
                 }
             }).then(function (results) {
                 res.json(results);
