@@ -4,7 +4,7 @@ function SignupForm(){
 
     return(
         <div>
-            <form class="float-right mb-4">
+            <form class="col-4">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your frist name...">
@@ -27,7 +27,7 @@ function SignupForm(){
                     <label for="email">Email</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your email..."></input>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign In</button>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
             </form>
         </div>
     )
