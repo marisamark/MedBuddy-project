@@ -18,6 +18,20 @@ module.exports = function (app) {
         });
     });
 
+// get specific medLog for medRoutine
+    app.get("/api/user/:id/medRoutine/:MedRoutineId/medLog/:medLogId", function (req, res) {
+        db.MedLog.findAll({
+            where: {
+                id: req.params.id
+            },
+            include: [db.MedRoutine]
+        }).then(function (dbMedLog) {
+            res.json(dbMedLog)
+        }).catch(function (error) {
+            console.log(error);
+        });
+    });
+
     // POST medLog
     // "/api/user/:userId/medRoutine/:id/medLog"
     app.post("/api/user/:id/medRoutine/:medRoutineId/medLog/", function (req, res) {
@@ -38,7 +52,7 @@ module.exports = function (app) {
 
     // UPDATE medLog
     // "/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId/"
-    app.put("/api/user/:id/medRoutine/:medRoutineId/medLog/:MedLogId", function (req, res) {
+    app.put("/api/user/:id/medRoutine/:medRoutineId/medLog/:medLogId", function (req, res) {
         db.MedLog.update(
             req.body,
             {
