@@ -3,7 +3,7 @@ module.exports = function (sequelize, DataTypes) {
 
         //Date (INT)
         date: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false
         },
         //time (INT)

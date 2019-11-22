@@ -6,12 +6,13 @@ module.exports = function (app) {
         console.log(req.body)
         db.MedRoutine.findAll({
             where: {
-                id: req.params.id
+                UserId: req.params.id
             }
+        }).then(function (dbmedroutine) {
+            res.json(dbmedroutine);
+        }).catch(function (error) {
+            console.log(error);
         })
-            .then(function (dbmedroutine) {
-                res.json(dbmedroutine);
-            })
     });
 
 // getting specific routine for users
@@ -22,11 +23,14 @@ module.exports = function (app) {
             where: {
                 UserId: req.params.id,
                 id: req.params.MedRoutineId
-            }
+            },
+            include: [db.MedLog]
         })
-            .then(function (dbmedroutine) {
-                res.json(dbmedroutine);
-            })
+        .then(function (dbmedroutine) {
+            res.json(dbmedroutine);
+        }).catch(function (error) {
+            console.log(error);
+        })
     });
 
 // posting medroutine for user
@@ -41,6 +45,8 @@ module.exports = function (app) {
         })
         .then(function(dbMedRoutine) {
             res.json(dbMedRoutine)
+        }).catch(function (error) {
+            console.log(error);
         });
     });
 
@@ -53,6 +59,8 @@ module.exports = function (app) {
                 }
             }).then(function (results) {
                 res.json(results);
+            }).catch(function (error) {
+                console.log(error);
             })
     })
 
