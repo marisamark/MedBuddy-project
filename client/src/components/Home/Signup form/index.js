@@ -4,7 +4,8 @@ function SignupForm(){
 
     return(
         <div>
-            <form class="col-4">
+            <h2 class="text-center mt-4 mb-3">Signup</h2>
+            <form class="mx-auto col-4 mt-4">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
                     <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your frist name...">
