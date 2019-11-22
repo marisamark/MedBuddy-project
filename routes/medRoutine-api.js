@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = function (app) {
-
+// get all medRoutine for users
     app.get("/api/user/:id/medRoutine", function (req, res) {
         console.log(req.body)
         db.MedRoutine.findAll({
@@ -14,13 +14,14 @@ module.exports = function (app) {
             })
     });
 
+// getting specific routine for users
     app.get("/api/user/:id/medRoutine/:MedRoutineId", function (req, res) {
         console.log(req.body)
         //need to check column name for userid under medroutine table
         db.MedRoutine.findAll({
             where: {
                 id: req.params.id,
-                MedRoutineId: req.params.MedRoutineId
+                MedRoutineId: req.body.medRoutineId
             }
         })
             .then(function (dbmedroutine) {
@@ -28,6 +29,7 @@ module.exports = function (app) {
             })
     });
 
+// posting medroutine for user
     app.post("/api/user/:id/medRoutine", function (req, res) {
         console.log(req.body);
         db.MedRoutine.create({
