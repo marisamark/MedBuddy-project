@@ -2,16 +2,22 @@ import React from "react";
 import _ from 'lodash';
 
 function TimeDives(props) {
-    // const [userState, setUserState] = useState({
-    //     selectValue: "",
-
-    // });
+    
 
     console.log('selected', props)
+    let countNum = {
+        0: "First",
+        1: "Second",
+        2: "Third",
+        3: "Fourth"
+    }
+
     let timesList = [];
      _.times(props.selectValue, (i) => {
     timesList.push(
-        <div key={i}>
+        <div key={i}> 
+     <h5> {countNum[i]} Time </h5>
+     <hr/>
             <select class="form-control" id="exampleFormControlSelect1">
                         <option>1</option>
                         <option>2</option>
@@ -36,7 +42,9 @@ function TimeDives(props) {
                         <option>AM</option>
                         <option>PM</option>
                     </select>
+                    <br />
                 </div>
+                
     );
     })
 
