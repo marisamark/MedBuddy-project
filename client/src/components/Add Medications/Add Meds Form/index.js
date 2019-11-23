@@ -19,22 +19,22 @@ function MedicationForm() {
             
         <div class="form-group">
             <label for="exampleFormControlInput1">Medication Name</label>
-            <input type="text" class="form-control" id="" placeholder="Add the name of your medication..." />
+            <input type="text" class="form-control" placeholder="Add the name of your medication..." />
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlInput1">Dose</label>
-            <input type="text" class="form-control" id="" placeholder="1 tablet..." />
+            <input type="text" class="form-control" placeholder="1 tablet..." />
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlInput1">When should you start to take it?</label>
-            <input type="text" class="form-control" id="" placeholder="MM/DD/YYY" />
+            <input type="text" class="form-control" placeholder="MM/DD/YYY" />
         </div>
 
         <div class="form-group">
             <label for="exampleFormControlInput1">How many consecutive days do you need to take it?</label>
-            <input type="text" class="form-control" id="" placeholder="10" /> 
+            <input type="text" class="form-control" placeholder="10" /> 
         </div>
 
         <div class="form-group">
@@ -60,9 +60,10 @@ function MedicationForm() {
 
                 <div class="form-group">
                     <label for="exampleFormControlInput1">What time do you want to start taking it?</label>                   
-                   
+                  
                     <TimeDives selectValue={userState.selectValue}/>
                     {console.log("secondory "+ userState.selectValue)}
+                  
                 </div>
 
             
