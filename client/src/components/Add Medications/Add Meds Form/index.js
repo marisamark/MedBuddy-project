@@ -3,9 +3,11 @@ import TimeDives from "../Start Times/index";
 
 function MedicationForm() {
     const[userState, setUserState]=useState({
-        selectValue: "",
+        selectValue: "1",
       
     });
+
+    console.log("initial " + userState.selectValue)
     let handleChange =(e) =>{
         setUserState({selectValue:e.target.value});
       }
@@ -93,7 +95,8 @@ function MedicationForm() {
                 <div class="form-group">
                     <label for="exampleFormControlInput1">What time do you want to start taking it?</label>                   
                    
-                    <TimeDives selctValue={userState.selctValue}/>
+                    <TimeDives selectValue={userState.selectValue}/>
+                    {console.log("secondory "+ userState.selectValue)}
                 </div>
 
             

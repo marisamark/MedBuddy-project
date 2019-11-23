@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import _ from 'lodash';
 
 function TimeDives(props) {
@@ -7,7 +7,7 @@ function TimeDives(props) {
 
     // });
 
-    console.log('selected', props.selectValue)
+    console.log('selected', props)
     let timesList = [];
      _.times(props.selectValue, (i) => {
     timesList.push(
