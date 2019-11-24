@@ -1,10 +1,10 @@
 import React from "react";
-import _ from 'lodash';
+import _ from "lodash";
 
 function TimeDives(props) {
 
 
-    console.log('selected', props)
+    console.log("selected", props)
     let countNum = {
         0: "First",
         1: "Second",
