@@ -13,19 +13,19 @@ function SignupForm() {
     const password = useRef();
     const email = useRef();
 
-    const usersignup = () => {
-        // preventDefault();
-        dispatch({ type: "usersignup" });
+    const usersignup = (event) => {
+        event.preventDefault();
+        // dispatch({ type: "usersignup" });
         //alert("button clicked");
         //alert(firstName.current.value + " " + lastName.current.value + " " + userName.current.value + " " + password.current.value + " " + email.current.value);
         var newUser = {
-            firstName: firstName.current.value,
-            lastName: lastName.current.value,
+            firstname: firstName.current.value,
+            lastname: lastName.current.value,
             username: userName.current.value,
             password: password.current.value,
-            email: email.current.value
+            email: email.current.value,
         }
-        alert(firstName.current.value + " " + lastName.current.value + " " + userName.current.value + " " + password.current.value + " " + email.current.value);
+        console.log(firstName.current.value + " " + lastName.current.value + " " + userName.current.value + " " + password.current.value + " " + email.current.value);
         ApiCalls.saveUser(newUser)
         .then(function(data) {
             console.log(data)
@@ -57,7 +57,7 @@ function SignupForm() {
                     <label for="email">Email</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Your email..." ref={email}></input>
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={() => usersignup()}>Sign Up</button>
+                <button type="submit" className="btn btn-primary" onClick={usersignup}>Sign Up</button>
             </form>
         </div>
     )
