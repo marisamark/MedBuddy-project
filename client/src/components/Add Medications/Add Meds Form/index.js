@@ -15,7 +15,7 @@ function MedicationForm() {
 
      
     return (
-        <div>
+        <form>
             
         <div className="form-group">
             <label for="exampleFormControlInput1">Medication Name</label>
@@ -66,9 +66,9 @@ function MedicationForm() {
                   
                 </div>
 
-            
+                <button type="submit" class="btn btn-primary mt-2 mb-2">Add</button> 
 
-        </div>
+        </form>
 
     )
 }
