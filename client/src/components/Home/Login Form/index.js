@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from "react";
 import ApiCalls from "../../../utils/API"
+import axios from "axios";
 
 function LoginForm() {
 
@@ -8,27 +9,39 @@ function LoginForm() {
 
     function loginClick(event) {
         event.preventDefault();
-        console.log("username " + username.current.value + " password " + password.current.value);
+        // console.log("username " + username.current.value + " password " + password.current.value);
         var userData = {
             username: username.current.value,
             password: password.current.value
         };
-        if (!userData.email || !userData.password) {
-            return;
-        }
+        // if (!userData.email || !userData.password) {
+        //     return
+        // }
         loginUser(userData.username, userData.password);
-
     }
 
     function loginUser(username, password) {
-        ApiCalls.loginUser({
+        console.log(username);
+        console.log(password);
+
+        axios.post("/api/user/login", {
             username: username,
             password: password
         }).then(function () {
-            alert("LOGIN SUCCESS");
+            alert("success");
         }).catch(function (err) {
             console.log(err)
         })
+
+
+        // ApiCalls.loginUser({
+        //     username: username,
+        //     password: password
+        // }).then(function () {
+        //     alert("LOGIN SUCCESS");
+        // }).catch(function (err) {
+        //     console.log(err)
+        // })
     }
 
     return (

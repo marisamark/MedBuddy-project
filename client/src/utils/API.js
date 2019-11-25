@@ -5,8 +5,8 @@ export default {
     {
         return axios.post("/api/user", newUser)
     },
-    loginUser : function ()
+    loginUser : function (loginDetails)
     {
-        return axios.post("/api/user/login")
+        return axios.post("/api/user/login", loginDetails)
     }
 }
