@@ -50,13 +50,13 @@ function LoginForm() {
         <div>
             <form className="float-right mb-4">
                 <div className="form-group">
-                    <label for="username">Username</label>
+                    <label htmlFor="username">Username</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
                     </input>
                 </div>
 
                 <div className="form-group">
-                    <label for="exampleInputPassword1">Password</label>
+                    <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={loginClick}>Sign In</button>
