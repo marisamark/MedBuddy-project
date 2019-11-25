@@ -23,13 +23,13 @@ function LoginForm() {
         console.log(username);
         console.log(password);
 
-        axios.post("/api/user/login", {
+        axios.post("/api/login", {
             username: username,
             password: password
         })
             .then(function () {
-                //window.location.replace("/dashboard")
-                console.log("then")
+                console.log("window replacement");
+        window.location.replace("/dashboard");
             })
             .catch(function (err) {
                 console.log(err)
