@@ -1,6 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
     ADD_ARTICLES,
+    FIND_ALL_ROUTINES,
     usersignup
 } from "./actions";
 
@@ -10,10 +11,21 @@ const { Provider } = StoreContext;
 const reducer = (state, action) => {
     switch (action.type) {
         case usersignup:
-            return { ...state, user: action.post };
+            return { 
+                ...state, 
+                user: action.post 
+            };
         case ADD_ARTICLES:
-            console.log(action);
-            return { ...state, headline: action.articles};
+            // console.log(action);
+            return { 
+                ...state, 
+                headline: action.articles
+            };
+        case FIND_ALL_ROUTINES:
+            console.log('findRoutine action', action)
+            return { ...state,
+                medroutine: action.routines
+            }
         
         default: throw new Error("action doesnt exist")
     }
