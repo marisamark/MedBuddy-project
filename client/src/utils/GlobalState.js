@@ -1,8 +1,6 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
     ADD_ARTICLES,
-    FETCHING_ARTICLES,
-    FETCHED_ARTICLES,
     usersignup
 } from "./actions";
 
@@ -15,10 +13,6 @@ const reducer = (state, action) => {
             return { ...state, user: action.post };
         case ADD_ARTICLES:
             return { ...state, headline: action.post};
-        case FETCHING_ARTICLES:
-            return 'FETCHING_ARTICLES';
-        case FETCHED_ARTICLES:
-            return 'FETCHED_ARTICLES';
         
         default: throw new Error("action doesnt exist")
     }

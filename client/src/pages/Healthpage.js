@@ -3,20 +3,22 @@ import Healthtab from "../components/Home/NavBar (public)/Healthtab/index";
 import NavBeforeLogin from "../components/Home/NavBar (public)/index";
 import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
+import {ADD_ARTICLES} from "../utils/actions";
+
 
 function Health() {
 
     const [state, dispatch] = useStoreContext();
 
     useEffect(() => {
-        dispatch({ type: 'FETCHING_ARTICLES'});
         API.getNews().then(data => {
             console.log(data);
-            dispatch({ type: 'ADD_ARTICLES', headline: data});
-            dispatch({ type: 'FETCHED_ARTICLES' });
+            let articles = data.data.articles
+            dispatch({ type: ADD_ARTICLES, headline: articles });
         }).catch((error) => {
             console.log(error);
         });
+        console.log('STATE', state.headline);
     }, []);
 
     return (

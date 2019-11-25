@@ -15,11 +15,11 @@ function Healthtab (props) {
                 <img alt={props.name} src={props.urlToImage}/>
             </div>
             <div className="content">
-                <h2>{props.title}</h2>
-                <h3>{props.author}</h3>
-                <h3>{props.publishedAt}</h3>
-                <h3>{props.description}</h3>
-                <h3>Click to read more: {props.url}</h3>
+                <h3>{props.title}</h3>
+                <h5>{props.author}</h5>
+                <h5>{props.publishedAt}</h5>
+                <h5>{props.description}</h5>
+                <h5>Click to read more: {props.url}</h5>
             </div>
         </div>
         </>
