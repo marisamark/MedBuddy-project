@@ -23,7 +23,7 @@ function LoginForm() {
         console.log(username);
         console.log(password);
 
-        axios.post("/api/user/login", {
+        axios.post("/api/login", {
             username: username,
             password: password
         })
