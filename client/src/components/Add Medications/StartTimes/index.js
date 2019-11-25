@@ -20,7 +20,7 @@ function TimeDives(props) {
                 <h5> {countNum[i]} Time </h5>
                 <hr />
                 <div className="row">
-                <div className="col-md-4">
+                <div className="col">
                     <select className="form-control" id="exampleFormControlSelect1">
                         <option>1</option>
                         <option>2</option>
@@ -36,7 +36,7 @@ function TimeDives(props) {
                         <option>12</option>
                     </select>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col">
                     <select className="form-control" id="exampleFormControlSelect1">
                         <option>00</option>
                         <option>15</option>
@@ -44,7 +44,7 @@ function TimeDives(props) {
                         <option>45</option>
                     </select>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col">
                     <select className="form-control" id="exampleFormControlSelect1">
                         <option>AM</option>
                         <option>PM</option>
