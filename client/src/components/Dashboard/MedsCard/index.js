@@ -7,16 +7,16 @@ function MedsCard(){
     return(
         
        
-        <Card style={{ width: '18rem' ,'margin-left': '140px' }}>
+        <Card style={{ width: '18rem' ,'marginLeft': '140px' }}>
         <Card.Body>
           <Card.Title>Time</Card.Title>
-          <Card.Text>
+         
             <ul>
                 <li>Name of Drug : </li>
                 <li>rug Concentration : </li>
                 <li>Dosage : </li>
             </ul>
-          </Card.Text>
+        
           <div className="row">
           <Button variant="primary" >Complete</Button>
           <Reschedule />

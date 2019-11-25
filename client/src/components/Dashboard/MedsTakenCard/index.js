@@ -6,15 +6,11 @@ function MedTakenCard(){
     return(
         
        
-        <Card style={{ width: '18rem' ,'margin-left': '140px' }}>
+        <Card style={{ width: '18rem' ,'marginLeft': '140px' }}>
         <Card.Body>
-          
-          <Card.Text>
           
                 <h2>Name of Drug : </h2>
           
-          </Card.Text>
-      
         </Card.Body>
       </Card>
           
