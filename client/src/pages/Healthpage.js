@@ -27,17 +27,23 @@ function Health() {
         <>
        <NavBeforeLogin/>
        <div className="container">
-            <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2> 
+            <h1 className="display-4 mt-4 mb-4">Recent News in Health and Wellness</h1>
+            <br></br>
+        {/* <div className="row"> */}
         {state.headline.map(headline =>
+        // <div className="col-4">
         <Healthtab
         title={headline.title}
         author={headline.author}
-        publishedAt={headline.publishedAt}
+        publishedAt={Date(headline.publishedAt)}
         description={headline.description}
         url={headline.url}
         imageUrl={headline.urlToImage}
         />
-        )} 
+        // </div>
+
+        )}
+        {/* </div> */}
         </div>
         </>
     )

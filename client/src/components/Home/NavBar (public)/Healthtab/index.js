@@ -10,17 +10,23 @@ function Healthtab (props) {
             <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2>
             
         </div> */}
-        <div className="card">
+        <div className="card-center w-75">
+        <div className="card-header mb-4">
             <div className="img-container">
-                <img alt={props.name} src={props.urlToImage}/>
+                {props.imageUrl? 
+                <img className="img-thumbnail" alt={props.author} src={props.imageUrl}/>
+                : <img className="img-fluid" alt="There is no image for this article"></img>
+                }
             </div>
-            <div className="content">
-                <h3>{props.title}</h3>
+            <div className="card-body">
+                <a href={props.url}><h3>{props.title}</h3>
+                </a>
                 <h5>{props.author}</h5>
                 <h5>{props.publishedAt}</h5>
                 <h5>{props.description}</h5>
-                <h5>Click to read more: {props.url}</h5>
+                {/* <a href={props.url}>Click to read more:</a> */}
             </div>
+        </div>
         </div>
         </>
     )
