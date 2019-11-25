@@ -29,6 +29,7 @@ function SignupForm() {
         ApiCalls.saveUser(newUser)
         .then(function(data) {
             console.log(data)
+            window.location.replace("/");
         }).catch(err =>console.log(err));
     }
 
@@ -37,24 +38,24 @@ function SignupForm() {
             <h2 className="text-center mt-4 mb-3">Signup</h2>
             <form className="mx-auto col-4 mt-4">
                 <div className="form-group">
-                    <label for="firstName">First Name</label>
+                    <label htmlFor="firstName">First Name</label>
                     <input type="text" className="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your first name..." ref={firstName}>
                     </input>
                 </div>
                 <div className="form-group">
-                    <label for="lastName">Last Name</label>
+                    <label htmlFor="lastName">Last Name</label>
                     <input type="text" className="form-control" id="exampleInputLastName1" placeholder="Your last name..." ref={lastName}></input>
                 </div>
                 <div className="form-group">
-                    <label for="username">Username</label>
+                    <label htmlFor="username">Username</label>
                     <input type="text" className="form-control" id="exampleInputUsername1" placeholder="Your username..." ref={userName}></input>
                 </div>
                 <div className="form-group">
-                    <label for="password">Password</label>
+                    <label htmlFor="password">Password</label>
                     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
                 </div>
                 <div className="form-group">
-                    <label for="email">Email</label>
+                    <label htmlFor="email">Email</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Your email..." ref={email}></input>
                 </div>
                 <button type="submit" className="btn btn-primary" onClick={usersignup}>Sign Up</button>

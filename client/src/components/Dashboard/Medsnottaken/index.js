@@ -14,16 +14,15 @@ import React from "react";
 import MedsCard from "../MedsCard/index"
 
 function Medsnottaken(){
-    return(
-        <div className="col-6">
-             
-            <h3 className="text-center">Medications I have to take</h3>
+    return(  
+        <>
+           
             <div id="medsnottaken">
             <MedsCard />
             </div>       
             
-        </div>
 
+</>
     )
 }
 

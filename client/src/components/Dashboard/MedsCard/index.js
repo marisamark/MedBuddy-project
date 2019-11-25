@@ -7,25 +7,37 @@ function MedsCard(){
     return(
         
        
-        <Card style={{ width: '18rem' ,'margin-left': '140px' }}>
-        <Card.Body>
-          <Card.Title>Time</Card.Title>
-          <Card.Text>
-            <ul>
-                <li>Name of Drug : </li>
-                <li>rug Concentration : </li>
-                <li>Dosage : </li>
-            </ul>
-          </Card.Text>
-          <div className="row">
-          <Button variant="primary" >Complete</Button>
+      //   <Card class="card card-block d-flex">
+      //   <Card.Body>
+      //     <Card.Title>Time</Card.Title>
+         
+      //       <ul>
+      //           <li>Name of Drug : </li>
+      //           <li>rug Concentration : </li>
+      //           <li>Dosage : </li>
+      //       </ul>
+        
+      //     <div className="row">
+      //     <Button variant="primary" >Complete</Button>
+      //     <Reschedule />
+      //     </div>
+      //   </Card.Body>
+      // </Card>
+      <div class="container">
+      <h2 className="text-center mt-3 mb-3">Medications I have to take</h2>
+          <div className="card mt-4">
+          <div className="card-body">
+            <h3 className="card-title text-center">Time</h3>
+                <h5 class="text-center">Name of Drug: </h5>
+                <h5 class="text-center">Drug Concentration: </h5> 
+                <h5 class="text-center">Dosage: </h5>
+            <div className="row justify-content-center">
+          <Button className="mr-2 ml-2" variant="primary">Complete</Button>
           <Reschedule />
           </div>
-        </Card.Body>
-      </Card>
-          
-    
-
+          </div>
+        </div>
+</div>
     )
 }
 
