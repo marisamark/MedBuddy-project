@@ -14,8 +14,8 @@ function Health() {
         API.getNews().then(data => {
             // console.log(data);
             let articles = data.data.articles
-            console.log(articles)
-            dispatch({ type: ADD_ARTICLES, post: articles });
+            // console.log(articles)
+            dispatch({ type: ADD_ARTICLES, articles });
         }).catch((error) => {
             console.log(error);
         });
@@ -28,9 +28,16 @@ function Health() {
        <NavBeforeLogin/>
        <div className="container">
             <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2> 
+        {state.headline.map(headline =>
         <Healthtab
-        articles={articles.map(articles)}
+        title={headline.title}
+        author={headline.author}
+        publishedAt={headline.publishedAt}
+        description={headline.description}
+        url={headline.url}
+        imageUrl={headline.urlToImage}
         />
+        )} 
         </div>
         </>
     )
