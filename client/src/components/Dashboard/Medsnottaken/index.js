@@ -11,12 +11,14 @@
 //   </div>
 
 import React from "react";
+import Reschedule from "../Reschedule modal/index";
 
 function Medsnottaken(){
     return(
         <div class="col-6">
             <h3 class="text-center">Medications I have to take</h3>
             <div id="medsnottaken"></div>
+            <Reschedule />
         </div>
 
     )

@@ -1,26 +1,25 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-// require("react-bootstrap/ModalHeader")
+import _ from "lodash";
 
-function RescheduleModal(props) {
-    return (
-      <Modal
-        {...props}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            Reschedule Time
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <h4>What time would you like to reschedule?</h4>
-          <div class="row">
+function TimeDives(props) {
+
+
+    console.log("selected", props)
+    let countNum = {
+        0: "First",
+        1: "Second",
+        2: "Third",
+        3: "Fourth"
+    }
+
+    let timesList = [];
+    _.times(props.selectValue, (i) => {
+        timesList.push(
+            <div key={i}>
+                <br />
+                <h5> {countNum[i]} Time </h5>
+                <hr />
+                <div class="row">
                 <div class="col-md-4">
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option>1</option>
@@ -53,30 +52,15 @@ function RescheduleModal(props) {
                     </div>
                     <br />
                     </div>
-                     
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={props.onHide}>Reschedule</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-  
-  function Reschedule() {
-    const [modalShow, setModalShow] = React.useState(false);
-  
+            </div>
+
+        );
+    })
+
+
     return (
-      <ButtonToolbar>
-        <Button variant="primary" onClick={() => setModalShow(true)}>
-          Reschedule
-        </Button>
-  
-        <RescheduleModal
-          show={modalShow}
-          onHide={() => setModalShow(false)}
-        />
-      </ButtonToolbar>
-    );
-  }
-  
-  export default Reschedule;
+        <div>{timesList}</div>
+    )
+
+}
+export default TimeDives;
