@@ -7,7 +7,7 @@ function Signup() {
     return (
         <>
             <NavBeforeLogin />
-            <div class="container text-primary">
+            <div className="container text-primary">
                 <SignupForm />
             </div>
 

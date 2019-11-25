@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from "react";
 import { StoreContext } from "../../../utils/GlobalState";
+import ApiCalls from "../../../utils/API"
 // import usersignup from "../../../../../routes/user-api";
 
 function SignupForm() {
@@ -16,36 +17,47 @@ function SignupForm() {
         // preventDefault();
         dispatch({ type: "usersignup" });
         //alert("button clicked");
+        //alert(firstName.current.value + " " + lastName.current.value + " " + userName.current.value + " " + password.current.value + " " + email.current.value);
+        var newUser = {
+            firstName: firstName.current.value,
+            lastName: lastName.current.value,
+            username: userName.current.value,
+            password: password.current.value,
+            email: email.current.value
+        }
         alert(firstName.current.value + " " + lastName.current.value + " " + userName.current.value + " " + password.current.value + " " + email.current.value);
-        console.log(state);
+        ApiCalls.saveUser(newUser)
+        .then(function(data) {
+            console.log(data)
+        }).catch(err =>console.log(err));
     }
 
     return (
         <div>
-            <h2 class="text-center mt-4 mb-3">Signup</h2>
-            <form class="mx-auto col-4 mt-4">
-                <div class="form-group">
+            <h2 className="text-center mt-4 mb-3">Signup</h2>
+            <form className="mx-auto col-4 mt-4">
+                <div className="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your first name..." ref={firstName}>
+                    <input type="text" className="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your first name..." ref={firstName}>
                     </input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="exampleInputLastName1" placeholder="Your last name..." ref={lastName}></input>
+                    <input type="text" className="form-control" id="exampleInputLastName1" placeholder="Your last name..." ref={lastName}></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Your username..." ref={userName}></input>
+                    <input type="text" className="form-control" id="exampleInputUsername1" placeholder="Your username..." ref={userName}></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
+                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your email..." ref={email}></input>
+                    <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Your email..." ref={email}></input>
                 </div>
-                <button type="submit" class="btn btn-primary" onClick={() => usersignup()}>Sign Up</button>
+                <button type="submit" className="btn btn-primary" onClick={() => usersignup()}>Sign Up</button>
             </form>
         </div>
     )
