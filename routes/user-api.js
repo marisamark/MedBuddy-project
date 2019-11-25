@@ -43,25 +43,29 @@ module.exports = function (app) {
 
 
     // POST for user logging in
-    app.post("/api/user/login",  function (req, res) {
-        console.log(req)
+    app.post("/api/login", passport.authenticate("local"), function (req, res) {
+        console.log("login attempted")
+        // console.log(req.body)
+        // console.log(req.User)
         res.json(req.user);
     })
 
     // POST create a new user
     // "/api/user"
     app.post("/api/user", function (req, res) {
-        console.log(req.body)
+        //console.log(req.body)
         db.User.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-            createdAt : new Date(),
-            updatedAt : new Date()
-        }).then(function (dbUser) {
-            res.json(dbUser);
+            createdAt: new Date(),
+            updatedAt: new Date()
+        }).then(function (results) {
+            console.log(results)
+            res.redirect("/");
+            // res.json(dbUser);
         }).catch(function (error) {
             res.json(error);
         });

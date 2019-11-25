@@ -9,7 +9,6 @@ function LoginForm() {
 
     function loginClick(event) {
         event.preventDefault();
-        // console.log("username " + username.current.value + " password " + password.current.value);
         var userData = {
             username: username.current.value,
             password: password.current.value
@@ -29,21 +28,12 @@ function LoginForm() {
             password: password
         })
             .then(function () {
-                alert("success");
+                //window.location.replace("/dashboard")
+                console.log("then")
             })
             .catch(function (err) {
                 console.log(err)
             })
-
-
-        // ApiCalls.loginUser({
-        //     username: username,
-        //     password: password
-        // }).then(function () {
-        //     alert("LOGIN SUCCESS");
-        // }).catch(function (err) {
-        //     console.log(err)
-        // })
     }
 
     return (

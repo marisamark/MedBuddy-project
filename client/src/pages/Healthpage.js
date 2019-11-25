@@ -14,12 +14,14 @@ function Health() {
         API.getNews().then(data => {
             console.log(data);
             let articles = data.data.articles
-            dispatch({ type: ADD_ARTICLES, headline: articles });
+            dispatch({ type: ADD_ARTICLES, post: articles});
         }).catch((error) => {
             console.log(error);
         });
-        console.log('STATE', state.headline);
+        
     }, []);
+
+    console.log('STATE', state);
 
     return (
         <>
