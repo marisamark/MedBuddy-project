@@ -11,7 +11,7 @@ function AddMedications() {
         <>
             <NavAfterLogin />
             <div className="container text-primary">
-                <div className="mx-auto col-4">
+                <div className="mx-auto col-lg-6">
                     <h2 className="mt-4">Add a medication</h2>
                     <MedicationForm />
 
