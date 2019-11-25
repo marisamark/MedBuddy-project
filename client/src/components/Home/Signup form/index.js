@@ -29,6 +29,7 @@ function SignupForm() {
         ApiCalls.saveUser(newUser)
         .then(function(data) {
             console.log(data)
+            window.location.replace("/");
         }).catch(err =>console.log(err));
     }
 
