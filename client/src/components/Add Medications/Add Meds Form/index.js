@@ -57,7 +57,7 @@ function MedicationForm() {
                     <option value="4">4</option>
                 </select>
             </div>
-            <div class="container">
+            <div className="container">
                 <div className="form-group">
                     <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
@@ -65,7 +65,7 @@ function MedicationForm() {
                     {console.log("secondory " + userState.selectValue)}
 
                 </div>
-                <button type="submit" class="btn btn-primary mt-2 mb-2">Add</button>
+                <button type="submit" className="btn btn-primary mt-2 mb-2">Add</button>
             </div>
 
         </form>
