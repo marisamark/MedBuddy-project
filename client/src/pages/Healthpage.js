@@ -29,9 +29,9 @@ function Health() {
        <div className="container">
             <h1 className="text-center display-4">Recent News in Health and Wellness</h1>
             <br></br>
-        {/* <div className="row"> */}
+        <div className="row">
         {state.headline.map(headline =>
-        // <div className="col-4">
+        <div className="col-lg-4">
         <Healthtab
         title={headline.title}
         author={headline.author}
@@ -40,10 +40,10 @@ function Health() {
         url={headline.url}
         imageUrl={headline.urlToImage}
         />
-        // </div>
+         </div>
 
         )}
-        {/* </div> */}
+        </div>
         </div>
         </>
     )
