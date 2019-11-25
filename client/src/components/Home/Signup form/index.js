@@ -5,7 +5,7 @@ import ApiCalls from "../../../utils/API"
 
 function SignupForm() {
 
-    const [state, dispatch] = useContext(StoreContext);
+    // const [state, dispatch] = useContext(StoreContext);
 
     const firstName = useRef();
     const lastName = useRef();
