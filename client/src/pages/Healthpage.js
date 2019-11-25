@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect} from "react";
 import Healthtab from "../components/Home/NavBar (public)/Healthtab/index";
 import NavBeforeLogin from "../components/Home/NavBar (public)/index";
 import API from "../utils/API";

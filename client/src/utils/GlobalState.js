@@ -1,16 +1,24 @@
 import React, { createContext, useReducer, useContext } from "react";
+import {
+    ADD_ARTICLES,
+    FETCHING_ARTICLES,
+    FETCHED_ARTICLES,
+    usersignup
+} from "./actions";
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case 'usersignup':
+        case usersignup:
             return { ...state, user: action.post };
-        case 'ADD_ARTICLES':
+        case ADD_ARTICLES:
             return { ...state, headline: data};
-        case 'FETCHING_ARTICLES':
+        case FETCHING_ARTICLES:
             return 'FETCHING_ARTICLES';
+        case FETCHED_ARTICLES:
+            return 'FETCHED_ARTICLES';
         
         default: throw new Error("action doesnt exist")
     }
