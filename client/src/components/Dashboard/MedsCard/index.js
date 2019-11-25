@@ -5,24 +5,25 @@ import Reschedule from "../Reschedule modal/index";
 function MedsCard(){
     return(
         
-           <div className="row">
-      <div className="col-sm-6">
+       
           <div className="card">
           <div className="card-body">
-              <h5 className="card-title"></h5>
-              <p className="card-text"></p>
+              <h5 className="card-title">Name of Drug</h5>
+              <ul className="card-text">
+                  <li>Drug Concentration:</li>
+                  <li>Time:</li>
+                  <li>Dosage:</li>
+              </ul>
               <div className="row">
-                <div className="col-6">
-              <a href="#" class="btn btn-primary">Complete</a>
-              </div>
-              <div className="col-6">
+                
+              <a href="#" class="btn btn-primary mr-4 ml-4">Complete</a>
+             
               <Reschedule />
-              </div>
+             
               </div>
           </div>
           </div>
-      </div>
-      </div>
+   
           
     
 
