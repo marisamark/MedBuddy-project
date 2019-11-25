@@ -14,7 +14,7 @@ const reducer = (state, action) => {
         case usersignup:
             return { ...state, user: action.post };
         case ADD_ARTICLES:
-            return { ...state, headline: data};
+            return { ...state, headline: action.post};
         case FETCHING_ARTICLES:
             return 'FETCHING_ARTICLES';
         case FETCHED_ARTICLES:
