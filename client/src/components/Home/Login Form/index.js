@@ -27,11 +27,13 @@ function LoginForm() {
         axios.post("/api/user/login", {
             username: username,
             password: password
-        }).then(function () {
-            alert("success");
-        }).catch(function (err) {
-            console.log(err)
         })
+            .then(function () {
+                alert("success");
+            })
+            .catch(function (err) {
+                console.log(err)
+            })
 
 
         // ApiCalls.loginUser({
