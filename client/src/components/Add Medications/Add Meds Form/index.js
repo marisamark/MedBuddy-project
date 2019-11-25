@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import TimeDives from "../Start Times/index";
+import TimeDives from "../StartTimes/index";
 
 function MedicationForm() {
     const[userState, setUserState]=useState({
