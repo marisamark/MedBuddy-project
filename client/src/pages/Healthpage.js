@@ -12,14 +12,16 @@ function Health() {
 
     useEffect(() => {
         API.getNews().then(data => {
-            console.log(data);
+            // console.log(data);
             let articles = data.data.articles
-            dispatch({ type: ADD_ARTICLES, headline: articles });
+            console.log(articles)
+            dispatch({ type: ADD_ARTICLES, post: articles });
         }).catch((error) => {
             console.log(error);
         });
-        console.log('STATE', state.headline);
     }, []);
+
+    console.log('STATE', state);
 
     return (
         <>
@@ -27,7 +29,7 @@ function Health() {
        <div className="container">
             <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2> 
         <Healthtab
-        articles={state.headline}
+        articles={articles.map(articles)}
         />
         </div>
         </>
