@@ -53,7 +53,7 @@ function RescheduleModal(props) {
                     </div>
                     <br />
                     </div>
-                     {/* <div>{TimesDives}</div> */}
+                     
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={props.onHide}>Reschedule</Button>
