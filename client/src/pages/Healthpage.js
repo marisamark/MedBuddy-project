@@ -9,9 +9,12 @@ function Health() {
     const [state, dispatch] = useStoreContext();
 
     useEffect(() => {
-        API.getNews().then(results => {
-            console.log(results);
-        });
+        dispatch({ type: 'get_articles'});
+        API.getNews().then(data => {
+            console.log(data);
+        }).catch((error) => {
+            console.log(error);
+        })
     }, []);
 
     return (
@@ -20,7 +23,7 @@ function Health() {
        <div className="container">
             <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2> 
         <Healthtab
-        
+
         />
         </div>
         </>

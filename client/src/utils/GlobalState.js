@@ -7,6 +7,11 @@ const reducer = (state, action) => {
     switch (action.type) {
         case 'usersignup':
             return { ...state, user: action.post };
+        case 'ADD_ARTICLES':
+            return { ...state, headline: data};
+        case 'FETCHING_ARTICLES':
+            return 'FETCHING_ARTICLES';
+        
         default: throw new Error("action doesnt exist")
     }
 }
