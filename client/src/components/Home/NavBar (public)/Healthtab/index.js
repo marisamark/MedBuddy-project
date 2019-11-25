@@ -6,9 +6,8 @@ function Healthtab() {
 
     return(
         <>
-        <div class="container">
-            <h2 class="text-center mt-4 mb-4">Recent News in Health and Wellness</h2>
-            
+        <div className="container">
+            <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2>
         </div>
         </>
     )
