@@ -43,8 +43,8 @@ module.exports = function (app) {
 
 
     // POST for user logging in
-    app.post("/api/user/login",function (req, res) {
-        // console.log("login attempted")
+    app.post("/api/login", passport.authenticate("local"), function (req, res) {
+        console.log("login attempted")
         // console.log(req.body)
         // console.log(req.User)
         res.json(req.user);
@@ -65,7 +65,7 @@ module.exports = function (app) {
         }).then(function (results) {
             console.log(results)
             res.redirect("/");
-          // res.json(dbUser);
+            // res.json(dbUser);
         }).catch(function (error) {
             res.json(error);
         });
