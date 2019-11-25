@@ -15,8 +15,8 @@ import Reschedule from "../Reschedule modal/index";
 
 function Medsnottaken(){
     return(
-        <div class="col-6">
-            <h3 class="text-center">Medications I have to take</h3>
+        <div className="col-6">
+            <h3 className="text-center">Medications I have to take</h3>
             <div id="medsnottaken"></div>
             <Reschedule />
         </div>
