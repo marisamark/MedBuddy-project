@@ -6,11 +6,11 @@ import SignupForm from "../components/Home/Signup form/index";
 function Signup() {
     return (
         <>
-        <NavBeforeLogin/>
-        <div class="container text-primary">
-            <SignupForm/>
-        </div>
-        
+            <NavBeforeLogin />
+            <div className="container text-primary">
+                <SignupForm />
+            </div>
+
         </>
     )
 }

@@ -7,7 +7,7 @@ import Health from "./pages/Healthpage";
 import MyMedicatons from "./pages/MyMedicationspage"
 import Signup from "./pages/Signup";
 //import Nav from "./components/Nav";
-//import { StoreProvider } from "./utils/GlobalState";
+import { StoreProvider } from "./utils/GlobalState";
 
 
 
@@ -15,7 +15,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <StoreProvider> */}
+        <StoreProvider>
         {/* <Nav /> */}
         <Switch>
           <Route exact path="/" component={Home} />
@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/signup" component={Signup} />
           {/* <Route component={NoMatch} /> */}
         </Switch>
-        {/* </StoreProvider> */}
+        </StoreProvider>
       </div>
     </Router>
   );

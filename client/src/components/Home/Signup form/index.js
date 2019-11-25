@@ -1,34 +1,63 @@
-import React from "react";
+import React, { useContext, useRef } from "react";
+import { StoreContext } from "../../../utils/GlobalState";
+import ApiCalls from "../../../utils/API"
+// import usersignup from "../../../../../routes/user-api";
 
-function SignupForm(){
+function SignupForm() {
 
-    return(
+    const [state, dispatch] = useContext(StoreContext);
+
+    const firstName = useRef();
+    const lastName = useRef();
+    const userName = useRef();
+    const password = useRef();
+    const email = useRef();
+
+    const usersignup = (event) => {
+        event.preventDefault();
+        // dispatch({ type: "usersignup" });
+        //alert("button clicked");
+        //alert(firstName.current.value + " " + lastName.current.value + " " + userName.current.value + " " + password.current.value + " " + email.current.value);
+        var newUser = {
+            firstname: firstName.current.value,
+            lastname: lastName.current.value,
+            username: userName.current.value,
+            password: password.current.value,
+            email: email.current.value,
+        }
+        console.log(firstName.current.value + " " + lastName.current.value + " " + userName.current.value + " " + password.current.value + " " + email.current.value);
+        ApiCalls.saveUser(newUser)
+        .then(function(data) {
+            console.log(data)
+        }).catch(err =>console.log(err));
+    }
+
+    return (
         <div>
-            <h2 class="text-center mt-4 mb-3">Signup</h2>
-            <form class="mx-auto col-4 mt-4">
-                <div class="form-group">
+            <h2 className="text-center mt-4 mb-3">Signup</h2>
+            <form className="mx-auto col-4 mt-4">
+                <div className="form-group">
                     <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your frist name...">
+                    <input type="text" className="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your first name..." ref={firstName}>
                     </input>
                 </div>
-
-                <div class="form-group">
+                <div className="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="exampleInputLastName1" placeholder="Your last name..."></input>
+                    <input type="text" className="form-control" id="exampleInputLastName1" placeholder="Your last name..." ref={lastName}></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="username">Username</label>
-                    <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Your username..."></input>
+                    <input type="text" className="form-control" id="exampleInputUsername1" placeholder="Your username..." ref={userName}></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="password">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Your password..."></input>
+                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
                 </div>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="email">Email</label>
-                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Your email..."></input>
+                    <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Your email..." ref={email}></input>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" className="btn btn-primary" onClick={usersignup}>Sign Up</button>
             </form>
         </div>
     )

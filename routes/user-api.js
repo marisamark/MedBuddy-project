@@ -50,12 +50,15 @@ module.exports = function (app) {
     // POST create a new user
     // "/api/user"
     app.post("/api/user", function (req, res) {
+        console.log(req.body)
         db.User.create({
             firstname: req.body.firstname,
             lastname: req.body.lastname,
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            createdAt : new Date(),
+            updatedAt : new Date()
         }).then(function (dbUser) {
             res.json(dbUser);
         }).catch(function (error) {
