@@ -13,8 +13,9 @@ function Dashboard() {
              <NavAfterLogin />
             <Calendarbar></Calendarbar>
             <div className="row">
-            <Medstaken />
             <Medsnottaken />
+            <Medstaken />
+           
             </div>
         </div>
            
