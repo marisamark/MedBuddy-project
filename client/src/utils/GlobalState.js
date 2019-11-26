@@ -3,7 +3,8 @@ import {
     ADD_ARTICLES,
     USER_SIGN_UP,
     GRAB_USER_INFO,
-    GRAB_USER_ROUTINE
+    GRAB_USER_ROUTINE,
+    FIND_ALL_ROUTINES
 } from "./actions";
 
 const StoreContext = createContext();
@@ -23,7 +24,18 @@ const reducer = (state, action) => {
         case GRAB_USER_ROUTINE:
             console.log("action", action.payload)
             return { ...state, medroutine: action.payload, logged: true };
-
+        case ADD_ARTICLES:
+            // console.log(action);
+            return { 
+                ...state, 
+                headline: action.articles
+            };
+        case FIND_ALL_ROUTINES:
+            console.log('findRoutine action', action)
+            return { ...state,
+                medroutine: action.routines,
+            }
+        
         default: throw new Error("action doesnt exist")
     }
 }
@@ -52,6 +64,10 @@ const StoreProvider = ({ value = [], ...props }) => {
                 time: 0,
                 status: false,
                 medroutineid: 0
+            }],
+            Medicine: [{
+                id: 0,
+                medicinename: ""
             }]
         }],
         Medicine : [{

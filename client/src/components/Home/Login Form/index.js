@@ -70,7 +70,8 @@ function LoginForm() {
     }
 
     return (
-        <div>
+        <div className="card float-right mr-4 ml-4 mt-4 mb-4">
+            <div className="card-body">
             <form className="float-right mb-4">
                 <div className="form-group">
                     <label htmlFor="username">Username</label>
@@ -82,8 +83,9 @@ function LoginForm() {
                     <label htmlFor="exampleInputPassword1">Password</label>
                     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={loginClick}>Sign In</button>
+                <button type="submit" className="btn btn-primary" onClick={loginClick}>Log In</button>
             </form>
+            </div>
         </div>
     )
 }

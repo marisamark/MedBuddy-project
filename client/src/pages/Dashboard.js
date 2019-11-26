@@ -15,7 +15,7 @@ console.log('this is your med routine', state)
     return (
         <div>
             <NavAfterLogin />
-            <div class="container">
+            <div className="container">
                 <Calendarbar></Calendarbar>
                 <Row>
                     <Col lg={true} >

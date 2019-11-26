@@ -10,8 +10,13 @@ export default {
     {
         return axios.post("/api/user", newUser)
     },
-    loginUser : function (loginDetails) //not yet applied
+
+    loginUser : function (loginDetails)
     {
         return axios.post("/api/user/login", loginDetails)
+    },
+
+    getAllRoutines: function () {
+        return axios.get("/api/user/1/medRoutine")
     }
 };
