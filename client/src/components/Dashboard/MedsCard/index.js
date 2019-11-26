@@ -24,14 +24,14 @@ function MedsCard(){
       //   </Card.Body>
       // </Card>
      
-          <div className="card mt-4">
+          <div className="card mt-4 text-color">
           <div className="card-body">
             <h3 className="card-title text-center">Time</h3>
                 <h5 className="text-center">Name of Drug: </h5>
                 <h5 className="text-center">Drug Concentration: </h5> 
                 <h5 className="text-center">Dosage: </h5>
             <div className="row justify-content-center">
-          <Button className="mr-2 ml-2" variant="primary">Complete</Button>
+          <Button className="mr-2 ml-2" id="button-blue" >Complete</Button>
           <Reschedule />
           </div>
           </div>

@@ -10,9 +10,9 @@ function AddMedications() {
     return (
         <>
             <NavAfterLogin />             
-            <div className="container text-primary">
+            <div className="container text-color">
                 <div className="mx-auto col-lg-6">
-                    <h2 className="mt-4 text-center mb-2">Add a medication</h2>
+                    <h2 className="mt-4 text-center mb-2 font-weight-bold">Add a medication</h2>
                     <MedicationForm />
 
 

@@ -58,7 +58,7 @@ function SignupForm() {
                     <label htmlFor="email">Email</label>
                     <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Your email..." ref={email}></input>
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={usersignup}>Sign Up</button>
+                <button type="submit" id="button-blue" className="btn btn-primary" onClick={usersignup}>Sign Up</button>
             </form>
         </div>
     )
