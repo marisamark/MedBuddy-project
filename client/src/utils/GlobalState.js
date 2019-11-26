@@ -1,7 +1,8 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
     ADD_ARTICLES,
-    USER_SIGN_UP
+    USER_SIGN_UP,
+    GRAB_USER_ROUTINE
 } from "./actions";
 
 const StoreContext = createContext();
@@ -10,12 +11,14 @@ const { Provider } = StoreContext;
 const reducer = (state, action) => {
     switch (action.type) {
         case USER_SIGN_UP:
-            console.log(action.newUser);
+            //console.log(action.newUser);
             return { ...state, user: action.newUser };
         case ADD_ARTICLES:
-            console.log(action);
-            return { ...state, headline: action.articles};
-        
+            //console.log(action);
+            return { ...state, headline: action.articles };
+        case GRAB_USER_ROUTINE:
+            console.log("action", action.transferMe)
+            return {...state.user, id : action.transferMe.id};
         default: throw new Error("action doesnt exist")
     }
 }
@@ -25,11 +28,11 @@ const StoreProvider = ({ value = [], ...props }) => {
         headline: [],
         user: {
             id: 0,
-            user: "",
+            username: "",
             password: "",
-            firstName: "",
-            lastName: "",
-            email : ""
+            firstname: "",
+            lastname: "",
+            email: ""
         },
         medroutine: [{
             id: 0,

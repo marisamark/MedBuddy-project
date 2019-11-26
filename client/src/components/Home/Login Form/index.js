@@ -1,8 +1,12 @@
 import React, { useContext, useRef } from "react";
 import ApiCalls from "../../../utils/API"
 import axios from "axios";
+import {GRAB_USER_ROUTINE} from "../../../utils/actions";
+import {StoreContext} from "../../../utils/GlobalState";
 
 function LoginForm() {
+
+    const [state, dispatch] = useContext(StoreContext);
 
     const username = useRef();
     const password = useRef();
@@ -17,24 +21,31 @@ function LoginForm() {
         //     return
         // }
         loginUser(userData.username, userData.password);
+        
+
     }
 
     function loginUser(username, password) {
-        console.log(username);
-        console.log(password);
+        // console.log(username);
+        // console.log(password);
 
         axios.post("/api/login", {
             username: username,
             password: password
         })
             .then(function (data) {
-                console.log("window replacement");
+                //console.log("window replacement");
                 //put dispatch here
-                window.location.replace("/dashboard");
+                console.log("data from axios", data.data);
+                let transferMe = data.data
+                dispatch({type : GRAB_USER_ROUTINE, transferMe})
+                //window.location.replace("/dashboard");
             })
             .catch(function (err) {
                 console.log(err)
             })
+            console.log("state after dispatch grab user routine" , state.user)
+            
     }
 
     return (

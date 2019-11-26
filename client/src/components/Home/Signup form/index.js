@@ -2,7 +2,8 @@ import React, { useContext, useRef } from "react";
 import { StoreContext } from "../../../utils/GlobalState";
 import ApiCalls from "../../../utils/API"
 // import usersignup from "../../../../../routes/user-api";
-import { USER_SIGN_UP } from "../../../utils/actions";
+import { USER_SIGN_UP, GRAB_USER_ROUTINE } from "../../../utils/actions";
+import axios from "axios";
 
 function SignupForm() {
 
@@ -35,6 +36,12 @@ function SignupForm() {
                 }).catch(err => console.log(err));
 
             dispatch({ type : USER_SIGN_UP, newUser});
+            
+            getUserRoutine(1)
+        }
+
+        function getUserRoutine (userid) {
+            axios.get("/api/user/"+{userid}+"/medRoutine").then((response) => console.log(response))
         }
 
         console.log("dispatch", state);

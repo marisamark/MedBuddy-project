@@ -9,6 +9,7 @@ module.exports = function (app) {
                 UserId: req.params.id
             }
         }).then(function (dbmedroutine) {
+            console.log(dbmedroutine);
             res.json(dbmedroutine);
         }).catch(function (error) {
             console.log(error);
