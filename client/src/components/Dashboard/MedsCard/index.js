@@ -23,8 +23,7 @@ function MedsCard(){
       //     </div>
       //   </Card.Body>
       // </Card>
-      <div className="container">
-      <h2 className="text-center mt-3 mb-3">Medications I have to take</h2>
+     
           <div className="card mt-4">
           <div className="card-body">
             <h3 className="card-title text-center">Time</h3>
@@ -37,7 +36,7 @@ function MedsCard(){
           </div>
           </div>
         </div>
-</div>
+
     )
 }
 
