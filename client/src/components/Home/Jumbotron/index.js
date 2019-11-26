@@ -4,7 +4,7 @@ import LoginForm from "../Login Form";
 function Jumbotron() {
     return (
         <div className="jumbotron jumbotron-fluid bg-img">
-           <section className="hero is-large is-widescreen">
+           {/* <section className="hero is-small is-widescreen"> */}
             <div className="container hero-body">
                 
                 <h1 className="display-4">Welcome to Medbuddy</h1>
@@ -18,7 +18,7 @@ function Jumbotron() {
                     </div>
                     </div>
             </div>
-            </section>
+            {/* </section> */}
         </div>
 
     )
