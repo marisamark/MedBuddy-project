@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TimeDives from "../StartTimes/index";
+import ToastMeds from "../Toast/index";
 
 function MedicationForm() {
     const [userState, setUserState] = useState({
@@ -65,7 +66,8 @@ function MedicationForm() {
                     {console.log("secondory " + userState.selectValue)}
 
                 </div>
-                <button type="submit" className="btn btn-primary mt-2 mb-2">Add</button>
+                {/* <button type="submit" className="btn btn-primary mt-2 mb-2">Add</button> */}
+                {/* <ToastMeds type="submit" className="btn btn-primary mt-2 mb-2"/> */}
             </div>
 
         </form>
