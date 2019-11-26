@@ -9,7 +9,7 @@ import {ADD_ARTICLES} from "../utils/actions";
 function Health() {
 
     const [state, dispatch] = useStoreContext();
-
+    
     useEffect(() => {
         API.getNews().then(data => {
             // console.log(data);

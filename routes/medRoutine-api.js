@@ -10,6 +10,7 @@ module.exports = function (app) {
             },
             include: [db.MedLog, db.Medicine]
         }).then(function (dbmedroutine) {
+            console.log(dbmedroutine);
             res.json(dbmedroutine);
         }).catch(function (error) {
             console.log(error);
