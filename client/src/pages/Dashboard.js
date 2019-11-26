@@ -10,7 +10,7 @@ function Dashboard() {
     return (
         <div>
             <NavAfterLogin />
-            <div class="container">
+            <div className="container">
                 <Calendarbar></Calendarbar>
                 <Row>
                     <Col lg={true} >
