@@ -66,8 +66,7 @@ function MedicationForm() {
                     {console.log("secondory " + userState.selectValue)}
 
                 </div>
-                {/* <button type="submit" className="btn btn-primary mt-2 mb-2">Add</button> */}
-                {/* <ToastMeds type="submit" className="btn btn-primary mt-2 mb-2"/> */}
+                <ToastMeds type="submit" className="btn btn-primary mt-2 mb-2"/>
             </div>
 
         </form>
