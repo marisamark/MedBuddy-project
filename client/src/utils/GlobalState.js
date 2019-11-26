@@ -24,7 +24,7 @@ const reducer = (state, action) => {
         case FIND_ALL_ROUTINES:
             console.log('findRoutine action', action)
             return { ...state,
-                medroutine: action.routines
+                medroutine: action.routines,
             }
         
         default: throw new Error("action doesnt exist")
