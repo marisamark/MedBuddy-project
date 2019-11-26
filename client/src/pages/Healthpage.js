@@ -21,7 +21,7 @@ function Health() {
         });
     }, []);
 
-    // console.log('STATE', state);
+    console.log('HEALTH STATE', state);
 
     return (
         <>

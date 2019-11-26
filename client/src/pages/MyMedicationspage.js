@@ -17,12 +17,13 @@ function MyMedications() {
                 console.log('All Routine Results', routines);
                 dispatch({
                     type: FIND_ALL_ROUTINES,
+                    ...state,
                     routines
                 });
             }).catch(error => console.log(error));
     }, []);
 
-    console.log('MEDROUTINE STATE', state.medroutine);
+    console.log('MEDROUTINE STATE', state);
 
 
     return (
@@ -34,11 +35,11 @@ function MyMedications() {
                 {state.medroutine.map(medroutine =>
                     <Meddata
                         key={medroutine.id}
-                        // medicine={medroutine.Medicine.medicinename}
+                        medicine={medroutine.Medicine.medicinename}
                         datecount={medroutine.datecount}
                         dosage={medroutine.dosage}
                         dose={medroutine.dose}
-                        // medLogs={medroutine.MedLogs}
+                        MedLogs={medroutine.MedLogs}
                     />
                 )}
             </div>

@@ -1,10 +1,10 @@
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-// import MedLog from "../MedLog/index";
+import MedLog from "../MedLog/index";
 
 function Meddata(props) {
-    console.log('MEDLOG PROPS', props)
+    console.log('Meddata PROPS', props)
 
     return (
         <Accordion>
@@ -18,13 +18,13 @@ function Meddata(props) {
                         <div><strong>Frequency of intake (per day): </strong> {props.dosage}</div>
                         <div><strong>Duration of intake (days): </strong> {props.datecount}</div>
                         <div><strong>Logs: </strong>
-                            {/* {props.medLogs.map(log =>   
+                            {props.MedLogs.map(log =>   
                             <MedLog
                                 date={log.date}
                                 time={log.time}
                                 status={log.status}
                             />
-                            )} */}
+                            )}
                             </div>
                     </Card.Body>
                 </Accordion.Collapse>

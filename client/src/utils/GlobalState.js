@@ -36,10 +36,10 @@ const StoreProvider = ({ value = [], ...props }) => {
         headline: [],
         user: {
             id: 0,
-            user: "",
+            username: "",
             password: "",
-            firstName: "hello",
-            lastName: "",
+            firstname: "hello",
+            lastname: "",
             email : ""
         },
         medroutine: [{
@@ -48,14 +48,14 @@ const StoreProvider = ({ value = [], ...props }) => {
             dosage: 0,
             dose: 0,
             userid: 0,
-            medlog: [{
+            MedLogs: [{
                 id: 0,
                 date: Date.now(),
                 time: 0,
                 status: false,
                 medroutineid: 0
             }],
-            medicine: [{
+            Medicine: [{
                 id: 0,
                 medicinename: ""
             }]
