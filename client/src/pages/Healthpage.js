@@ -12,23 +12,38 @@ function Health() {
 
     useEffect(() => {
         API.getNews().then(data => {
-            console.log(data);
+            // console.log(data);
             let articles = data.data.articles
-            dispatch({ type: ADD_ARTICLES, headline: articles });
+            // console.log(articles)
+            dispatch({ type: ADD_ARTICLES, articles });
         }).catch((error) => {
             console.log(error);
         });
-        console.log('STATE', state.headline);
     }, []);
+
+    console.log('STATE', state);
 
     return (
         <>
        <NavBeforeLogin/>
        <div className="container">
-            <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2> 
+            <h1 className="text-center display-4">Recent News in Health and Wellness</h1>
+            <br></br>
+        <div className="row">
+        {state.headline.map(headline =>
+        <div className="col-lg-4">
         <Healthtab
-        articles={state.headline}
+        title={headline.title}
+        author={headline.author}
+        publishedAt={Date(headline.publishedAt)}
+        description={headline.description}
+        url={headline.url}
+        imageUrl={headline.urlToImage}
         />
+         </div>
+
+        )}
+        </div>
         </div>
         </>
     )

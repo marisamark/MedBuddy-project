@@ -32,7 +32,7 @@ function MedsCard(){
                 <h5 class="text-center">Drug Concentration: </h5> 
                 <h5 class="text-center">Dosage: </h5>
             <div className="row justify-content-center">
-          <Button variant="primary">Complete</Button>
+          <Button className="mr-2 ml-2" variant="primary">Complete</Button>
           <Reschedule />
           </div>
           </div>

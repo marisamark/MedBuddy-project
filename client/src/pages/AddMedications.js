@@ -12,8 +12,10 @@ function AddMedications() {
             <NavAfterLogin />             
             <div className="container text-primary">
                 <div className="mx-auto col-lg-6">
-                    <h2 className="mt-4">Add a medication</h2>
-                    <MedicationForm />                                
+                    <h2 className="mt-4 text-center mb-2">Add a medication</h2>
+                    <MedicationForm />
+
+
                 </div>
                 
             </div>

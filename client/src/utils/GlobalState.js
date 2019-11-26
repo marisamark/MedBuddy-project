@@ -12,7 +12,8 @@ const reducer = (state, action) => {
         case usersignup:
             return { ...state, user: action.post };
         case ADD_ARTICLES:
-            return { ...state, headline: action.post};
+            console.log(action);
+            return { ...state, headline: action.articles};
         
         default: throw new Error("action doesnt exist")
     }

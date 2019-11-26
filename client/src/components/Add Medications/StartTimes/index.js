@@ -17,7 +17,7 @@ function TimeDives(props) {
         timesList.push(
             <div key={i}>
                 <br />
-                <h5> {countNum[i]} Time </h5>
+                <p> {countNum[i]} Time </p>
                 <hr />
                 <div className="row">
                 <div className="col">

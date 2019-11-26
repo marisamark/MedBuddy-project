@@ -9,7 +9,6 @@ function LoginForm() {
 
     function loginClick(event) {
         event.preventDefault();
-        // console.log("username " + username.current.value + " password " + password.current.value);
         var userData = {
             username: username.current.value,
             password: password.current.value
@@ -24,26 +23,17 @@ function LoginForm() {
         console.log(username);
         console.log(password);
 
-        axios.post("/api/user/login", {
+        axios.post("/api/login", {
             username: username,
             password: password
         })
             .then(function () {
-                alert("success");
+                console.log("window replacement");
+        window.location.replace("/dashboard");
             })
             .catch(function (err) {
                 console.log(err)
             })
-
-
-        // ApiCalls.loginUser({
-        //     username: username,
-        //     password: password
-        // }).then(function () {
-        //     alert("LOGIN SUCCESS");
-        // }).catch(function (err) {
-        //     console.log(err)
-        // })
     }
 
     return (

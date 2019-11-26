@@ -43,9 +43,9 @@ module.exports = function (app) {
 
 
     // POST for user logging in
-    app.post("/api/user/login",  function (req, res) {
-        console.log(req)
-        res.json(req.user);
+    app.post("/api/login",passport.authenticate("local"),  function (req, res) {
+        console.log(req.body)
+        res.json(req.body);
     })
 
     // POST create a new user

@@ -8,18 +8,21 @@ function Healthtab (props) {
         <>
         {/* <div className="container">
             <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2>
-            
         </div> */}
-        <div className="card">
-            <div className="img-container">
-                <img alt={props.name} src={props.urlToImage}/>
+        <div className="card mb-4">
+            <div className="card-header">
+                {props.imageUrl? 
+                <img className="img-thumbnail" alt={props.author} src={props.imageUrl}/>
+                : <img className="img-fluid img-thumbnail" alt="There is no image for this article"></img>
+                }
             </div>
-            <div className="content">
-                <h3>{props.title}</h3>
-                <h5>{props.author}</h5>
-                <h5>{props.publishedAt}</h5>
-                <h5>{props.description}</h5>
-                <h5>Click to read more: {props.url}</h5>
+            <div className="card-body">
+                <a href={props.url}><h4>{props.title}</h4>
+                </a>
+                <p label="summary">{props.description}</p>
+                <p>By {props.author}</p>
+                <p>{props.publishedAt}</p>
+                
             </div>
         </div>
         </>
