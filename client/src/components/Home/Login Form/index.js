@@ -27,9 +27,10 @@ function LoginForm() {
             username: username,
             password: password
         })
-            .then(function () {
+            .then(function (data) {
                 console.log("window replacement");
-        window.location.replace("/dashboard");
+                //put dispatch here
+                window.location.replace("/dashboard");
             })
             .catch(function (err) {
                 console.log(err)

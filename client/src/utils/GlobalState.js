@@ -1,7 +1,7 @@
 import React, { createContext, useReducer, useContext } from "react";
 import {
     ADD_ARTICLES,
-    usersignup
+    USER_SIGN_UP
 } from "./actions";
 
 const StoreContext = createContext();
@@ -9,8 +9,9 @@ const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
     switch (action.type) {
-        case usersignup:
-            return { ...state, user: action.post };
+        case USER_SIGN_UP:
+            console.log(action.newUser);
+            return { ...state, user: action.newUser };
         case ADD_ARTICLES:
             console.log(action);
             return { ...state, headline: action.articles};
@@ -26,7 +27,7 @@ const StoreProvider = ({ value = [], ...props }) => {
             id: 0,
             user: "",
             password: "",
-            firstName: "hello",
+            firstName: "",
             lastName: "",
             email : ""
         },

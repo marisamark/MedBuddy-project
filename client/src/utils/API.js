@@ -10,7 +10,7 @@ export default {
     {
         return axios.post("/api/user", newUser)
     },
-    loginUser : function (loginDetails)
+    loginUser : function (loginDetails) //not yet applied
     {
         return axios.post("/api/user/login", loginDetails)
     }
