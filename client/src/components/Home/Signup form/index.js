@@ -40,6 +40,7 @@ function SignupForm() {
             getUserRoutine(1)
         }
 
+
         function getUserRoutine (userid) {
             axios.get("/api/user/"+{userid}+"/medRoutine").then((response) => console.log(response))
         }
