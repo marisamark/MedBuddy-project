@@ -56,7 +56,7 @@ function RescheduleModal(props) {
                      
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Reschedule</Button>
+          <Button id="button-blue" onClick={props.onHide}>Reschedule</Button>
         </Modal.Footer>
       </Modal>
     );
