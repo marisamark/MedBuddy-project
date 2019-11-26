@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TimeDives from "../StartTimes/index";
+import ToastMeds from "../Toast/index";
 
 function MedicationForm() {
     const [userState, setUserState] = useState({
@@ -57,16 +58,18 @@ function MedicationForm() {
                     <option value="4">4</option>
                 </select>
             </div>
-           
-                <div className="form-group">
-                    <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                    <TimeDives selectValue={userState.selectValue} />
-                    {console.log("secondory " + userState.selectValue)}
+            <div className="form-group">
+                <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                </div>
-                <button type="submit" className="btn btn-primary mt-2 mb-2">Add</button>
-            
+                <TimeDives selectValue={userState.selectValue} />
+                {console.log("secondory " + userState.selectValue)}
+
+            </div>
+            <div>
+                <ToastMeds type="submit" className="btn btn-primary mt-2 mb-2" />
+            </div>
+
 
         </form>
 

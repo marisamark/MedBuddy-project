@@ -16,13 +16,14 @@ import MedsCard from "../MedsCard/index"
 function Medsnottaken(){
     return(  
         <>
-           
-            <div id="medsnottaken">
-            <MedsCard />
-            </div>       
+            <div className="container">
+                <h2 className="text-center mt-3 mb-3">Medications I have to take</h2>
+                <div id="medsnottaken">
+                <MedsCard />
+                </div>       
             
-
-</>
+            </div>
+        </>
     )
 }
 
