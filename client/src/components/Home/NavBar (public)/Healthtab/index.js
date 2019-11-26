@@ -13,15 +13,16 @@ function Healthtab (props) {
             <div className="card-header">
                 {props.imageUrl? 
                 <img className="img-thumbnail" alt={props.author} src={props.imageUrl}/>
-                : <img className="img-thumbnail" alt="There is no image for this article"></img>
+                : <img className="img-fluid img-thumbnail" alt="There is no image for this article"></img>
                 }
             </div>
             <div className="card-body">
-                <a href={props.url}><h3>{props.title}</h3>
+                <a href={props.url}><h4>{props.title}</h4>
                 </a>
-                <h5>{props.author}</h5>
-                <h5>{props.publishedAt}</h5>
-                <h5>Summary: {props.description}</h5>
+                <p label="summary">{props.description}</p>
+                <p>By {props.author}</p>
+                <p>{props.publishedAt}</p>
+                
             </div>
         </div>
         </>
