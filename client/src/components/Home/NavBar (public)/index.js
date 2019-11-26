@@ -4,8 +4,8 @@ import { Navbar, Nav, Button } from 'react-bootstrap';
 function NavBeforeLogin() {
 
   return (
-<Navbar bg="primary" expand="lg">
-  <Navbar.Brand href="/home"><img height="70px" width="130px" src="whitemedbuddy.png" alt="logo"/></Navbar.Brand>
+<Navbar className="nav-color" expand="lg">
+  <Navbar.Brand href="/home"><img height="70px" width="130px" src="medbuddylogo.png" alt="logo"/></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">

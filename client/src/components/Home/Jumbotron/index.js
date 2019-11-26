@@ -7,9 +7,7 @@ function Jumbotron() {
            {/* <section className="hero is-small is-widescreen"> */}
             <div className="container hero-body">
                 
-                <h1 className="display-4">Welcome to Medbuddy</h1>
-                <p className="lead">This is a modified jumbotron that occupies the entire horizontal space of its
-                parent.</p>
+                <h1 className="display-3 font-weight-bold text-white">Welcome to Medbuddy</h1>
                 <div className="container">
                     <div className="row">
                         <div className="col-11">
