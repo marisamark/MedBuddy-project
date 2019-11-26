@@ -10,3 +10,16 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  .nav-color {
+    /* background-color: #4e7ac7; */
+    background-color: #2e3192;
+  }
+
+  #button-blue {
+ background-color: #2e3192;
+  }
+
+  .text-color {
+    color: #2e3192;
+  }
