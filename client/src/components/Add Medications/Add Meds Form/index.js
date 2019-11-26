@@ -58,16 +58,16 @@ function MedicationForm() {
                     <option value="4">4</option>
                 </select>
             </div>
-           
-                <div className="form-group">
-                    <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                    <TimeDives selectValue={userState.selectValue} />
-                    {console.log("secondory " + userState.selectValue)}
+            <div className="form-group">
+                <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                </div>
+                <TimeDives selectValue={userState.selectValue} />
+                {console.log("secondory " + userState.selectValue)}
 
-                <ToastMeds type="submit" className="btn btn-primary mt-2 mb-2"/>
+            </div>
+            <div>
+                <ToastMeds type="submit" className="btn btn-primary mt-2 mb-2" />
             </div>
 
 
