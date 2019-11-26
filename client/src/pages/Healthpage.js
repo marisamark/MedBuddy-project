@@ -9,11 +9,11 @@ import {ADD_ARTICLES} from "../utils/actions";
 function Health() {
 
     const [state, dispatch] = useStoreContext();
-
+    
     useEffect(() => {
         API.getNews().then(data => {
             // console.log(data);
-            let articles = data.data.articles
+            let articles = data.data.articles;
             // console.log(articles)
             dispatch({ type: ADD_ARTICLES, articles });
         }).catch((error) => {
@@ -21,7 +21,7 @@ function Health() {
         });
     }, []);
 
-    console.log('STATE', state);
+    console.log('HEALTH STATE', state);
 
     return (
         <>

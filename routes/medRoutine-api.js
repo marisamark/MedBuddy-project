@@ -7,8 +7,10 @@ module.exports = function (app) {
         db.MedRoutine.findAll({
             where: {
                 UserId: req.params.id
-            }
+            },
+            include: [db.MedLog, db.Medicine]
         }).then(function (dbmedroutine) {
+            console.log(dbmedroutine);
             res.json(dbmedroutine);
         }).catch(function (error) {
             console.log(error);

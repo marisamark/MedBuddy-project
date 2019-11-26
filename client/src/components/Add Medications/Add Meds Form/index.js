@@ -71,7 +71,7 @@ function MedicationForm() {
             </div>
 
 
-        </form>
+        </ form >
 
     )
 }

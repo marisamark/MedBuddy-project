@@ -17,7 +17,7 @@ passport.use(new LocalStrategy(
         username: username
       }
     }).then(function(dbUser) {
-      console.log(dbUser)
+      console.log(dbUser.dataValues)
       // If there's no user with the given email
       if (!dbUser) {
         return done(null, false, {
@@ -31,7 +31,7 @@ passport.use(new LocalStrategy(
         });
       }
       // If none of the above, return the user
-      return done(null, dbUser);
+      return done(null, dbUser.dataValues);
     });
   }
 ));
