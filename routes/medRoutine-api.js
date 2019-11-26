@@ -8,7 +8,7 @@ module.exports = function (app) {
             where: {
                 UserId: req.params.id
             },
-            include: [db.MedLog]
+            include: [db.MedLog, db.Medicine]
         }).then(function (dbmedroutine) {
             res.json(dbmedroutine);
         }).catch(function (error) {

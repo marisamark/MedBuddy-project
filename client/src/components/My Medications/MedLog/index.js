@@ -1,13 +1,14 @@
 import React from "react";
 
+
 function MedLog(props) {
     return (
         <>
         <div className="card">
             <div className="card-body">
-                {props.time}
-                {props.date}
-                {props.status}
+                Date: {props.date}
+                Time: {props.time}
+                Status: {props.status}
             </div>
         </div>
         </>

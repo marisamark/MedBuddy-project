@@ -1,39 +1,36 @@
 import React from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Card from 'react-bootstrap/Card';
-
+// import MedLog from "../MedLog/index";
 
 function Meddata(props) {
-    return (
-        // <>
+    console.log('MEDLOG PROPS', props)
 
+    return (
         <Accordion>
-        <Card>
+            <Card>
             <Accordion.Toggle as={Card.Header} eventKey="0">
-            Medicine Name
+                {props.medicine}
             </Accordion.Toggle>
-            <Accordion.Collapse eventKey="0">
-            <Card.Body>
-            {props.dose}
-            {props.dosage}
-            {props.datecount}
-            </Card.Body>
-            </Accordion.Collapse>
+                <Accordion.Collapse eventKey="0">
+                    <Card.Body>
+                        <div><strong>Amount of intake: </strong> {props.dose}</div>
+                        <div><strong>Frequency of intake (per day): </strong> {props.dosage}</div>
+                        <div><strong>Duration of intake (days): </strong> {props.datecount}</div>
+                        <div><strong>Logs: </strong>
+                            {/* {props.medLogs.map(log =>   
+                            <MedLog
+                                date={log.date}
+                                time={log.time}
+                                status={log.status}
+                            />
+                            )} */}
+                            </div>
+                    </Card.Body>
+                </Accordion.Collapse>
             </Card>
         </Accordion>
 
-
-        /* <div className="card">
-            <div className="card-header">
-               <h3>Medicine Name</h3>
-            </div>
-            <div className="card-body">
-                {props.dose}
-                {props.dosage}
-                {props.datecount}
-            </div>
-        </div> */
-        /* </> */
     )
 }
 

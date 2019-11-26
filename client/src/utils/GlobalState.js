@@ -54,6 +54,10 @@ const StoreProvider = ({ value = [], ...props }) => {
                 time: 0,
                 status: false,
                 medroutineid: 0
+            }],
+            medicine: [{
+                id: 0,
+                medicinename: ""
             }]
         }]
     })
