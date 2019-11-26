@@ -62,7 +62,7 @@ function LoginForm() {
                     // window.location.replace("/dashboard");
                     // props.history.push('/dashboard')
                     // push('/dashboard')
-                    history.replace('/dashboard')
+                    //history.replace('/dashboard')
                 }
             }) 
         }
