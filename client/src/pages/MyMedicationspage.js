@@ -38,13 +38,13 @@ function MyMedications() {
                 dosage={medroutine.dosage}
                 dose={medroutine.dose}
                 />)}
-                {state.medroutine.medlog.map(medLog =>
+                {/* {state.medroutine.medlog.map(medLog =>
                 <MedLog
                 date={medLog.date}
                 time={medLog.time}
                 status={medLog.status}
                 />
-                )}
+                )} */}
             </div>
         </>
     )
