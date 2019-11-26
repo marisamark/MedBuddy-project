@@ -33,3 +33,7 @@
   .height {
     height: 160px;
   }
+
+  .center {
+    justify-content: center;
+  }
