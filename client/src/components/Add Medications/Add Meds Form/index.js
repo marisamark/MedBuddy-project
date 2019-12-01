@@ -20,22 +20,22 @@ function MedicationForm() {
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">Medication Name</label>
-                <input type="text" className="form-control" placeholder="Add the name of your medication..." />
+                <input type="text" className="form-control" value="medicinename" placeholder="Add the name of your medication..." />
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">Dose</label>
-                <input type="text" className="form-control" placeholder="1 tablet..." />
+                <input type="text" className="form-control" value="dose" placeholder="1 tablet..." />
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">When should you start to take it?</label>
-                <input type="text" className="form-control" placeholder="MM/DD/YYY" />
+                <input type="text" className="form-control" value="date" placeholder="MM/DD/YYY" />
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">How many consecutive days do you need to take it?</label>
-                <input type="text" className="form-control" placeholder="10" />
+                <input type="text" className="form-control" value="datecount" placeholder="10" />
             </div>
 
             <div className="form-group">
