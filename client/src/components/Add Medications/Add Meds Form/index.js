@@ -13,6 +13,7 @@ function MedicationForm() {
     const dose = useRef();
     const date = useRef();
     const datecount = useRef();
+    const dosage = useRef();
     const [state, dispatch] = useStoreContext();
 
 
@@ -71,7 +72,7 @@ function MedicationForm() {
                 <select
                     value={userState.selectValue}
                     onChange={handleChange}
-                    className="form-control" id="exampleFormControlSelect1">
+                    className="form-control" ref={dosage} id="exampleFormControlSelect1">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
