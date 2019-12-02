@@ -49,8 +49,8 @@ const reducer = (state, action) => {
         case POST_MEDICINE: 
             return {
                 ...state,
-                medicine:
-            }
+                medicine: action.medicine
+            };
             
         
         default: throw new Error("action doesnt exist")

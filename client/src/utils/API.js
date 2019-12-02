@@ -16,11 +16,11 @@ export default {
         return axios.post("/api/user/login", loginDetails)
     },
 
-    getAllRoutines: function () {
+    getAllRoutines: function (id) {
         return axios.get("/api/user/" + id + "/medRoutine")
     },
 
-    postMedroutine: function (medRoutineData) {
+    postMedroutine: function (id, medRoutineData) {
         return axios.post("/api/user/" + id + "/medRoutine", medRoutineData)
     },
 
