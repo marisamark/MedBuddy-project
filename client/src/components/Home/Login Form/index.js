@@ -77,7 +77,7 @@ function LoginForm() {
     }
 
     return (
-        loggedState ? (<Redirect to='/dashboard' />) :
+        // loggedState ? (<Redirect to='/dashboard' />) :
             <div id="border" className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
                 <div className="card-body">
                     <form className="float-right mb-4">
