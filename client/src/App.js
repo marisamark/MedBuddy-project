@@ -12,7 +12,9 @@ import { StoreProvider} from "./utils/GlobalState";
 
 
 function App() {
+
   return (
+
     <Router>
       <div>
         <StoreProvider>
