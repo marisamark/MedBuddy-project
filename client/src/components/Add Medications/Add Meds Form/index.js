@@ -15,6 +15,8 @@ function MedicationForm() {
     const date = useRef();
     const datecount = useRef();
     const dosage = useRef();
+    const log = useRef();
+
     const [state, dispatch] = useStoreContext();
 
 
@@ -28,11 +30,13 @@ function MedicationForm() {
         API.postMedroutine({
             dose: dose.current.value,
             date: date.current.value,
-            datecount: datecount.current.value
+            datecount: datecount.current.value,
+            dosage: dosage.current.value
         }).then(result => {
+            console.log("POSTMEDROUTINE", result)
             dispatch({ 
                 type: POST_ROUTINE,
-                medroutine: result.data
+                medroutine: result
             });
         })
         .catch(err => console.log(err));
@@ -40,11 +44,14 @@ function MedicationForm() {
         API.postMedicine({
             medicinename: medicinename.current.value
         }).then(result => {
+            console.log("POSTMEDICINE", result)
             dispatch({
                 type: POST_MEDICINE,
-                
+                medroutine: result
             })
-        })
+        }).catch(err => console.log(err));
+
+
     }
 
 
@@ -95,12 +102,12 @@ function MedicationForm() {
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                <TimeDives selectValue={userState.selectValue} />
+                <TimeDives ref={log} selectValue={userState.selectValue} />
                 {console.log("secondory " + userState.selectValue)}
 
             </div>
             <div>
-                <ToastMeds type="submit" className="btn mt-2 mb-2" />
+                <ToastMeds type="submit" onClick={handleSubmit} className="btn mt-2 mb-2" />
             </div>
 
 
