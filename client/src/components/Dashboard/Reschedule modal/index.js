@@ -21,7 +21,7 @@ function RescheduleModal(props) {
         <Modal.Body>
           <h4 className="text-color">What time would you like to reschedule?</h4>
           <div className="row">
-                <div className="col-md-4">
+                <div className="col-4">
                     <select className="form-control" id="exampleFormControlSelect1">
                         <option>1</option>
                         <option>2</option>
@@ -37,7 +37,7 @@ function RescheduleModal(props) {
                         <option>12</option>
                     </select>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-4">
                     <select className="form-control" id="exampleFormControlSelect1">
                         <option>00</option>
                         <option>15</option>
@@ -45,7 +45,7 @@ function RescheduleModal(props) {
                         <option>45</option>
                     </select>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-4">
                     <select className="form-control" id="exampleFormControlSelect1">
                         <option>AM</option>
                         <option>PM</option>
