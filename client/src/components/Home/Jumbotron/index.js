@@ -10,8 +10,8 @@ function Jumbotron() {
                     <div class="row justify-content-center">
                         {/* <div> */}
                             <h1 id="welcometo" className="medbuddy font-weight-bold mr-4">Welcome to</h1>
-                        </div>
-                        <div> 
+                        {/* </div> */}
+                        {/* <div>  */}
                             <h1 id="medbuddy" className="mr-4 medbuddy font-weight-bold ">MedBuddy</h1>
                         {/* </div> */}
                     </div>
