@@ -46,7 +46,7 @@
   .center {
     justify-content: center;
   }
-
+/* 
   #healthandwellness{
     padding-right: 38px;
   }
@@ -60,8 +60,8 @@
 }
 #login{
   margin-left: -241px;
-  margin-top: 25px;
-}
+  margin-top: 25px; */
+/* } */
 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -114,8 +114,8 @@
   #jumbotron {
     background-color:white;
   }
-
+/* 
   #border{
     padding: 14px;
-  }
+  } */
 }
