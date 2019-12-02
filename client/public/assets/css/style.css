@@ -26,12 +26,80 @@
 
   #border {
     border-width: 10px;
-    border-color: #2e3192;;
-
+    border-color: #2e3192;
   }
 
- 
+  .form1 {
+ margin-left: 64px;
+  }
+
+  #welcometo {
+    font-size: 58pt;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 0px;
+  }
+  #medbuddy {
+    font-size: 58pt;
+  }
+
 
   .center {
     justify-content: center;
   }
+  
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (max-width: 992px) {
+  #welcometo {
+    font-size: 58pt;
+    margin-top: 30px;
+    margin-right: 30px;
+    margin-left: 0px;
+  }
+  #medbuddy {
+    font-size: 58pt;
+  }
+  .form1 {
+    margin-left: 64px;
+     }
+}
+
+  /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+  #welcometo {
+    font-size: 35pt;
+  }
+  #medbuddy {
+    font-size: 35pt;
+    margin-left: 10px;
+  }
+  .form1 {
+    margin-left: 0;
+    margin-bottom: 10px;
+     }
+}
+  /*small devices (phones, 600px and down) */
+@media only screen and (max-width: 480px) {
+  #welcometo {
+    font-size: 30pt;
+  }
+  #medbuddy {
+    font-size: 30pt;
+  }
+  .form1 {
+    margin-left: 37px;
+     }
+     .bg-img {
+      /* The image used */
+      background-image: none;
+    
+      /* Full height */
+      /* height: 100%;  */
+     
+      /* Center and scale the image nicely */
+      background-position: left;
+      /* background-repeat: no-repeat; */
+      background-size: 250%;
+    }
+
+}
