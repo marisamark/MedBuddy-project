@@ -3,13 +3,6 @@ import _ from "lodash";
 
 function TimeDives(props) {
 
-    // const hour = useRef();
-    // const min = useRef();
-    // const AMPM = useRef();
-
-    // hour: hour.current.value,
-    // min: min.current.value,
-    // AMPM: AMPM.current.value
 
     console.log("selected", props)
     let countNum = {

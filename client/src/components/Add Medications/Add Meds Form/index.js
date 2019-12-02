@@ -1,9 +1,10 @@
 import React, { useState, useRef } from "react";
 import TimeDives from "../StartTimes/index";
-import ToastMeds from "../Toast/index";
+// import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
 import { POST_ROUTINE, POST_MEDICINE } from "../../../utils/actions";
+import { Button } from "react-bootstrap";
 
 function MedicationForm() {
     const [userState, setUserState] = useState({
@@ -27,30 +28,34 @@ function MedicationForm() {
 
     const handleSubmit = e => {
         e.preventDefault();
-        API.postMedroutine({
-            dose: dose.current.value,
-            date: date.current.value,
-            datecount: datecount.current.value,
-            dosage: dosage.current.value
-        }).then(result => {
-            console.log("POSTMEDROUTINE", result)
-            dispatch({ 
-                type: POST_ROUTINE,
-                medroutine: result
-            });
-        })
-        .catch(err => console.log(err));
-
+        console.log('DOSAGE', dosage.current.value)
         API.postMedicine({
             medicinename: medicinename.current.value
         }).then(result => {
             console.log("POSTMEDICINE", result)
             dispatch({
                 type: POST_MEDICINE,
-                medroutine: result
+                medroutine: result.data
             })
         }).catch(err => console.log(err));
 
+        API.postMedroutine({
+            dose: dose.current.value,
+            date: date.current.value,
+            datecount: datecount.current.value,
+            dosage: dosage.current.value,
+            UserId: 1,
+            MedicineId: 1
+        }).then(result => {
+            console.log("POSTMEDROUTINE", result)
+            dispatch({ 
+                type: POST_ROUTINE,
+                medroutine: result
+            });
+            console.log('CURRENT STATE', state)
+
+        })
+        .catch(err => console.log(err));
 
     }
 
@@ -107,7 +112,11 @@ function MedicationForm() {
 
             </div>
             <div>
-                <ToastMeds type="submit" onClick={handleSubmit} className="btn mt-2 mb-2" />
+                {/* // <ToastMeds  */}
+                {/* // type="submit"  */}
+                <Button onClick={handleSubmit} className="btn mt-2 mb-2">Add Medication</Button>
+                {/* // /> */}
+                
             </div>
 
 

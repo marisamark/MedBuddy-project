@@ -49,7 +49,7 @@ const reducer = (state, action) => {
         case POST_MEDICINE: 
             return {
                 ...state,
-                medroutine: [action.medroutine.Medicine, ...state.medroutine]
+                medroutine: [action.Medicine, ...state.medroutine]
             };
             
         
