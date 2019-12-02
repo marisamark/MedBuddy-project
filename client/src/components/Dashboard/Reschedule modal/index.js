@@ -14,12 +14,12 @@ function RescheduleModal(props) {
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title className="text-color" id="contained-modal-title-vcenter">
             Reschedule Time
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <h4>What time would you like to reschedule?</h4>
+          <h4 className="text-color">What time would you like to reschedule?</h4>
           <div className="row">
                 <div className="col-md-4">
                     <select className="form-control" id="exampleFormControlSelect1">
@@ -56,7 +56,7 @@ function RescheduleModal(props) {
                      
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={props.onHide}>Reschedule</Button>
+          <Button id="button-blue" onClick={props.onHide}>Reschedule</Button>
         </Modal.Footer>
       </Modal>
     );
@@ -67,7 +67,7 @@ function RescheduleModal(props) {
   
     return (
       <ButtonToolbar>
-        <Button className="mr-2 ml-2" variant="primary" onClick={() => setModalShow(true)}>
+        <Button className="mr-2 ml-2" id="button-blue" onClick={() => setModalShow(true)}>
           Reschedule
         </Button>
   

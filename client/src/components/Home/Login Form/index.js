@@ -79,7 +79,7 @@ function LoginForm() {
     }
 
     return (
-        <div className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
+        <div id="border" className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
             <div className="card-body">
                 <form className="float-right mb-4">
                     <div className="form-group">

@@ -26,7 +26,7 @@ function ToastMeds() {
                 </Alert>
           </Toast>
         
-          <Button onClick={() => setShow(true)}>Add</Button>
+          <Button  id="button-blue" onClick={() => setShow(true)}>Add</Button>
           
           </>
     );

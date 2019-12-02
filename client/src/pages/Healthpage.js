@@ -27,7 +27,7 @@ function Health() {
         <>
        <NavBeforeLogin/>
        <div className="container">
-            <h1 className="text-center display-4">Recent News in Health and Wellness</h1>
+            <h1 className="text-center text-color display-4 font-weight-bold mt-3">Recent News in Health and Wellness</h1>
             <br></br>
         <div className="row">
         {state.headline.map(headline =>

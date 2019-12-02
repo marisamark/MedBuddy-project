@@ -17,7 +17,7 @@ function Medsnottaken(){
     return(  
         <>
             <div className="container">
-                <h2 className="text-center mt-3 mb-3">Medications I have to take</h2>
+                <h2 className="text-center mt-3 mb-3 text-color">Medications I have to take</h2>
                 <div id="medsnottaken">
                 <MedsCard />
                 </div>       

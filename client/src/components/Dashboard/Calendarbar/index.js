@@ -5,7 +5,7 @@ function Calendarbar() {
     return(
 <>
 <div className="row">
-            <table className="table justify-content-center">
+            <table className="table text-color justify-content-center">
                 <thead>
                     <tr>
                         <th scope="col">Today's Date:</th>
@@ -18,7 +18,7 @@ function Calendarbar() {
         </div>
 
         <div className="row">
-            <table className="table text-center">
+            <table className="table text-color text-center">
                 <thead>
                     <tr>
                         <th scope="col">Mon</th>
