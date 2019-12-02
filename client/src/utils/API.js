@@ -17,6 +17,18 @@ export default {
     },
 
     getAllRoutines: function () {
-        return axios.get("/api/user/1/medRoutine")
+        return axios.get("/api/user/" + id + "/medRoutine")
+    },
+
+    postMedroutine: function (medRoutineData) {
+        return axios.post("/api/user/" + id + "/medRoutine", medRoutineData)
+    },
+
+    postMedicine: function (medicinename) {
+        return axios.post("/api/medicine/", medicinename)
+    },
+
+    postMedlog: function (log) {
+        return axios.post("/api/user/:id/medRoutine/:medRoutineId/medLog/", log)
     }
 };

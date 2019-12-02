@@ -1,18 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import TimeDives from "../StartTimes/index";
 import ToastMeds from "../Toast/index";
+import { useStoreContext } from "../../../utils/GlobalState";
 
 function MedicationForm() {
     const [userState, setUserState] = useState({
         selectValue: "1",
-
     });
+
+    const medicinename = useRef();
+    const dose = useRef();
+    const date = useRef();
+    const datecount = useRef();
+    const [state, dispatch] = useStoreContext();
+
 
     console.log("initial " + userState.selectValue)
     let handleChange = (e) => {
         setUserState({ selectValue: e.target.value });
     }
 
+    const handleSubmit = e => {
+        e.preventDefault();
+        API.postMedroutine({
+            dose: dose.current.value,
+            date: date.current.value,
+            datecount: datecount.current.value
+        }).then(result => {
+            dispatch({
+                
+            })
+        })
+    }
 
 
     return (
@@ -20,22 +39,22 @@ function MedicationForm() {
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">Medication Name</label>
-                <input type="text" className="form-control" value="medicinename" placeholder="Add the name of your medication..." />
+                <input type="text" className="form-control" required ref={medicinename} placeholder="Add the name of your medication..." />
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">Dose</label>
-                <input type="text" className="form-control" value="dose" placeholder="1 tablet..." />
+                <input type="text" className="form-control" required ref={dose} placeholder="1 tablet..." />
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">When should you start to take it?</label>
-                <input type="text" className="form-control" value="date" placeholder="MM/DD/YYY" />
+                <input type="text" className="form-control" required ref={date} placeholder="MM/DD/YYY" />
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">How many consecutive days do you need to take it?</label>
-                <input type="text" className="form-control" value="datecount" placeholder="10" />
+                <input type="text" className="form-control" required ref={datecount} placeholder="10" />
             </div>
 
             <div className="form-group">

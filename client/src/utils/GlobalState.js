@@ -4,25 +4,29 @@ import {
     USER_SIGN_UP,
     GRAB_USER_INFO,
     GRAB_USER_ROUTINE,
-    FIND_ALL_ROUTINES
+    FIND_ALL_ROUTINES,
+    POST_LOG,
+    POST_MEDICINE,
+    POST_ROUTINE
 } from "./actions";
 
 const StoreContext = createContext();
 const { Provider } = StoreContext;
 
 const reducer = (state, action) => {
+    console.log("DISPATCH", action);
     switch (action.type) {
         case USER_SIGN_UP:
-            console.log(action.newUser);
+            // console.log(action.newUser);
             return { ...state, user: action.newUser };
         case ADD_ARTICLES:
-            console.log(action);
+            // console.log(action);
             return { ...state, headline: action.articles };
         case GRAB_USER_INFO:
             //console.log("action", action.transferMe)
             return { ...state, user: action.transferMe };
         case GRAB_USER_ROUTINE:
-            console.log("action", action.payload)
+            // console.log("action", action.payload)
             return { ...state, medroutine: action.payload, logged: true };
         case ADD_ARTICLES:
             // console.log(action);
@@ -31,10 +35,23 @@ const reducer = (state, action) => {
                 headline: action.articles
             };
         case FIND_ALL_ROUTINES:
-            console.log('findRoutine action', action)
+            // console.log('findRoutine action', action)
             return { ...state,
                 medroutine: action.routines,
+            };
+
+        case POST_ROUTINE:
+            return {
+                ...state,
+                medroutine: action.routines
+            };
+
+        case POST_MEDICINE: 
+            return {
+                ...state,
+                medicine:
             }
+            
         
         default: throw new Error("action doesnt exist")
     }
