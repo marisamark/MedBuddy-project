@@ -15,7 +15,7 @@ function Dashboard() {
     // }, [state])
 
     return (
-        // state.logged ? (
+        state.logged ? (
         <div>
             <NavAfterLogin />
             <div className="container">
@@ -31,8 +31,8 @@ function Dashboard() {
             </div>
         </div>
         )
-    //     : (<Redirect to = '/' />)
-    // )
+        : (<Redirect to = '/' />)
+    )
 }
 
 export default Dashboard;

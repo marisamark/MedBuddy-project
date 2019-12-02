@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import { useStoreContext } from "../../utils/GlobalState";
 import { Navbar, Nav, Button } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
-// import {Link} from 'react-router'
-
+import {Link} from 'react-router-dom'
+import {StoreContext} from "../../utils/GlobalState"
 
 function NavAfterLogin() {
-
-  const [loggedState, setLoggedState] = useState(true);
 
   return (
 
@@ -18,12 +16,9 @@ function NavAfterLogin() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            {/* <Link to = "/mymedications">mymedications</Link> */}
-            {/* <Redirect className="text-light" href="/dashboard">Dashboard</Redirect>
-            <Redirect className="text-light" href="/mymedications">My Medications</Redirect>
-            <Redirect className="text-light" href="/addmedications">Add Medications</Redirect>
-            <Redirect className="text-light" href="/home">Logout</Redirect> */}
 
+            {/* <Link to ="/mymedications">My Medications</Link> */}
+            {/* <Link to ="/addmedications">Add Medications</Link> */}
             <Nav.Link className="text-light" href="/dashboard">Dashboard</Nav.Link>
             <Nav.Link className="text-light" href="/mymedications" >My Medications</Nav.Link>
             <Nav.Link className="text-light" href="/addmedications">Add Medications</Nav.Link>

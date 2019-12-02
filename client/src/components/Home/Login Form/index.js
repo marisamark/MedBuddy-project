@@ -70,6 +70,7 @@ function LoginForm() {
                 if (i === routineid.length - 1) {
                     dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
                     setLoggedState(true);
+                    console.log(state.logged)
                 }
             })
         }
