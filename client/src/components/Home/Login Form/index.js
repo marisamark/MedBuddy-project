@@ -1,13 +1,23 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, Component, useEffect, useState } from "react";
 import ApiCalls from "../../../utils/API";
 import axios from "axios";
 import { GRAB_USER_INFO, GRAB_USER_ROUTINE } from "../../../utils/actions";
 import { StoreContext } from "../../../utils/GlobalState";
-import { push } from 'react-router-redux';
+//import { push } from 'react-router-redux';
+//import { Redirect } from "react-router-dom";
+//import history from "../../../App"
+//import Dashboard from "../../../pages/Dashboard";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+//import { hostname } from "os";
+//import { NavLink } from "react-bootstrap";
+//import { createRequireFromPath } from "module";
+//import { browserHistory } from 'react-router';
 
 function LoginForm() {
 
     const [state, dispatch] = useContext(StoreContext);
+    const [loggedState, setLoggedState] = useState(false);
+
     console.log("current state", state);
     const username = useRef();
     const password = useRef();
@@ -57,36 +67,35 @@ function LoginForm() {
                 console.log(results.data)
                 routineid[i].medlog = results.data
                 // console.log("myroutine", myroutine)
-                if (i === routineid.length - 1){
-                    dispatch({ type: GRAB_USER_ROUTINE, payload:routineid}) 
-                    // window.location.replace("/dashboard");
-                    // props.history.push('/dashboard')
-                    // push('/dashboard')
-                    //history.replace('/dashboard')
+                if (i === routineid.length - 1) {
+                    dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
+                    setLoggedState(true);
                 }
-            }) 
+            })
         }
-       
+
     }
 
     return (
-        <div className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
-            <div className="card-body">
-            <form className="float-right mb-4">
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
-                    </input>
-                </div>
+        loggedState ? (<Redirect to='/dashboard' />) :
+            <div id="border" className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
+                <div className="card-body">
+                    <form className="float-right mb-4">
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
+                            </input>
+                        </div>
 
-                <div className="form-group">
-                    <label htmlFor="exampleInputPassword1">Password</label>
-                    <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
+                        <div className="form-group">
+                            <label htmlFor="exampleInputPassword1">Password</label>
+                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
+                        </div>
+                        <button type="submit" id="button-blue" className="btn btn-light text-light" onClick={loginClick} >Log In</button>
+                    </form>
                 </div>
-                <button type="submit" id="button-blue" className="btn btn-light text-light" onClick={loginClick}>Log In</button>
-            </form>
             </div>
-        </div>
+
     )
 }
 
