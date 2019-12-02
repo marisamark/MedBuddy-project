@@ -9,7 +9,7 @@ function NavBeforeLogin() {
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
     <Nav className="mr-auto">
-      <Nav.Link className="text-light" href="/health">Health and Wellness</Nav.Link>
+      <Nav.Link className="text-light" href="/health" id="healthandwellness">Health and Wellness</Nav.Link>
       <Nav.Link className="text-light" href="/signup">Signup</Nav.Link>
     </Nav>
   </Navbar.Collapse>
