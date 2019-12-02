@@ -15,7 +15,7 @@ function Jumbotron() {
                             <h1 id="medbuddy" className="mr-4 medbuddy font-weight-bold ">MedBuddy</h1>
                         {/* </div> */}
                     </div>
-                <div className="row justify-content-center">
+                <div className="row justify-content-center" id="login">
                         <LoginForm />
                 </div>
 
