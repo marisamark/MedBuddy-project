@@ -29,16 +29,12 @@
     border-color: #2e3192;
   }
 
-  .form1 {
- margin-left: 45px;
- margin-bottom: 25px;
-  }
 
   #welcometo {
     font-size: 50pt;
-    margin-top: 30px;
+    /* margin-top: 30px;
     margin-right: 30px;
-    margin-left: 0px;
+    margin-left: 0px; */
     color: white;
   }
   #medbuddy {
@@ -56,18 +52,16 @@
 @media only screen and (max-width: 992px) {
   #welcometo {
     font-size: 55pt;
-    margin-top: 30px;
+    /* margin-top: 30px;
     margin-right: 30px;
-    margin-left: 0px;
+    margin-left: 0px; */
     color: white;
   }
   #medbuddy {
     font-size: 55pt;
     color: white;
   }
-  .form1 {
-    margin-left: 64px;
-     }
+
 }
 
   /* Medium devices (landscape tablets, 768px and up) */
@@ -78,29 +72,24 @@
   }
   #medbuddy {
     font-size: 35pt;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     color: white;
   }
-  .form1 {
-    margin-left: 0;
-    margin-bottom: 10px;
-     }
+
 }
   /*small devices (phones, 600px and down) */
 @media only screen and (max-width: 480px) {
   #welcometo {
     font-size: 30pt;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     color: #2e3192;
   }
   #medbuddy {
     font-size: 30pt;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     color: #2e3192;
   }
-  .form1 {
-    margin-left: 25px;
-     }
+ 
   .bg-img {
     background-image: none;
   
@@ -110,4 +99,7 @@
     background-color:white;
   }
 
+  #border{
+    padding: 14px;
+  }
 }
