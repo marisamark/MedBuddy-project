@@ -46,9 +46,23 @@
   .center {
     justify-content: center;
   }
+
   #healthandwellness{
     padding-right: 38px;
   }
+
+  
+#welcometo{
+  margin-left: -202px;
+}
+#medbuddy{
+  margin-left: -17px;
+}
+#login{
+  margin-left: -241px;
+  margin-top: 25px;
+}
+
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
