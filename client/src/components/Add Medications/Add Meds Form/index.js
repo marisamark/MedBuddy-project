@@ -3,6 +3,7 @@ import TimeDives from "../StartTimes/index";
 import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
+import { POST_ROUTINE, POST_MEDICINE } from "../../../utils/actions";
 
 function MedicationForm() {
     const [userState, setUserState] = useState({
@@ -29,7 +30,18 @@ function MedicationForm() {
             date: date.current.value,
             datecount: datecount.current.value
         }).then(result => {
+            dispatch({ 
+                type: POST_ROUTINE,
+                medroutine: result.data
+            });
+        })
+        .catch(err => console.log(err));
+
+        API.postMedicine({
+            medicinename: medicinename.current.value
+        }).then(result => {
             dispatch({
+                type: POST_MEDICINE,
                 
             })
         })

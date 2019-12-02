@@ -36,7 +36,7 @@ module.exports = function (app) {
 
 // POST medLog
 // "/api/user/:userId/medRoutine/:id/medLog"
-    app.post("/api/user/:id/medRoutine/:medRoutineId/medLog/", function (req, res) {
+    app.post("/api/medRoutine/:medRoutineId/medLog/", function (req, res) {
         db.MedLog.create({
             MedRoutineId: req.params.medRoutineId,
             date: req.body.date,

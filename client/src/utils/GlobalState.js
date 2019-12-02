@@ -43,13 +43,13 @@ const reducer = (state, action) => {
         case POST_ROUTINE:
             return {
                 ...state,
-                medroutine: action.routines
+                medroutine: action.medroutine
             };
 
         case POST_MEDICINE: 
             return {
                 ...state,
-                medicine: action.medicine
+                medroutine: [action.medroutine.Medicine, ...state.medroutine]
             };
             
         
@@ -86,10 +86,6 @@ const StoreProvider = ({ value = [], ...props }) => {
                 id: 0,
                 medicinename: ""
             }]
-        }],
-        Medicine : [{
-            id : 0,
-            medicinename : ""
         }]
     })
     return < Provider value={[state, dispatch]} {...props} />;
