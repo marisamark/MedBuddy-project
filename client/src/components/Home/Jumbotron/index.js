@@ -5,9 +5,10 @@ function Jumbotron() {
     return (
         <div className="jumbotron jumbotron-fluid bg-img">
            {/* <section className="hero is-small is-widescreen"> */}
-            <div className="container hero-body">
-                
-                <h1 className="display-3 font-weight-bold text-white">Welcome to Medbuddy</h1>
+            <div className="container welcome1">
+                <h1 id="welcometo" className="medbuddy font-weight-bold text-white mr-4">Welcome to</h1>
+                <h1 id ="medbuddy" className="mr-4 medbuddy font-weight-bold text-white">MedBuddy</h1>    
+            </div>
                 <div className="container">
                     <div className="row">
                         <div className="col-11">
@@ -15,7 +16,7 @@ function Jumbotron() {
                         </div>
                     </div>
                     </div>
-            </div>
+        
             {/* </section> */}
         </div>
 
