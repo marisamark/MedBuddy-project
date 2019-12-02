@@ -31,7 +31,7 @@ function Dashboard() {
             </div>
         </div>
         )
-        // : (<Redirect to = '/' />)
+    //     : (<Redirect to = '/' />)
     // )
 }
 

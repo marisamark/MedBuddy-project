@@ -19,8 +19,10 @@ function LoginForm() {
     const [loggedState, setLoggedState] = useState(false);
 
     console.log("current state", state);
+
     const username = useRef();
     const password = useRef();
+
     function loginClick(event) {
         event.preventDefault();
         var userData = {
@@ -31,6 +33,7 @@ function LoginForm() {
         //     return
         // }
         loginUser(userData.username, userData.password);
+
     }
 
     function loginUser(username, password) {
@@ -43,7 +46,7 @@ function LoginForm() {
                 //console.log("data from axios", data.data);
                 let transferMe = data.data
                 dispatch({ type: GRAB_USER_INFO, transferMe })
-                console.log(data.data)
+                //console.log("first", data.data)
                 getUserRoutine(data.data.id);
             })
             .catch(function (err) {
@@ -57,7 +60,15 @@ function LoginForm() {
             console.log("user routine", usersRoutine.data);
             let transferMyRoutine = usersRoutine.data
             //dispatch({ type: GRAB_USER_ROUTINE, transferMyRoutine })
-            grabLog(usersRoutine.data);
+            
+            
+            if (usersRoutine.data !== null) {
+                console.log("TRUE");
+                setLoggedState(true);
+                grabLog(usersRoutine.data);
+            } else {
+                setLoggedState(true);
+            }
         })
     }
 
@@ -69,6 +80,7 @@ function LoginForm() {
                 // console.log("myroutine", myroutine)
                 if (i === routineid.length - 1) {
                     dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
+                    console.log("loggedstate before", loggedState);
                     setLoggedState(true);
                 }
             })
@@ -76,25 +88,29 @@ function LoginForm() {
 
     }
 
-    return (
-        // loggedState ? (<Redirect to='/dashboard' />) :
-            <div id="border" className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
-                <div className="card-body">
-                    <form className="float-right mb-4">
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
-                            </input>
-                        </div>
+    // useEffect(() => {
+    //     console.log("useeffect", loggedState);
+    // }, [loggedState])
 
-                        <div className="form-group">
-                            <label htmlFor="exampleInputPassword1">Password</label>
-                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
-                        </div>
-                        <button type="submit" id="button-blue" className="btn btn-light text-light" onClick={loginClick} >Log In</button>
-                    </form>
-                </div>
+    return (
+        loggedState ? (<Redirect to='/dashboard' />) :
+        <div id="border" className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
+            <div className="card-body">
+                <form className="float-right mb-4">
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
+                        </input>
+                    </div>
+
+                    <div className="form-group">
+                        <label htmlFor="exampleInputPassword1">Password</label>
+                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
+                    </div>
+                    <button type="submit" id="button-blue" className="btn btn-light text-light" onClick={loginClick} >Log In</button>
+                </form>
             </div>
+        </div>
 
     )
 }
