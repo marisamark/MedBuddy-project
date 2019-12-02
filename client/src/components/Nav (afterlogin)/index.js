@@ -10,7 +10,7 @@ function NavAfterLogin() {
 
   return (
 
-    loggedState ? (
+    // loggedState ? (
 
       <Navbar className="nav-color" expand="lg">
         <Navbar.Brand href="/dashboard"><img height="60px" width="120px" src="medbuddylogo.png" alt="logo" /></Navbar.Brand>
@@ -30,9 +30,9 @@ function NavAfterLogin() {
         </Navbar.Collapse>
       </Navbar>
 
-    ) :
-      <h1>not logged in</h1>
-  )
+    ) 
+  //     <h1>not logged in</h1>
+  // )
 }
 
 export default NavAfterLogin;

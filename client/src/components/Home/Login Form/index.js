@@ -78,14 +78,14 @@ function LoginForm() {
 
     return (
         loggedState ? (<Redirect to='/dashboard' />) :
-            <div id="border" className="card float-right mr-4 ml-4 mt-4 mb-4 text-color">
-                <div className="card-body">
-                    <form className="float-right mb-4">
-                        <div className="form-group">
-                            <label htmlFor="username">Username</label>
-                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
-                            </input>
-                        </div>
+        <div id="border" className="card form1 float-left mt-2 mb-4 text-color">
+            <div className="card-body">
+                <form className="float-right mb-4">
+                    <div className="form-group">
+                        <label htmlFor="username">Username</label>
+                        <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
+                        </input>
+                    </div>
 
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1">Password</label>
