@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 
 function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
+    console.log("dashboard", state)
     // useEffect(() => {
     //     console.log('this is your med routine', state)
     // }, [state])
