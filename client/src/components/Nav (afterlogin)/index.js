@@ -38,12 +38,6 @@ function NavAfterLogin() {
     // </Navbar>
   )
 
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> 8aacc5edb1ed7a46e5dc92536448e34d26cba94b
 }
 
 export default NavAfterLogin;

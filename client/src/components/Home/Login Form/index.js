@@ -1,7 +1,7 @@
 import React, { useContext, useRef, Component, useEffect, useState } from "react";
 import ApiCalls from "../../../utils/API";
 import axios from "axios";
-import { GRAB_USER_INFO, GRAB_USER_ROUTINE } from "../../../utils/actions";
+import { GRAB_USER_INFO, GRAB_USER_ROUTINE, LOGGED_TO_TRUE } from "../../../utils/actions";
 import { StoreContext } from "../../../utils/GlobalState";
 //import { push } from 'react-router-redux';
 //import { Redirect } from "react-router-dom";
@@ -30,6 +30,7 @@ function LoginForm() {
         // if (!userData.email || !userData.password) {
         //     return
         // }
+        dispatch({ type: LOGGED_TO_TRUE })
         loginUser(userData.username, userData.password);
     }
 
@@ -57,7 +58,11 @@ function LoginForm() {
             console.log("user routine", usersRoutine.data);
             let transferMyRoutine = usersRoutine.data
             //dispatch({ type: GRAB_USER_ROUTINE, transferMyRoutine })
-            grabLog(usersRoutine.data);
+            if (usersRoutine.length === null) {
+                return console.log("if/else", state.logged)
+            } else {
+                grabLog(usersRoutine.data);
+            }
         })
     }
 
@@ -67,6 +72,7 @@ function LoginForm() {
                 console.log(results.data)
                 routineid[i].medlog = results.data
                 // console.log("myroutine", myroutine)
+
                 if (i === routineid.length - 1) {
                     dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
                     setLoggedState(true);
@@ -79,14 +85,14 @@ function LoginForm() {
 
     return (
         loggedState ? (<Redirect to='/dashboard' />) :
-        <div id="border1" className="card form1 float-left  text-color">
-            <div className="card-body">
-                <form className="float-right mb-4">
-                    <div className="form-group">
-                        <label htmlFor="username">Username</label>
-                        <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
-                        </input>
-                    </div>
+            <div id="border1" className="card form1 float-left  text-color">
+                <div className="card-body">
+                    <form className="float-right mb-4">
+                        <div className="form-group">
+                            <label htmlFor="username">Username</label>
+                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Your username..." ref={username}>
+                            </input>
+                        </div>
 
                         <div className="form-group">
                             <label htmlFor="exampleInputPassword1">Password</label>
