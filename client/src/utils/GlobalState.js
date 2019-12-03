@@ -48,21 +48,12 @@ const reducer = (state, action) => {
                 medroutine: action.medroutine
             };
 
-<<<<<<< HEAD
-        case POST_MEDICINE:
-            return {
-                ...state,
-                medroutine: [action.Medicine, ...state.medroutine]
-            };
-
         case POST_LOG:
             return {
                 ...state,
                 medroutine: [action.MedLogs, ...state.medroutine]
             };
             
-=======
->>>>>>> master
         case LOGGED_TO_TRUE:
             return {
                 ...state,
