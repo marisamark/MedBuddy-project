@@ -1,17 +1,19 @@
 import React from "react";
 // import { useStoreContext } from "../../utils/GlobalState";
 import { Navbar, Nav, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom'
 function NavBeforeLogin() {
 
   return (
 <Navbar className="nav-color" expand="lg">
-  <Navbar.Brand href="/home"><img height="70px" width="130px" src="medbuddylogo.png" alt="logo"/></Navbar.Brand>
+  <Navbar.Brand href="/home" className="col"><img height="70px" width="130px" src="medbuddylogo.png" alt="logo"/></Navbar.Brand>
   <Navbar.Toggle aria-controls="basic-navbar-nav" />
   <Navbar.Collapse id="basic-navbar-nav">
-    <Nav className="mr-auto" id="navpublic">
-      <Nav.Link className="text-light" href="/health" id="healthandwellness">Health and Wellness</Nav.Link>
-      <Nav.Link className="text-light" href="/signup"style={{paddingLeft: '50px'}}>Signup</Nav.Link>
-    </Nav>
+    <Nav id="navpublic">
+      <Link to = "/health" className="text-light col-md-11 offset-md-11 " id="healthandwellness">Health and Wellness</Link>
+      
+      <Link to ="/signup" className="text-light col-md-1 offset-md-1 ">Signup</Link>
+      </Nav>
   </Navbar.Collapse>
 </Navbar>
   );
