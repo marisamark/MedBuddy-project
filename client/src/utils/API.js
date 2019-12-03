@@ -20,8 +20,8 @@ export default {
         return axios.get("/api/user/" + id + "/medRoutine")
     },
 
-    postMedroutine: function (medRoutineData) {
-        return axios.post("/api/user/1/medRoutine", medRoutineData)
+    postMedroutine: function (id, medRoutineData) {
+        return axios.post("/api/user/" + id + "/medRoutine", medRoutineData)
     },
 
     postMedlog: function (id, log) {

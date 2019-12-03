@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TimeDives from "../StartTimes/index";
 // import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
@@ -10,6 +10,8 @@ function MedicationForm() {
     const [userState, setUserState] = useState({
         selectValue: "1",
     });
+
+  
 
     const medicinename = useRef();
     const dose = useRef();
@@ -47,9 +49,26 @@ setTimeState({...timeState, [data.key]:data.val})
         submitAPI()
     }
 
+    // useEffect(() => {
+    //     console.log("use effect")
+    //     console.log(state.medroutine)
+    //     // API.getAllRoutines()
+    //     //     .then(results => {
+    //     //         let routines = results.data;
+    //     //         console.log('All Routine Results', routines);
+    //     //         dispatch({
+    //     //             type: FIND_ALL_ROUTINES,
+    //     //             ...state,
+    //     //             routines
+    //     //         });
+    //     //     }).catch(error => console.log(error));
+    // }, [state.medroutine]);
+
+
     const submitAPI = ()=>{
 
-        API.postMedroutine({
+        API.postMedroutine(state.user.id, {
+            
             dose: dose.current.value,
             date: date.current.value,
             datecount: datecount.current.value,
@@ -65,15 +84,16 @@ setTimeState({...timeState, [data.key]:data.val})
 
             API.getAllRoutines(state.user.id)
             .then(results => {
-                console.log(results)
+                console.log("run me", results.data)
                 let medroutines = results.data;
                 dispatch({
                     type: FIND_ALL_ROUTINES,
-                    medroutines
+                    payload: medroutines
                 })
+                console.log('CURRENT STATE', state)
+
             });
 
-            console.log('CURRENT STATE', state)
 
         })
         .catch(err => console.log(err));
