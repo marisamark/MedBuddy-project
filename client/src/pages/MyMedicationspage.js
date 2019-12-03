@@ -9,19 +9,21 @@ function MyMedications() {
     const [state, dispatch] = useStoreContext();
 
     // useEffect(() => {
-    //     API.getAllRoutines()
-    //         .then(results => {
-    //             let routines = results.data;
-    //             console.log('All Routine Results', routines);
-    //             dispatch({
-    //                 type: FIND_ALL_ROUTINES,
-    //                 ...state,
-    //                 routines
-    //             });
-    //         }).catch(error => console.log(error));
-    // }, []);
+    //     console.log("use effect")
+        
+    //     // API.getAllRoutines()
+    //     //     .then(results => {
+    //     //         let routines = results.data;
+    //     //         console.log('All Routine Results', routines);
+    //     //         dispatch({
+    //     //             type: FIND_ALL_ROUTINES,
+    //     //             ...state,
+    //     //             routines
+    //     //         });
+    //     //     }).catch(error => console.log(error));
+    // }, [state.medroutine.id]);
 
-    console.log('MEDROUTINE STATE', state);
+    // console.log('MEDROUTINE STATE', state);
 
 
     return (
@@ -30,8 +32,8 @@ function MyMedications() {
             <div className="container text-center text-color" id="meddata">
                 <h2 className="mt-4">My Medications</h2>
                 <br></br>
-                {state.medroutine[0].id !== 0 ? 
-                state.medroutine.map(medroutine =>
+                {/* {!state.medroutine[0].id ?  */}
+                {state.medroutine.map(medroutine =>
                     <Meddata
                         key={medroutine.id}
                         medicine={medroutine.medicinename}
@@ -40,8 +42,9 @@ function MyMedications() {
                         dose={medroutine.dose}
                         MedLogs={medroutine.MedLogs}
                     />
-                ) : <h1>No routines yet!</h1>
-                }
+                )}
+                 {/* : <h1>No routines yet!</h1>
+                } */}
             </div>
         </>
     )
