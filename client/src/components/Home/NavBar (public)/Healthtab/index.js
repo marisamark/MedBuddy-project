@@ -9,7 +9,7 @@ function Healthtab (props) {
         {/* <div className="container">
             <h2 className="text-center mt-4 mb-4">Recent News in Health and Wellness</h2>
         </div> */}
-        <div className="card mb-4">
+        <div id="healthcards" className="card mb-4">
             <div className="card-header">
                 {props.imageUrl? 
                 <img className="img-thumbnail" alt={props.author} src={props.imageUrl}/>
