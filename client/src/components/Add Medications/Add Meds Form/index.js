@@ -136,7 +136,7 @@ setTimeState({...timeState, [data.key]:data.val})
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                <TimeDives ref={log} handleSelect={handleSelect} selectValue={userState.selectValue} />
+                <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
                 {console.log("secondory " + userState.selectValue)}
 
             </div>
