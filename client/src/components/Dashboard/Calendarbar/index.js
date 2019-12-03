@@ -1,4 +1,6 @@
 import React from "react";
+var moment = require('moment');
+moment().format();
 
 function Calendarbar() {
     
@@ -8,8 +10,8 @@ function Calendarbar() {
             <table className="table text-color justify-content-center">
                 <thead>
                     <tr>
-                        <th scope="col">Today's Date:</th>
-                        <th scope="col">Current Time:</th>
+                        <th scope="col">Today's Date: {moment().format('MMMM Do YYYY')}</th>
+                        <th scope="col">Current Time: {moment().format('h:mm:ss a')}</th>
                     </tr>
 
                 </thead>
