@@ -116,6 +116,7 @@
   margin-left: 14px;
 }
 
+
 }
   /*small devices (phones, 600px and down) */
 @media only screen and (max-width: 480px) {
@@ -148,4 +149,5 @@
   #nav-loging{
     margin-left: 14px;
   }
+
 }
