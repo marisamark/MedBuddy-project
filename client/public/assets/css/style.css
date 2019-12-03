@@ -112,10 +112,12 @@
   border-width: 10px;
   border-color: #2e3192;
 }
-#nav-loging{
+/* #nav-loging{
   margin-left: 14px;
 }
-
+.logout{
+  margin-left: 14px;
+} */
 
 }
   /*small devices (phones, 600px and down) */
@@ -146,8 +148,11 @@
   #contentcenter {
     margin: 0;
   }
-  #nav-loging{
+  /* #nav-loging{
     margin-left: 14px;
   }
+.logout{
+  margin-left: 14px;
+} */
 
 }
