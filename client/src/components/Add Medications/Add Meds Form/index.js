@@ -19,6 +19,7 @@ function MedicationForm() {
     const log = useRef();
 
     const [state, dispatch] = useStoreContext();
+    const [timeState, setTimeState] = useState({});
 
 
     console.log("initial " + userState.selectValue)
@@ -26,10 +27,29 @@ function MedicationForm() {
         setUserState({ selectValue: e.target.value });
     }
 
-    const handleSubmit = e => {
+    function handleSelect(data) {
+        console.log("SELECTING...")
+setTimeState({...timeState, [data.key]:data.val})
+    // function handleSelectMinute(e) {
+    //     console.log("SELECTING...")
+    //     console.log(e.target.value + "minutes")
+    //     setTimeState({...timeState, [e.target.id]:e.target.value})
+    // }
+    // function handleSelectAMPM(e) {
+    //     console.log("SELECTING...")
+    //     console.log(e.target.value)
+    // }
+    console.log(timeState)
+    }
+
+    const handleSubmit = (e, data) => {
         e.preventDefault();
         console.log('DOSAGE', dosage.current.value)
-        API.postMedicine({
+        submitAPI()
+    }
+
+    const submitAPI = ()=>{
+         API.postMedicine({
             medicinename: medicinename.current.value
         }).then(result => {
             console.log("POSTMEDICINE", result)
@@ -56,7 +76,6 @@ function MedicationForm() {
 
         })
         .catch(err => console.log(err));
-
     }
 
 
@@ -96,7 +115,7 @@ function MedicationForm() {
                 <select
                     value={userState.selectValue}
                     onChange={handleChange}
-                    className="form-control" ref={dosage} id="exampleFormControlSelect1">
+                    className="form-control" ref={dosage} id="timesaday">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -107,7 +126,7 @@ function MedicationForm() {
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                <TimeDives ref={log} selectValue={userState.selectValue} />
+                <TimeDives ref={log} handleSelect={handleSelect} selectValue={userState.selectValue} />
                 {console.log("secondory " + userState.selectValue)}
 
             </div>
