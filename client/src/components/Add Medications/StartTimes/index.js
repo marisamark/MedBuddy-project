@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import _ from "lodash";
 
 function TimeDives(props) {
-    const [timeState, setTimeState] = useState({})
+    // const [timeState, setTimeState] = useState({})
 
     console.log("selected", props)
     let countNum = {
