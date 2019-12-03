@@ -88,7 +88,7 @@ setTimeState({...timeState, [data.key]:data.val})
                 let medroutines = results.data;
                 dispatch({
                     type: FIND_ALL_ROUTINES,
-                    payload: medroutines
+                    medroutines
                 })
                 console.log('CURRENT STATE', state)
 
