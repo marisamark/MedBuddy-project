@@ -63,7 +63,7 @@ setTimeState({...timeState, [data.key]:data.val})
             date: date.current.value,
             datecount: datecount.current.value,
             dosage: dosage.current.value,
-            UserId: 1,
+            UserId: state.user.id,
             MedicineId: 1
         }).then(result => {
             console.log("POSTMEDROUTINE", result)
