@@ -159,4 +159,19 @@
 #healthwellness {
   font-size: 25pt;
 }
+#medsivetaken {
+font-size: 18pt;
+}
+
+#medsihavetotake {
+  font-size: 18pt;
+}
+
+#drugname, #drugcon, #dosage, #nameofdrug, #time {
+  font-size: 12pt;
+}
+
+.complete1 {
+transform: scale(.7)
+}
 }
