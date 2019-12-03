@@ -3,7 +3,7 @@ import TimeDives from "../StartTimes/index";
 // import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
-import { POST_ROUTINE } from "../../../utils/actions";
+import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 
 function MedicationForm() {
@@ -62,6 +62,17 @@ setTimeState({...timeState, [data.key]:data.val})
                 type: POST_ROUTINE,
                 medroutine: result
             });
+
+            API.getAllRoutines(state.user.id)
+            .then(results => {
+                console.log(results)
+                let medroutines = results.data;
+                dispatch({
+                    type: FIND_ALL_ROUTINES,
+                    medroutines
+                })
+            });
+
             console.log('CURRENT STATE', state)
 
         })
