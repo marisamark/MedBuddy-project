@@ -31,10 +31,6 @@ function NavAfterLogin() {
     
   )
 
-
-
-  )
-
 }
 
 export default NavAfterLogin;
