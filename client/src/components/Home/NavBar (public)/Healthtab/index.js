@@ -20,7 +20,7 @@ function Healthtab (props) {
                 <a className="text-color" href={props.url}><h4>{props.title}</h4>
                 </a>
                 <p label="summary">{props.description}</p>
-                <p>By {props.author}</p>
+                <p>{props.author}</p>
                 <p>{props.publishedAt}</p>
                 
             </div>
