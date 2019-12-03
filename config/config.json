@@ -2,7 +2,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
     "password": "Hellojamie3!",
+=======
+    "password": "!Anthon69",
+>>>>>>> master
     "database": "medBuddy",
     "host": "127.0.0.1",
     "dialect": "mysql"
