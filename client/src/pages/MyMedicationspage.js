@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NavAfterLogin from "../components/Nav (afterlogin)/index";
 import Meddata from "../components/My Medications/Med data/index";
-import { FIND_ALL_ROUTINES } from "../utils/actions";
-import API from "../utils/API";
 import { useStoreContext } from "../utils/GlobalState";
 
 
@@ -32,16 +30,18 @@ function MyMedications() {
             <div className="container text-center text-color" id="meddata">
                 <h2 className="mt-4">My Medications</h2>
                 <br></br>
-                {state.medroutine.map(medroutine =>
+                {state.medroutine.length === 0 ? 
+                state.medroutine.map(medroutine =>
                     <Meddata
                         key={medroutine.id}
-                        medicine={medroutine.Medicine.medicinename}
+                        medicine={medroutine.medicinename}
                         datecount={medroutine.datecount}
                         dosage={medroutine.dosage}
                         dose={medroutine.dose}
                         MedLogs={medroutine.MedLogs}
                     />
-                )}
+                ) : <h1>No routines yet!</h1>
+                }
             </div>
         </>
     )

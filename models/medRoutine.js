@@ -11,16 +11,15 @@ module.exports = function (sequelize, DataTypes) {
         dose: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        medicinename: {
+            type: DataTypes.STRING,
+            allowNull: false
         }
     });
     // need to fix models.MedRoutine when ready.
     MedRoutine.associate = function (models) {
-        MedRoutine.belongsTo(models.Medicine, {
-            foreignKey: {
-                alloNull: false
-            }
-        });
-
+        
         MedRoutine.belongsTo(models.User, {
             foreignKey: {
                 allowNull: false

@@ -58,8 +58,8 @@ module.exports = function (app) {
             username: req.body.username,
             email: req.body.email,
             password: req.body.password,
-            createdAt : new Date(),
-            updatedAt : new Date()
+            // createdAt : new Date(),
+            // updatedAt : new Date()
         }).then(function (dbUser) {
             res.json(dbUser);
         }).catch(function (error) {

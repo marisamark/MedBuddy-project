@@ -24,10 +24,6 @@ export default {
         return axios.post("/api/user/1/medRoutine", medRoutineData)
     },
 
-    postMedicine: function (medicinename) {
-        return axios.post("/api/medicine/", medicinename)
-    },
-
     postMedlog: function (id, log) {
         return axios.post("/api/medRoutine/" + id + "/medLog/", log)
     }

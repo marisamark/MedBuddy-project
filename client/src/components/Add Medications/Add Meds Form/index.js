@@ -3,7 +3,7 @@ import TimeDives from "../StartTimes/index";
 // import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
-import { POST_ROUTINE, POST_MEDICINE } from "../../../utils/actions";
+import { POST_ROUTINE } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 
 function MedicationForm() {
@@ -49,23 +49,14 @@ setTimeState({...timeState, [data.key]:data.val})
     }
 
     const submitAPI = ()=>{
-         API.postMedicine({
-            medicinename: medicinename.current.value
-        }).then(result => {
-            console.log("POSTMEDICINE", result)
-            dispatch({
-                type: POST_MEDICINE,
-                medroutine: result.data
-            })
-        }).catch(err => console.log(err));
 
         API.postMedroutine({
             dose: dose.current.value,
             date: date.current.value,
             datecount: datecount.current.value,
             dosage: dosage.current.value,
-            UserId: 1,
-            MedicineId: 1
+            UserId: state.user.id,
+            medicinename: medicinename.current.value
         }).then(result => {
             console.log("POSTMEDROUTINE", result)
             dispatch({ 
