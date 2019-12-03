@@ -19,10 +19,8 @@ function LoginForm() {
     const [loggedState, setLoggedState] = useState(false);
 
     console.log("current state", state);
-
     const username = useRef();
     const password = useRef();
-
     function loginClick(event) {
         event.preventDefault();
         var userData = {
@@ -33,7 +31,6 @@ function LoginForm() {
         //     return
         // }
         loginUser(userData.username, userData.password);
-
     }
 
     function loginUser(username, password) {
@@ -46,7 +43,7 @@ function LoginForm() {
                 //console.log("data from axios", data.data);
                 let transferMe = data.data
                 dispatch({ type: GRAB_USER_INFO, transferMe })
-                //console.log("first", data.data)
+                console.log(data.data)
                 getUserRoutine(data.data.id);
             })
             .catch(function (err) {
@@ -60,15 +57,7 @@ function LoginForm() {
             console.log("user routine", usersRoutine.data);
             let transferMyRoutine = usersRoutine.data
             //dispatch({ type: GRAB_USER_ROUTINE, transferMyRoutine })
-            
-            
-            if (usersRoutine.data !== null) {
-                console.log("TRUE");
-                setLoggedState(true);
-                grabLog(usersRoutine.data);
-            } else {
-                setLoggedState(true);
-            }
+            grabLog(usersRoutine.data);
         })
     }
 
@@ -80,17 +69,13 @@ function LoginForm() {
                 // console.log("myroutine", myroutine)
                 if (i === routineid.length - 1) {
                     dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
-                    console.log("loggedstate before", loggedState);
                     setLoggedState(true);
+                    console.log(state.logged)
                 }
             })
         }
 
     }
-
-    // useEffect(() => {
-    //     console.log("useeffect", loggedState);
-    // }, [loggedState])
 
     return (
         loggedState ? (<Redirect to='/dashboard' />) :
@@ -103,14 +88,14 @@ function LoginForm() {
                         </input>
                     </div>
 
-                    <div className="form-group">
-                        <label htmlFor="exampleInputPassword1">Password</label>
-                        <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
-                    </div>
-                    <button type="submit" id="button-blue" className="btn btn-light text-light" onClick={loginClick} >Log In</button>
-                </form>
+                        <div className="form-group">
+                            <label htmlFor="exampleInputPassword1">Password</label>
+                            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Your password..." ref={password}></input>
+                        </div>
+                        <button type="submit" id="button-blue" className="btn btn-light text-light" onClick={loginClick} >Log In</button>
+                    </form>
+                </div>
             </div>
-        </div>
 
     )
 }
