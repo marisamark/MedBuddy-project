@@ -21,12 +21,12 @@ useEffect(() => {
 
 
         return (
-            <>
+            <div>
                 <div className="row">
                     <table className="table text-color justify-content-center">
                         <thead>
                             <tr>
-                                <th scope="col">Today's Date: {moment().format('MMMM Do YYYY')}</th>
+                                <th scope="col">Today: {moment().format('MMMM Do YYYY')}</th>
                                 <th id="currenttime" scope="col"></th>
                             </tr>
 
@@ -39,13 +39,13 @@ useEffect(() => {
                     <table className="table text-color text-center">
                         <thead>
                             <tr>
-                                <th scope="col">{moment().format('dddd')}</th>
-                                <th scope="col">{moment().add(1, 'days').format('dddd')}</th>
-                                <th scope="col">{moment().add(2, 'days').format('dddd')}</th>
-                                <th scope="col">{moment().add(3, 'days').format('dddd')}</th>
-                                <th scope="col">{moment().add(4, 'days').format('dddd')}</th>
-                                <th scope="col">{moment().add(5, 'days').format('dddd')}</th>
-                                <th scope="col">{moment().add(6, 'days').format('dddd')}</th>
+                                <th scope="col">{moment().format('ddd')}</th>
+                                <th scope="col">{moment().add(1, 'days').format('ddd')}</th>
+                                <th scope="col">{moment().add(2, 'days').format('ddd')}</th>
+                                <th scope="col">{moment().add(3, 'days').format('ddd')}</th>
+                                <th scope="col">{moment().add(4, 'days').format('ddd')}</th>
+                                <th scope="col">{moment().add(5, 'days').format('ddd')}</th>
+                                <th scope="col">{moment().add(6, 'days').format('ddd')}</th>
                             </tr>
                             <tr>
                                 <td>{moment().add(0, 'days').format("D")}</td>
@@ -60,7 +60,7 @@ useEffect(() => {
                         </thead>
                     </table>
                 </div>
-            </>
+            </div>
         )
     }
 
