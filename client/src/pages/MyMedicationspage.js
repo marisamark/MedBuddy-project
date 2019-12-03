@@ -32,7 +32,8 @@ function MyMedications() {
             <div className="container text-center text-color" id="meddata">
                 <h2 className="mt-4">My Medications</h2>
                 <br></br>
-                {state.medroutine.map(medroutine =>
+                {state.medroutine.length === 0 ? 
+                state.medroutine.map(medroutine =>
                     <Meddata
                         key={medroutine.id}
                         medicine={medroutine.Medicine.medicinename}
@@ -41,7 +42,8 @@ function MyMedications() {
                         dose={medroutine.dose}
                         MedLogs={medroutine.MedLogs}
                     />
-                )}
+                ) : <h1>No routine yet!</h1>
+                }
             </div>
         </>
     )
