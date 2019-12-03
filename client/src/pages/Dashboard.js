@@ -10,12 +10,13 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 
 function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
+    console.log("dashboard", state)
     // useEffect(() => {
     //     console.log('this is your med routine', state)
     // }, [state])
 
     return (
-        // state.logged ? (
+        state.logged ? (
         <div>
             <NavAfterLogin />
             <div className="container">
@@ -31,8 +32,8 @@ function Dashboard() {
             </div>
         </div>
         )
-    //     : (<Redirect to = '/' />)
-    // )
+        : (<Redirect to = '/' />)
+    )
 }
 
 export default Dashboard;

@@ -10,18 +10,18 @@ function MyMedications() {
 
     const [state, dispatch] = useStoreContext();
 
-    useEffect(() => {
-        API.getAllRoutines()
-            .then(results => {
-                let routines = results.data;
-                console.log('All Routine Results', routines);
-                dispatch({
-                    type: FIND_ALL_ROUTINES,
-                    ...state,
-                    routines
-                });
-            }).catch(error => console.log(error));
-    }, []);
+    // useEffect(() => {
+    //     API.getAllRoutines()
+    //         .then(results => {
+    //             let routines = results.data;
+    //             console.log('All Routine Results', routines);
+    //             dispatch({
+    //                 type: FIND_ALL_ROUTINES,
+    //                 ...state,
+    //                 routines
+    //             });
+    //         }).catch(error => console.log(error));
+    // }, []);
 
     console.log('MEDROUTINE STATE', state);
 
