@@ -51,8 +51,13 @@ const reducer = (state, action) => {
                 ...state,
                 medroutine: [action.Medicine, ...state.medroutine]
             };
+
+        case POST_LOG:
+            return {
+                ...state,
+                medroutine: [action.MedLogs, ...state.medroutine]
+            };
             
-        
         default: throw new Error("action doesnt exist")
     }
 }

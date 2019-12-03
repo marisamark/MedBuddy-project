@@ -3,7 +3,7 @@ import TimeDives from "../StartTimes/index";
 // import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
-import { POST_ROUTINE, POST_MEDICINE } from "../../../utils/actions";
+import { POST_ROUTINE, POST_MEDICINE, POST_LOG } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 
 function MedicationForm() {
@@ -16,7 +16,6 @@ function MedicationForm() {
     const date = useRef();
     const datecount = useRef();
     const dosage = useRef();
-    const log = useRef();
 
     const [state, dispatch] = useStoreContext();
 
@@ -56,6 +55,16 @@ function MedicationForm() {
 
         })
         .catch(err => console.log(err));
+
+        // API.postMedlog({
+        //     log: log.current.value
+        // }).then(result => {
+        //     console.log("POSTLOG", result)
+        //     dispatch({
+        //         type: POST_LOG,
+        //         medroutine: result
+        //     });
+        // });
 
     }
 
@@ -107,7 +116,7 @@ function MedicationForm() {
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                <TimeDives ref={log} selectValue={userState.selectValue} />
+                <TimeDives selectValue={userState.selectValue} />
                 {console.log("secondory " + userState.selectValue)}
 
             </div>
