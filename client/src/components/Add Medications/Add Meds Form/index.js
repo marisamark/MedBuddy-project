@@ -145,7 +145,7 @@ setTimeState({...timeState, [data.key]:data.val})
             <div>
                 {/* // <ToastMeds  */}
                 {/* // type="submit"  */}
-                <Button onClick={handleSubmit} id="bluebtn" className="btn mt-2 mb-2">Add Medication</Button>
+                <Button onClick={handleSubmit} id="bluebtn" className="btn mt-2 mb-4">Add Medication</Button>
                 {/* // /> */}
                 
             </div>
