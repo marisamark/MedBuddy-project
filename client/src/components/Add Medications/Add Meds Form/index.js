@@ -3,7 +3,7 @@ import TimeDives from "../StartTimes/index";
 // import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
-import { POST_ROUTINE } from "../../../utils/actions";
+import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 
 function MedicationForm() {
@@ -16,7 +16,6 @@ function MedicationForm() {
     const date = useRef();
     const datecount = useRef();
     const dosage = useRef();
-    const log = useRef();
 
     const [state, dispatch] = useStoreContext();
     const [timeState, setTimeState] = useState({});
@@ -63,10 +62,32 @@ setTimeState({...timeState, [data.key]:data.val})
                 type: POST_ROUTINE,
                 medroutine: result
             });
+
+            API.getAllRoutines(state.user.id)
+            .then(results => {
+                console.log(results)
+                let medroutines = results.data;
+                dispatch({
+                    type: FIND_ALL_ROUTINES,
+                    medroutines
+                })
+            });
+
             console.log('CURRENT STATE', state)
 
         })
         .catch(err => console.log(err));
+
+        // API.postMedlog({
+        //     log: log.current.value
+        // }).then(result => {
+        //     console.log("POSTLOG", result)
+        //     dispatch({
+        //         type: POST_LOG,
+        //         medroutine: result
+        //     });
+        // });
+
     }
 
 
@@ -117,7 +138,7 @@ setTimeState({...timeState, [data.key]:data.val})
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
-                <TimeDives ref={log} handleSelect={handleSelect} selectValue={userState.selectValue} />
+                <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
                 {console.log("secondory " + userState.selectValue)}
 
             </div>

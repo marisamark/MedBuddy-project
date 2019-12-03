@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React from "react";
 // import { useStoreContext } from "../../utils/GlobalState";
 
 // import { Navbar, Nav, Button } from 'react-bootstrap';
@@ -24,7 +24,7 @@ function NavAfterLogin() {
           <Link to ="/mymedications" className="text-light col-md-auto">My Medications</Link>  
           <Link to = "/addmedications"className="text-light col-md-auto" >Add Medications</Link>               
     </Nav>
-      <Link to = "/home" className="text-light logout mr-3 col-md-auto" id="logout">Logout</Link> 
+      <Nav.Link href = "/" className="text-light logout mr-3 col-md-auto" id="logout">Logout</Nav.Link> 
   </Navbar.Collapse> 
      
 </Navbar>

@@ -12,7 +12,7 @@ function NavBeforeLogin() {
     <Nav id="navpublic">
       <Link to = "/health" className="text-light col-md-11 offset-md-11 " id="healthandwellness">Health and Wellness</Link>
       
-      <Link to ="/signup" className="text-light col-md-1 offset-md-1 ">Signup</Link>
+      <Link to ="/signup" className="text-light col-md-1 offset-md-1 " id="signup">Signup</Link>
       </Nav>
   </Navbar.Collapse>
 </Navbar>

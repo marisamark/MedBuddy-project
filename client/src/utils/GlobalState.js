@@ -48,6 +48,12 @@ const reducer = (state, action) => {
                 medroutine: action.medroutine
             };
 
+        case POST_LOG:
+            return {
+                ...state,
+                medroutine: [action.MedLogs, ...state.medroutine]
+            };
+            
         case LOGGED_TO_TRUE:
             return {
                 ...state,

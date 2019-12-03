@@ -66,7 +66,12 @@
 /* #navpublic{
   padding-left: 63px;
 } */
-
+#healthandwellness{
+  margin-left: 5px;
+}
+#signup{
+  margin-left: 5px;
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
@@ -120,6 +125,7 @@
 .logout{
   margin-left: 14px;
 } */
+
 #medsivetaken {
   font-size: 25pt;
   }
@@ -131,6 +137,14 @@
   #drugname, #drugcon, #dosage, #nameofdrug {
     font-size: 16pt;
   }
+
+#healthandwellness{
+  margin-left: 5px;
+}
+#signup{
+  margin-left: 5px;
+}
+
 }
   /*small devices (phones, 600px and down) */
 @media only screen and (max-width: 480px) {
