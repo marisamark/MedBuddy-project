@@ -67,7 +67,7 @@ function RescheduleModal(props) {
   
     return (
       <ButtonToolbar>
-        <Button className="mr-2 ml-2" id="button-blue" onClick={() => setModalShow(true)}>
+        <Button className="mr-2 ml-2 complete1" id="button-blue" onClick={() => setModalShow(true)}>
           Reschedule
         </Button>
   

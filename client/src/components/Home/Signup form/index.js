@@ -50,7 +50,7 @@ function SignupForm() {
         return (
             <div>
                 <h2 className="text-center mt-4 mb-3">Signup</h2>
-                <form className="mx-auto col-4 mt-4">
+                <form className="mx-auto col-lg-5 col-md-6 col-sm-11 mt-4">
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
                         <input type="text" className="form-control" id="exampleInputFirstName" aria-describedby="emailHelp" placeholder="Your first name..." ref={firstName}>
