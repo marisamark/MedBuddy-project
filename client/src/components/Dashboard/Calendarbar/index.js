@@ -23,22 +23,22 @@ function Calendarbar() {
             <table className="table text-color text-center">
                 <thead>
                     <tr>
-                        <th scope="col">Mon</th>
-                        <th scope="col">Tue</th>
-                        <th scope="col">Wed</th>
-                        <th scope="col">Thur</th>
-                        <th scope="col">Fri</th>
-                        <th scope="col">Sat</th>
-                        <th scope="col">Sun</th>
+                        <th scope="col">{moment().format('dddd')}</th>
+                        <th scope="col">{moment().add(1, 'days').format('dddd')}</th>
+                        <th scope="col">{moment().add(2, 'days').format('dddd')}</th>
+                        <th scope="col">{moment().add(3, 'days').format('dddd')}</th>
+                        <th scope="col">{moment().add(4, 'days').format('dddd')}</th>
+                        <th scope="col">{moment().add(5, 'days').format('dddd')}</th>
+                        <th scope="col">{moment().add(6, 'days').format('dddd')}</th>
                     </tr>
                     <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                        <td>6</td>
-                        <td>7</td>
+                        <td>{moment().add(0, 'days').format("D")}</td>
+                        <td>{moment().add(1, 'days').format("D")}</td>
+                        <td>{moment().add(2, 'days').format("D")}</td>
+                        <td>{moment().add(3, 'days').format("D")}</td>
+                        <td>{moment().add(4, 'days').format("D")}</td>
+                        <td>{moment().add(5, 'days').format("D")}</td>
+                        <td>{moment().add(6, 'days').format("D")}</td>
                     </tr>
 
                 </thead>
