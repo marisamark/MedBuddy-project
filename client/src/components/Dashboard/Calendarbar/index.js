@@ -2,6 +2,12 @@ import React from "react";
 var moment = require('moment');
 moment().format();
 
+var update = function() {
+    document.getElementById("currenttime")
+    .innerHTML = moment().format('h:mm:ss a');
+}
+setInterval(update, 1000);
+
 function Calendarbar() {
     
     return(
@@ -11,7 +17,7 @@ function Calendarbar() {
                 <thead>
                     <tr>
                         <th scope="col">Today's Date: {moment().format('MMMM Do YYYY')}</th>
-                        <th scope="col">Current Time: {moment().format('h:mm:ss a')}</th>
+                        <th id="currenttime" scope="col"></th>
                     </tr>
 
                 </thead>
