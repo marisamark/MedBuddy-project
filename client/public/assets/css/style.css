@@ -84,6 +84,9 @@
   #contentcenter {
     margin-right: 200px;
   }
+  /* #logout{
+    margin-right: -100px;
+  } */
 }
 
   /* Medium devices (landscape tablets, 768px and up) */
@@ -108,6 +111,9 @@
   margin-bottom: 40px;
   border-width: 10px;
   border-color: #2e3192;
+}
+#nav-loging{
+  margin-left: 14px;
 }
 
 }
@@ -138,5 +144,8 @@
 
   #contentcenter {
     margin: 0;
+  }
+  #nav-loging{
+    margin-left: 14px;
   }
 }
