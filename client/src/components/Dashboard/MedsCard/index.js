@@ -25,7 +25,7 @@ function MedsCard(){
       // </Card>
      
           <div className="card mt-4 text-color">
-          <div className="card-body">
+          <div id="medsihavetotakecard" className="card-body">
             <h3 id="time" className="card-title text-center">Time</h3>
                 <h5 id="drugname" className="text-center">Name of Drug: </h5>
                 <h5 id="drugcon" className="text-center">Drug Concentration: </h5> 

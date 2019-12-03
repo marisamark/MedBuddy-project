@@ -73,6 +73,9 @@
   margin-left: 5px;
 }
 
+#medsihavetotakecard, #medstakencard {
+  background-color: #dbdfeb;
+}
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
   #welcometo {
