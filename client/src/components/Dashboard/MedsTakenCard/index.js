@@ -8,7 +8,7 @@ function MedTakenCard() {
 
     <div className="card mt-4">
       <div className="card-body">
-        <h3 className="card-title text-center text-color">Name of Drug: </h3>
+        <h3 id="nameofdrug" className="card-title text-center text-color">Name of Drug: </h3>
       </div>
     </div>
 </>
