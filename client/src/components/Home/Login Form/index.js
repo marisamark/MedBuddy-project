@@ -30,7 +30,7 @@ function LoginForm() {
         // if (!userData.email || !userData.password) {
         //     return
         // }
-        dispatch({ type: LOGGED_TO_TRUE })
+        
         loginUser(userData.username, userData.password);
     }
 
@@ -40,11 +40,12 @@ function LoginForm() {
             password: password
         })
             .then(function (data) {
+                
                 //console.log("window replacement");
                 //console.log("data from axios", data.data);
                 let transferMe = data.data
                 dispatch({ type: GRAB_USER_INFO, transferMe })
-                console.log(data.data)
+                //console.log(data.data)
                 getUserRoutine(data.data.id);
             })
             .catch(function (err) {
@@ -55,12 +56,12 @@ function LoginForm() {
     function getUserRoutine(id) {
         // console.log(currentUser)
         axios.get("/api/user/" + id + "/medRoutine").then(function (usersRoutine) {
-            console.log("user routine", usersRoutine.data);
+            console.log("user routine", usersRoutine.data.length);
             let transferMyRoutine = usersRoutine.data
             //dispatch({ type: GRAB_USER_ROUTINE, transferMyRoutine })
-            if (usersRoutine.length === null) {
-                return console.log("if/else", state.logged)
-            } else {
+            if (usersRoutine.data.length === 0) {
+                dispatch({ type: LOGGED_TO_TRUE })
+            }else{
                 grabLog(usersRoutine.data);
             }
         })
@@ -72,11 +73,11 @@ function LoginForm() {
                 console.log(results.data)
                 routineid[i].medlog = results.data
                 // console.log("myroutine", myroutine)
-
+                console.log(state.logged)
                 if (i === routineid.length - 1) {
                     dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
-                    setLoggedState(true);
-                    console.log(state.logged)
+                    dispatch({ type: LOGGED_TO_TRUE })
+                    
                 }
             })
         }
@@ -84,7 +85,7 @@ function LoginForm() {
     }
 
     return (
-        loggedState ? (<Redirect to='/dashboard' />) :
+        state.logged ? (<Redirect to='/dashboard' />) :
             <div id="border1" className="card form1 float-left  text-color">
                 <div className="card-body">
                     <form className="float-right mb-4">
