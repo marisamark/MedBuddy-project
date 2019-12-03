@@ -6,7 +6,6 @@ import {
     GRAB_USER_ROUTINE,
     FIND_ALL_ROUTINES,
     POST_LOG,
-    POST_MEDICINE,
     POST_ROUTINE,
     LOGGED_TO_TRUE
 } from "./actions";
@@ -49,11 +48,6 @@ const reducer = (state, action) => {
                 medroutine: action.medroutine
             };
 
-        case POST_MEDICINE:
-            return {
-                ...state,
-                medroutine: [action.Medicine, ...state.medroutine]
-            };
         case LOGGED_TO_TRUE:
             return {
                 ...state,
@@ -83,16 +77,13 @@ const StoreProvider = ({ value = [], ...props }) => {
             dosage: 0,
             dose: 0,
             userid: 0,
+            medicinename: "",
             MedLogs: [{
                 id: 0,
                 date: Date.now(),
                 time: 0,
                 status: false,
                 medroutineid: 0
-            }],
-            Medicine: [{
-                id: 0,
-                medicinename: ""
             }]
         }]
     })

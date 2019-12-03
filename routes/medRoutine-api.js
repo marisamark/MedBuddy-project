@@ -8,7 +8,7 @@ module.exports = function (app) {
             where: {
                 UserId: req.params.id
             },
-            include: [db.MedLog, db.Medicine]
+            include: [db.MedLog]
         }).then(function (dbmedroutine) {
             console.log(dbmedroutine);
             res.json(dbmedroutine);
@@ -42,7 +42,7 @@ module.exports = function (app) {
             datecount: req.body.datecount,
             dosage: req.body.dosage,
             dose: req.body.dose,
-            MedicineId: req.body.medicineId,
+            medicinename: req.body.medicinename,
             UserId: req.params.id,
         })
         .then(function(dbMedRoutine) {

@@ -23,7 +23,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
-require("./routes/medicine-api.js")(app);
 require("./routes/medLog-api.js")(app);
 require("./routes/medRoutine-api.js")(app);
 require("./routes/user-api.js")(app);
