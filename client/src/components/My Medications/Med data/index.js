@@ -7,13 +7,13 @@ function Meddata(props) {
     console.log('Meddata PROPS', props)
 
     return (
-        <Accordion>
-            <Card>
-            <Accordion.Toggle as={Card.Header} eventKey="0">
+        <Accordion >
+            <Card className = "col-lg-6 col-md-8 col-sm-12 mx-auto"id="bluecard" >
+            <Accordion.Toggle as={Card.Header} eventKey="0" id="margin">
                 {props.medicine}
             </Accordion.Toggle>
                 <Accordion.Collapse eventKey="0">
-                    <Card.Body>
+                    <Card.Body >
                         <div><strong>Amount of intake: </strong> {props.dose}</div>
                         <div><strong>Frequency of intake (per day): </strong> {props.dosage}</div>
                         <div><strong>Duration of intake (days): </strong> {props.datecount}</div>
