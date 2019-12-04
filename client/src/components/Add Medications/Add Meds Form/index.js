@@ -116,12 +116,85 @@ function MedicationForm() {
             });
             // dispatch({ type: UPDATE_ROUTINE, medroutine : result})
 
+            // function hrChange(hrConverted, AMPM) {
+            //     //convert PM to military time
+            //     if(AMPM === "PM")
+            //     {
+            //         hourcomputation0 = parseInt(hourcomputation0) + 12;
+            //         time0 = hourcomputation0+":"+timeState.minute0+":"+"00";
+            //         console.log("time pm", time0);
+                    
+            //     } else if(AMPM === "AM")
+            //     {
+            //         time0 = hourcomputation0+":"+timeState.minute0+":"+"00";
+            //         console.log("time am", time0);
+            //     }
+            // }
+
+
             if (timeState.hour3) {
                 console.log("you have 4 logs - insert save code here")
             } else if (timeState.hour2) {
                 console.log("you have 3 logs - insert save code here")
             } else if (timeState.hour1) {
                 console.log("you have 2 logs - insert save code here")
+
+                // things we have
+                // timeState.hour0
+                // timeState.hour1
+                // timeState.minute0
+                // timeState.minute1
+                // timeState.ampm0
+                // timeState.ampm1
+                let hourcomputation0 = timeState.hour0;
+                let time0 = "";
+
+                if(timeState.ampm0 === "PM")
+                {
+                    hourcomputation0 = parseInt(hourcomputation0) + 12;
+                    time0 = hourcomputation0+":"+timeState.minute0+":"+"00";
+                    console.log("time pm", time0);
+                    
+                } else if(timeState.ampm0 === "AM")
+                {
+                    time0 = hourcomputation0+":"+timeState.minute0+":"+"00";
+                    console.log("time am", time0);
+                }
+
+                API.postMedlog(result.data.id,
+                    {
+                        //need to figure out how to rearrange the date format
+                        date : date.current.value,
+                        time : time0,
+                        status : false
+                    }).then(console.log("BOOM!!!! ROUTINE SAVED!!!!"))
+
+                // ---------------------------------------------------- //
+                
+                let hourcomputation1 = timeState.hour1;
+                let time1 = "";
+
+                if(timeState.ampm1 === "PM")
+                {
+                    hourcomputation1 = parseInt(hourcomputation1) + 12;
+                    time1 = hourcomputation1+":"+timeState.minute1+":"+"00";
+                    console.log("time pm", time1);
+                    
+                } else if(timeState.ampm1 === "AM")
+                {
+                    time1 = hourcomputation1+":"+timeState.minute1+":"+"00";
+                    console.log("time am", time1);
+                }
+                
+                API.postMedlog(result.data.id,
+                    {
+                        //need to figure out how to rearrange the date format
+                        date : date.current.value,
+                        time : time1,
+                        status : false
+                    }).then(console.log("BOOM!!!! ROUTINE SAVED!!!!"))
+
+
             } else if (timeState.hour0) {
                 console.log("you have 1 log - insert save code here")
                 //axios.post("/api/medRoutine/" + result.data.id + "/medLog/")
@@ -138,7 +211,6 @@ function MedicationForm() {
                 {
                     time0 = hourcomputation0+":"+timeState.minute0+":"+"00";
                     console.log("time am", time0);
-                    
                 }
 
                 API.postMedlog(result.data.id,
