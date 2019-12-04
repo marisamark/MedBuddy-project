@@ -28,4 +28,5 @@ export default {
         return axios.post("/api/medRoutine/" + id + "/medLog/", log)
     },
 
+    getLogs: 
 };
