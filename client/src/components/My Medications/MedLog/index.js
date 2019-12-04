@@ -6,9 +6,12 @@ function MedLog(props) {
         <>
         <div className="card">
             <div className="card-body">
-                Date: {props.date}
-                Time: {props.time}
-                Status: {props.status}
+                <p>Date: {props.date}</p>
+                <p>Time: {props.time}</p>
+                {props.status !== 0 ? 
+                <p>Status: Not Taken</p> :
+                <p>Status: Taken</p>
+                }
             </div>
         </div>
         </>
