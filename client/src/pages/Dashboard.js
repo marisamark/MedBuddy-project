@@ -24,14 +24,15 @@ function Dashboard() {
                     <Col lg={true} >
                     <h2 id="medsihavetotake" className="text-center mt-3 mb-3 text-color">Medications I have to take</h2>
                     <div id="medsnottaken">
-                    {state.medroutine.map(log =>
-                    (!log.MedLogs.status) ?
+                    {
+                    state.medroutine.map(log =>
                         <Medsnottaken 
                         key={log.id}
                         name={log.medicinename}
                         dose={log.dose}
                         MedLogs={log.MedLogs}
-                        />: ""                       
+                        status={false}
+                        />                      
                     )}
                     </div>
                     </Col>
@@ -40,13 +41,13 @@ function Dashboard() {
                     <h2 id="medsivetaken" className="text-center mt-3 mb-3 text-color">Medications I've taken</h2>
                     <div id="medstaken">
                     {state.medroutine.map(log =>
-                    (log.MedLogs.status === true) ?
-                        <Medstaken
+                        <Medsnottaken
                         key={log.id}
                         name={log.medicinename}
                         dose={log.dose}
                         MedLogs={log.MedLogs}
-                        />: ""
+                        status={true}
+                        />
                     )}
                     </div>
                     </Col>

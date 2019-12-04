@@ -7,15 +7,17 @@ function Medsnottaken(props){
         <>
             <div className="container">
             {props.MedLogs.map(log =>
+                    log.status === props.status ?
+
                 <MedsCard
                     {...props}
                     time={log.time}
                     status={log.status}
                 />
-                )}
+               : <></> )}
             </div>       
-            
         </>
+            
     )
 }
 
