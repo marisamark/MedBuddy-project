@@ -11,17 +11,8 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
     console.log("dashboard", state)
-
-    const [trueLog, setTrueLog] = useState({});
-    const [falseLog, setFalseLog] = useState({});
-
     
 
-
-    // useEffect(() => {
-        
-    // }, [])
-// time, name of drug, dose
     return (
         // state.logged ? (
         <div>
@@ -34,24 +25,26 @@ function Dashboard() {
                     <h2 id="medsihavetotake" className="text-center mt-3 mb-3 text-color">Medications I have to take</h2>
                     <div id="medsnottaken">
                     {state.medroutine.map(log =>
+                    (!log.MedLogs.status) ?
                         <Medsnottaken 
                         key={log.id}
                         name={log.medicinename}
                         dose={log.dose}
                         MedLogs={log.MedLogs}
-                        />
-                        
+                        />: ""                       
                     )}
                     </div>
                     </Col>
+
                     <Col lg={true} >
                     <h2 id="medsivetaken" className="text-center mt-3 mb-3 text-color">Medications I've taken</h2>
                     <div id="medstaken">
                     {state.medroutine.map(log =>
-                    (!log.MedLogs.status) ?
+                    (log.MedLogs.status) ?
                         <Medstaken
                         key={log.id}
                         name={log.medicinename}
+                        dose={log.dose}
                         MedLogs={log.MedLogs}
                         />: ""
                     )}

@@ -1,18 +1,17 @@
-//container
-//cards of meds taken
-
-
 import React from "react";
 import MedsTakenCard from "../MedsTakenCard/index"
 
 function Medstaken(props){
     return(
-<>
+        <>
          <div className="container">
-
-                <MedsTakenCard {...props} />
+            {props.MedLogs.map(log =>
+            <MedsTakenCard {...props} 
+            status={log.status}
+            />
+            )}
         </div>   
-</>
+        </>
 
     )
 }
