@@ -36,9 +36,9 @@
     color: #2e3192;
   }
 
- .calendarbartext {
+ /* .calendarbartext {
     color: #2e3192;
-  }
+  } */
   #border {
     border-width: 10px;
     border-color: #2e3192;
@@ -146,7 +146,7 @@
   margin-left: 14px;
 } */
 
-#medsivetaken {
+#medsivetaken, #clickedday {
   font-size: 25pt;
   }
   
@@ -203,7 +203,7 @@
 #healthwellness {
   font-size: 25pt;
 }
-#medsivetaken {
+#medsivetaken, #clickedday {
 font-size: 18pt;
 }
 
