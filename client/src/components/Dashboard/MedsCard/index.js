@@ -12,8 +12,15 @@ function MedsCard(props) {
         <h5 id="drugname" className="text-center">{props.name} </h5>
         <h5 id="drugcon" className="text-center">{props.dose}</h5>
         <div className="row justify-content-center">
+
+          {!props.status ?
           <Button className="mr-2 ml-2 complete1" id="button-blue" >Complete</Button>
-          <Reschedule />
+          : <></>
+          }
+          {!props.status ?
+          <Reschedule /> 
+          : <></>
+          }
         </div>
       </div>
     </div>
