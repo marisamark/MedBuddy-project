@@ -82,23 +82,9 @@ function MedicationForm() {
     const handleSubmit = (e, data) => {
         e.preventDefault();
         console.log('DOSAGE', dosage.current.value)
-        submitAPI()
-    }
+        submitAPI();
 
-    // useEffect(() => {
-    //     console.log("use effect")
-    //     console.log(state.medroutine)
-    //     // API.getAllRoutines()
-    //     //     .then(results => {
-    //     //         let routines = results.data;
-    //     //         console.log('All Routine Results', routines);
-    //     //         dispatch({
-    //     //             type: FIND_ALL_ROUTINES,
-    //     //             ...state,
-    //     //             routines
-    //     //         });
-    //     //     }).catch(error => console.log(error));
-    // }, [state.medroutine]);
+    }
 
     const submitAPI = () => {
 
@@ -413,16 +399,6 @@ function MedicationForm() {
         })
             .catch(err => console.log(err));
 
-        // API.postMedlog({
-        //     log: log.current.value
-        // }).then(result => {
-        //     console.log("POSTLOG", result)
-        //     dispatch({
-        //         type: POST_LOG,
-        //         medroutine: result
-        //     });
-        // });
-
     }
 
 
@@ -474,7 +450,7 @@ function MedicationForm() {
                 <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
                 <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
-                {console.log("secondory " + userState.selectValue)}
+                {console.log("secondory ", userState.selectValue)}
 
             </div>
             <div>

@@ -32,7 +32,7 @@ useEffect(() => {
 
         return (
             <div>
-                <div className="row">
+                <div className="row container mx-auto">
                     <table className="table text-color justify-content-center">
                         <thead>
                             <tr>

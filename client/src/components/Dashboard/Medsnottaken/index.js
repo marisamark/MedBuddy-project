@@ -1,29 +1,23 @@
-// //container
-// //cards of meds not taken
-// <div class="container">
-//   <div class="row">
-//     <div class="col">
-//       1 of 2
-//     </div>
-//     <div class="col">
-//       2 of 2
-//     </div>
-//   </div>
-
 import React from "react";
-import MedsCard from "../MedsCard/index"
+import MedsCard from "../MedsCard/index";
 
-function Medsnottaken(){
+function Medsnottaken(props){
+
     return(  
         <>
             <div className="container">
-                <h2 id="medsihavetotake" className="text-center mt-3 mb-3 text-color">Medications I have to take</h2>
-                <div id="medsnottaken">
-                <MedsCard />
-                </div>       
-            
-            </div>
+            {props.MedLogs.map(log =>
+            log.status === props.status ?
+
+                <MedsCard
+                    {...props}
+                    time={log.time}
+                    status={log.status}
+                />
+               : <></> )}
+            </div>       
         </>
+            
     )
 }
 
