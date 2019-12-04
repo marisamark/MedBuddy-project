@@ -8,7 +8,8 @@ import {
     POST_LOG,
     POST_ROUTINE,
     LOGGED_TO_TRUE,
-    UPDATE_ROUTINE
+    UPDATE_ROUTINE,
+    UPDATE_STATUS
 } from "./actions";
 
 const StoreContext = createContext();
@@ -55,17 +56,21 @@ const reducer = (state, action) => {
                 medroutine: [action.MedLogs, ...state.medroutine]
             };
 
-
-
         case LOGGED_TO_TRUE:
             return {
                 ...state,
                 logged: true
-            }
+            };
         case UPDATE_ROUTINE:
             return {
                 ...state,
-                medroutine: [...action.medroutine]
+                medroutine: [...state.medroutine, action.MedLogs]
+            };
+        case UPDATE_STATUS:
+            console.log('UPDATES STATUS', action)
+            return {
+                ...state,
+                medroutine: [action.MedLogs]
             }
 
 

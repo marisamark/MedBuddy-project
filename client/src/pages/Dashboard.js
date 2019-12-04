@@ -11,7 +11,6 @@ function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
     console.log("dashboard", state)
     
-    
 
     return (
         <div>
@@ -26,6 +25,7 @@ function Dashboard() {
                     {state.medroutine.map(log =>
                         <Medsnottaken 
                         key={log.id}
+                        id={log.id}
                         name={log.medicinename}
                         dose={log.dose}
                         MedLogs={log.MedLogs}

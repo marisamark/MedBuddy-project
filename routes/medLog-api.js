@@ -54,12 +54,12 @@ module.exports = function (app) {
 
 // UPDATE medLog
 // "/api/user/:userId/medRoutine/:medRoutineId/medLog/:medLogId/"
-    app.put("/api/user/:id/medRoutine/:medRoutineId/medLog/:medLogId", function (req, res) {
+    app.put("/api/medLog/:medLogId", function (req, res) {
         db.MedLog.update(
             req.body,
             {
             where: {
-                MedLogId: req.body.id
+                id: req.params.medLogId
             }
             }).then(function (dbMedLog) {
                 res.json(dbMedLog);
