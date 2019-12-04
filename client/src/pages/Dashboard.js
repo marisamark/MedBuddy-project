@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import NavAfterLogin from "../components/Nav (afterlogin)/index";
 import Calendarbar from "../components/Dashboard/Calendarbar";
 import Medstaken from "../components/Dashboard/Medstaken/index";
@@ -12,11 +12,10 @@ function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
     console.log("dashboard", state)
 
-    let log = state.medroutine.map(log =>
-        log.MedLogs.map(medlogs =>
-            console.log("MAPPED LOG", medlogs)
-        )
-    )
+    const [trueLog, setTrueLog] = useState({});
+    const [falseLog, setFalseLog] = useState({});
+
+    
 
 
     // useEffect(() => {
@@ -32,22 +31,31 @@ function Dashboard() {
                
                 <Row>
                     <Col lg={true} >
+                    <h2 id="medsihavetotake" className="text-center mt-3 mb-3 text-color">Medications I have to take</h2>
+                    <div id="medsnottaken">
                     {state.medroutine.map(log =>
                         <Medsnottaken 
                         key={log.id}
                         name={log.medicinename}
+                        dose={log.dose}
                         MedLogs={log.MedLogs}
                         />
-                        )}
+                        
+                    )}
+                    </div>
                     </Col>
                     <Col lg={true} >
+                    <h2 id="medsivetaken" className="text-center mt-3 mb-3 text-color">Medications I've taken</h2>
+                    <div id="medstaken">
                     {state.medroutine.map(log =>
+                    (!log.MedLogs.status) ?
                         <Medstaken
                         key={log.id}
                         name={log.medicinename}
                         MedLogs={log.MedLogs}
-                        />
+                        />: ""
                     )}
+                    </div>
                     </Col>
                 </Row>
             </div>

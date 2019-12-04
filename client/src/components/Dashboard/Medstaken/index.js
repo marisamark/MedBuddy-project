@@ -5,12 +5,12 @@
 import React from "react";
 import MedsTakenCard from "../MedsTakenCard/index"
 
-function Medstaken(){
+function Medstaken(props){
     return(
 <>
          <div className="container">
 
-                <MedsTakenCard />
+                <MedsTakenCard {...props} />
         </div>   
 </>
 

@@ -6,9 +6,9 @@ function Medsnottaken(props){
     return(  
         <>
             <div className="container">
-                {props.name}
             {props.MedLogs.map(log =>
                 <MedsCard
+                    {...props}
                     time={log.time}
                     status={log.status}
                 />
