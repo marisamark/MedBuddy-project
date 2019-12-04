@@ -223,16 +223,6 @@ function MedicationForm() {
         })
             .catch(err => console.log(err));
 
-        // API.postMedlog({
-        //     log: log.current.value
-        // }).then(result => {
-        //     console.log("POSTLOG", result)
-        //     dispatch({
-        //         type: POST_LOG,
-        //         medroutine: result
-        //     });
-        // });
-
     }
 
 
