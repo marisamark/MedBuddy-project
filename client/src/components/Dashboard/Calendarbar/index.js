@@ -6,9 +6,18 @@ let updateHandle;
 
 
 
+function clickedDay (event) {
+// console.log(event.target)
+let day = parseInt(event.target.dataset['day'])
+// console.log("day", day)
+
+document.getElementById("clickedday")
+    .innerHTML = moment().add(day, 'days').format('dddd MMMM Do YYYY')
+}
+
 var update = function () {
     document.getElementById("currenttime")
-        .innerHTML = moment().format('h:mm:ss a');
+        .innerHTML = "Today: " + moment().format('MMMM Do YYYY, h:mm:ss a');
 }
     
 
@@ -23,12 +32,12 @@ useEffect(() => {
 
         return (
             <div>
-                <div className="row">
+                <div className="row container mx-auto">
                     <table className="table text-color justify-content-center">
                         <thead>
                             <tr>
-                                <th scope="col">Today: {moment().format('MMMM Do YYYY')}</th>
                                 <th id="currenttime" scope="col"></th>
+                                <th id="clickedday" scope="col"></th>
                             </tr>
 
                         </thead>
@@ -49,13 +58,13 @@ useEffect(() => {
                                 <th scope="col">{moment().add(6, 'days').format('ddd')}</th>
                             </tr>
                             <tr>
-                                <td><Link to ="" className="calendarbartext" >{moment().add(0, 'days').format("D")}</Link></td>
-                                <td><Link to ="" className="calendarbartext" >{moment().add(1, 'days').format("D")}</Link></td>
-                                <td><Link to ="" className="calendarbartext" >{moment().add(2, 'days').format("D")}</Link></td>
-                                <td><Link to ="" className="calendarbartext" >{moment().add(3, 'days').format("D")}</Link></td>
-                                <td><Link to ="" className="calendarbartext" >{moment().add(4, 'days').format("D")}</Link></td>
-                                <td><Link to ="" className="calendarbartext" >{moment().add(5, 'days').format("D")}</Link></td>
-                                <td><Link to ="" className="calendarbartext" >{moment().add(6, 'days').format("D")}</Link></td>
+                                <td data-day="0" onClick={clickedDay}className="calendarbartext" >{moment().add(0, 'days').format("D")}</td>
+                                <td data-day="1"onClick={clickedDay} >{moment().add(1, 'days').format("D")}</td>
+                                <td data-day="2" onClick={clickedDay}className="calendarbartext" >{moment().add(2, 'days').format("D")}</td>
+                                <td data-day="3" onClick={clickedDay}className="calendarbartext" >{moment().add(3, 'days').format("D")}</td>
+                                <td data-day="4" onClick={clickedDay} className="calendarbartext" >{moment().add(4, 'days').format("D")}</td>
+                                <td data-day="5" onClick={clickedDay} className="calendarbartext" >{moment().add(5, 'days').format("D")}</td>
+                                <td data-day="6" onClick={clickedDay} className="calendarbartext" >{moment().add(6, 'days').format("D")}</td>
                             </tr>
 
                         </thead>
