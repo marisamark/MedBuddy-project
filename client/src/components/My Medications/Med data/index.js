@@ -7,6 +7,7 @@ function Meddata(props) {
     console.log('Meddata PROPS', props)
 
     return (
+
         <Accordion >
             <Card className = "col-lg-6 col-md-8 col-sm-12 mx-auto"id="bluecard" >
             <Accordion.Toggle as={Card.Header} eventKey="0" id="margin">
@@ -26,11 +27,13 @@ function Meddata(props) {
                             />
                             )}
                             </div>
+
                     </Card.Body>
                 </Accordion.Collapse>
             </Card>
+            
         </Accordion>
-
+      
     )
 }
 
