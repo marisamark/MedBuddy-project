@@ -2,7 +2,7 @@
 {
   "development": {
     "username": "root",
-    "password": "emidayo777",
+    "password": "asdfasdf",
     "database": "medBuddy",
     "host": "127.0.0.1",
     "dialect": "mysql"
