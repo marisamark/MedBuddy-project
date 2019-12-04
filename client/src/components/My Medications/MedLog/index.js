@@ -5,13 +5,19 @@ function MedLog(props) {
     return (
         <>
         <div className="card">
-            <div className="card-body">
-                <p>Date: {props.date}</p>
-                <p>Time: {props.time}</p>
-                {props.status !== 0 ? 
-                <p>Status: Not Taken</p> :
-                <p>Status: Taken</p>
+            <div className="card-body mx-auto">
+                <div class="row">
+                <span className="font-weight-bold mr-2">Date: </span> {props.date}
+                </div>
+                <div class="row">
+                <span className="font-weight-bold mr-2"> Time: </span>{props.time}
+                </div>
+                <div class="row">
+                <span className="font-weight-bold mr-2"> Status: </span> {!props.status ?
+                <p>Not Taken</p> :
+                <p>Taken</p>
                 }
+                </div>
             </div>
         </div>
         </>
