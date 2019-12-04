@@ -48,13 +48,13 @@ useEffect(() => {
                                 <th scope="col">{moment().add(6, 'days').format('ddd')}</th>
                             </tr>
                             <tr>
-                                <td>{moment().add(0, 'days').format("D")}</td>
-                                <td>{moment().add(1, 'days').format("D")}</td>
-                                <td>{moment().add(2, 'days').format("D")}</td>
-                                <td>{moment().add(3, 'days').format("D")}</td>
-                                <td>{moment().add(4, 'days').format("D")}</td>
-                                <td>{moment().add(5, 'days').format("D")}</td>
-                                <td>{moment().add(6, 'days').format("D")}</td>
+                                <td><a class="calendarbartext" href="">{moment().add(0, 'days').format("D")}</a></td>
+                                <td><a class="calendarbartext" href="">{moment().add(1, 'days').format("D")}</a></td>
+                                <td><a class="calendarbartext" href="">{moment().add(2, 'days').format("D")}</a></td>
+                                <td><a class="calendarbartext" href="">{moment().add(3, 'days').format("D")}</a></td>
+                                <td><a class="calendarbartext" href="">{moment().add(4, 'days').format("D")}</a></td>
+                                <td><a class="calendarbartext" href="">{moment().add(5, 'days').format("D")}</a></td>
+                                <td><a class="calendarbartext" href="">{moment().add(6, 'days').format("D")}</a></td>
                             </tr>
 
                         </thead>
