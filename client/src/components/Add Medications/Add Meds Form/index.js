@@ -16,8 +16,10 @@ function MedicationForm() {
 
     const medicinename = useRef();
     const dose = useRef();
+    // i need this 
     const date = useRef();
     const datecount = useRef();
+    // ---- //
     const dosage = useRef();
 
     const [state, dispatch] = useStoreContext();
@@ -134,16 +136,7 @@ function MedicationForm() {
 
             if (timeState.hour3) {
                 console.log("you have 4 logs - insert save code here")
-                // things we have
-                // timeState.hour0
-                // timeState.hour1
-                // timeState.hour2
-                // timeState.minute0
-                // timeState.minute1
-                // timeState.minute2
-                // timeState.ampm0
-                // timeState.ampm1
-                // timeState.ampm2
+
                 let hourcomputation0 = timeState.hour0;
                 let time0 = "";
 
@@ -156,15 +149,20 @@ function MedicationForm() {
                     time0 = hourcomputation0 + ":" + timeState.minute0 + ":" + "00";
                     console.log("time am", time0);
                 }
+                let myloop = datecount.current.value;
+                let deconstructMyDateYEAR = date.current.value.slice(0, 4);
+                let deconstructMyDateMONTH = date.current.value.slice(5, 7);
+                let deconstructMyDateDAY = date.current.value.slice(8, 11);
 
+                for(let i =0 ; i < myloop; i++){
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: date.current.value,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
                         time: time0,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
-
+                }
                 // ---------------------------------------------------- //
 
                 let hourcomputation1 = timeState.hour1;
@@ -179,15 +177,15 @@ function MedicationForm() {
                     time1 = hourcomputation1 + ":" + timeState.minute1 + ":" + "00";
                     console.log("time am", time1);
                 }
-
+                for(let i =0 ; i < myloop; i++){
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: date.current.value,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
                         time: time1,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
-
+                }
                 // ---------------------------------------------------- //
 
                 let hourcomputation2 = timeState.hour2;
@@ -202,15 +200,15 @@ function MedicationForm() {
                     time2 = hourcomputation2 + ":" + timeState.minute2 + ":" + "00";
                     console.log("time am", time2);
                 }
-
+                for(let i =0 ; i < myloop; i++){
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: date.current.value,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
                         time: time2,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
-
+                }
                 // ---------------------------------------------------- //
 
                 let hourcomputation3 = timeState.hour3;
@@ -225,15 +223,15 @@ function MedicationForm() {
                     time3 = hourcomputation3 + ":" + timeState.minute3 + ":" + "00";
                     console.log("time am", time3);
                 }
-
+                for(let i =0 ; i < myloop; i++){
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: date.current.value,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
                         time: time3,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 3 SAVED!!!!"))
-
+                }
             } else if (timeState.hour2) {
                 console.log("you have 3 logs - insert save code here")
 
@@ -249,15 +247,20 @@ function MedicationForm() {
                     time0 = hourcomputation0 + ":" + timeState.minute0 + ":" + "00";
                     console.log("time am", time0);
                 }
+                let myloop = datecount.current.value;
+                let deconstructMyDateYEAR = date.current.value.slice(0, 4);
+                let deconstructMyDateMONTH = date.current.value.slice(5, 7);
+                let deconstructMyDateDAY = date.current.value.slice(8, 11);
 
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: date.current.value,
-                        time: time0,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
-
+                for (let i = 0; i < myloop; i++) {
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            time: time0,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
+                }
                 // ---------------------------------------------------- //
 
                 let hourcomputation1 = timeState.hour1;
@@ -273,14 +276,15 @@ function MedicationForm() {
                     console.log("time am", time1);
                 }
 
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: date.current.value,
-                        time: time1,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
-
+                for (let i = 0; i < myloop; i++) {
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            time: time1,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
+                }
                 // ---------------------------------------------------- //
 
                 let hourcomputation2 = timeState.hour2;
@@ -296,15 +300,18 @@ function MedicationForm() {
                     console.log("time am", time2);
                 }
 
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: date.current.value,
-                        time: time2,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
+                for (let i = 0; i < myloop; i++) {
 
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            time: time2,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
+                }
             } else if (timeState.hour1) {
+
                 console.log("you have 2 logs - insert save code here")
                 let hourcomputation0 = timeState.hour0;
                 let time0 = "";
@@ -319,14 +326,22 @@ function MedicationForm() {
                     console.log("time am", time0);
                 }
 
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: date.current.value,
-                        time: time0,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
+                let myloop = datecount.current.value;
+                let deconstructMyDateYEAR = date.current.value.slice(0, 4);
+                let deconstructMyDateMONTH = date.current.value.slice(5, 7);
+                let deconstructMyDateDAY = date.current.value.slice(8, 11);
 
+
+                for (let i = 0; i < myloop; i++) {
+
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            time: time0,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
+                }
                 // ---------------------------------------------------- //
 
                 let hourcomputation1 = timeState.hour1;
@@ -342,14 +357,16 @@ function MedicationForm() {
                     console.log("time am", time1);
                 }
 
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: date.current.value,
-                        time: time1,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
+                for (let i = 0; i < myloop; i++) {
 
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            time: time1,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
+                }
 
             } else if (timeState.hour0) {
                 console.log("you have 1 log - insert save code here")
@@ -366,13 +383,19 @@ function MedicationForm() {
                     console.log("time am", time0);
                 }
 
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: date.current.value,
-                        time: time0,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
+                let myloop = datecount.current.value;
+                let deconstructMyDateYEAR = date.current.value.slice(0, 4);
+                let deconstructMyDateMONTH = date.current.value.slice(5, 7);
+                let deconstructMyDateDAY = date.current.value.slice(8, 11);
+                for (let i = 0; i < myloop; i++) {
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            time: time0,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
+                }
             }
 
             API.getAllRoutines(state.user.id)
@@ -426,13 +449,13 @@ function MedicationForm() {
                 <input type="text" className="form-control" required ref={datecount} placeholder="10" />
             </div>
 
-            <div className="form-group">
+            {/* <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">How often should you take it?</label>
                 <select className="form-control" id="exampleFormControlSelect1">
                     <option>everyday</option>
                     <option>every other day</option>
                 </select>
-            </div>
+            </div> */}
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">How many times a day do you need to take it?</label>
