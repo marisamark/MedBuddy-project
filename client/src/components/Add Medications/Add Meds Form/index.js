@@ -46,23 +46,9 @@ function MedicationForm() {
     const handleSubmit = (e, data) => {
         e.preventDefault();
         console.log('DOSAGE', dosage.current.value)
-        submitAPI()
-    }
+        submitAPI();
 
-    // useEffect(() => {
-    //     console.log("use effect")
-    //     console.log(state.medroutine)
-    //     // API.getAllRoutines()
-    //     //     .then(results => {
-    //     //         let routines = results.data;
-    //     //         console.log('All Routine Results', routines);
-    //     //         dispatch({
-    //     //             type: FIND_ALL_ROUTINES,
-    //     //             ...state,
-    //     //             routines
-    //     //         });
-    //     //     }).catch(error => console.log(error));
-    // }, [state.medroutine]);
+    }
 
     const submitAPI = () => {
 
@@ -132,13 +118,13 @@ function MedicationForm() {
                 <input type="text" className="form-control" required ref={datecount} placeholder="10" />
             </div>
 
-            <div className="form-group">
+            {/* <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">How often should you take it?</label>
                 <select className="form-control" id="exampleFormControlSelect1">
                     <option>everyday</option>
                     <option>every other day</option>
                 </select>
-            </div>
+            </div> */}
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlSelect1">How many times a day do you need to take it?</label>
@@ -157,7 +143,7 @@ function MedicationForm() {
                 <label htmlFor="exampleFormControlInput1">What time do you want to start taking it?</label>
 
                 <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
-                {console.log("secondory " + userState.selectValue)}
+                {console.log("secondory ", userState.selectValue)}
 
             </div>
             <div>
