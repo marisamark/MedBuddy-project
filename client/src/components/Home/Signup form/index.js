@@ -34,9 +34,9 @@ function SignupForm() {
             .then(function (data) {
                 console.log("new user's data", data);
                 dispatch({ type: USER_SIGN_UP, newUser });
-                dispatch({ type: LOGGED_TO_TRUE })
+                // dispatch({ type: LOGGED_TO_TRUE })
                 getUserRoutine(data.data.id)
-                //window.location.replace("/dashboard");
+                window.location.replace("/");
             }).catch(err => console.log(err));
     }
 
@@ -44,10 +44,10 @@ function SignupForm() {
         axios.get("/api/user/" + { userid } + "/medRoutine").then((response) => console.log(response))
     }
 
-    console.log("dispatch", state);
+    //console.log("dispatch", state);
 
     return (
-        state.logged ? (<Redirect to='/dashboard' />) :
+        // state.logged ? (<Redirect to='/dashboard' />) :
             <div>
                 <h2 className="text-center mt-4 mb-3">Signup</h2>
                 <form className="mx-auto col-lg-5 col-md-6 col-sm-11 mt-4">
