@@ -46,6 +46,7 @@ function TimeDives(props) {
                 <div className="row">
                     <div className="col">
                         <select className="form-control" onChange={handleSelect} id={"hour" + i}>
+                            <option value="" disabled selected hidden>HOUR</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -62,6 +63,8 @@ function TimeDives(props) {
                     </div>
                     <div className="col">
                         <select className="form-control" onChange={handleSelect} id={'minute' + i}>
+                            <option value="" disabled selected hidden>MINUTE</option>
+
                             <option value="00">00</option>
                             <option value="15">15</option>
                             <option value="30">30</option>
@@ -70,6 +73,8 @@ function TimeDives(props) {
                     </div>
                     <div className="col">
                         <select className="form-control" onChange={handleSelect} id={'ampm' + i}>
+                            <option value="" disabled selected hidden>AM/PM</option>
+
                             <option value="AM">AM</option>
                             <option value="PM">PM</option>
                         </select>

@@ -3,7 +3,7 @@ import TimeDives from "../StartTimes/index";
 // import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
-import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES } from "../../../utils/actions";
+import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES, UPDATE_ROUTINE } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 
 function MedicationForm() {
@@ -64,7 +64,6 @@ function MedicationForm() {
     //     //     }).catch(error => console.log(error));
     // }, [state.medroutine]);
 
-
     const submitAPI = () => {
 
         API.postMedroutine(state.user.id, {
@@ -81,20 +80,19 @@ function MedicationForm() {
                 type: POST_ROUTINE,
                 medroutine: result
             });
+            // dispatch({ type: UPDATE_ROUTINE, medroutine : result})
+
 
             API.getAllRoutines(state.user.id)
                 .then(results => {
                     console.log("run me", results.data)
-                    let medroutines = results.data;
-                    dispatch({
-                        type: FIND_ALL_ROUTINES,
-                        payload: medroutines
-                    })
-                    console.log('CURRENT STATE', state)
+                    let routines = results.data;
+                    console.log("hey! this is your updated routines", routines)
+                    // dispatch({ type: FIND_ALL_ROUTINES, payload: routines })
+                    dispatch({ type: UPDATE_ROUTINE, medroutine: routines })
 
-                });
-
-
+                    //console.log('CURRENT STATE', state)
+                }).then(() => console.log("state after then then", state));
         })
             .catch(err => console.log(err));
 

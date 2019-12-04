@@ -7,7 +7,8 @@ import {
     FIND_ALL_ROUTINES,
     POST_LOG,
     POST_ROUTINE,
-    LOGGED_TO_TRUE
+    LOGGED_TO_TRUE,
+    UPDATE_ROUTINE
 } from "./actions";
 
 const StoreContext = createContext();
@@ -28,7 +29,7 @@ const reducer = (state, action) => {
         case GRAB_USER_ROUTINE:
             // console.log("action", action.payload)
             return { ...state, medroutine: action.payload };
-            //return { ...state, medroutine: action.payload, logged: true };
+        //return { ...state, medroutine: action.payload, logged: true };
         case ADD_ARTICLES:
             // console.log(action);
             return {
@@ -53,11 +54,16 @@ const reducer = (state, action) => {
                 ...state,
                 medroutine: [action.MedLogs, ...state.medroutine]
             };
-            
+
         case LOGGED_TO_TRUE:
             return {
                 ...state,
                 logged: true
+            }
+        case UPDATE_ROUTINE:
+            return {
+                ...state,
+                medroutine: [...action.medroutine]
             }
 
 
