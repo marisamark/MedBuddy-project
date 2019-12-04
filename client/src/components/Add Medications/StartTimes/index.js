@@ -14,21 +14,21 @@ function TimeDives(props) {
 
     function handleSelect(e) {
         e.preventDefault()
-        props.handleSelect({key: e.target.id, val: e.target.value})
-//         console.log("SELECTING...")
-//         console.log(e.target.value )
-//         props.handleSubmit({...timeState, [e.target.id]:e.target.value})
-// setTimeState({...timeState, [e.target.id]:e.target.value})
-//     // function handleSelectMinute(e) {
-//     //     console.log("SELECTING...")
-//     //     console.log(e.target.value + "minutes")
-//     //     setTimeState({...timeState, [e.target.id]:e.target.value})
-//     // }
-//     // function handleSelectAMPM(e) {
-//     //     console.log("SELECTING...")
-//     //     console.log(e.target.value)
-//     // }
-//     console.log(timeState)
+        props.handleSelect({ key: e.target.id, val: e.target.value })
+        //         console.log("SELECTING...")
+        //         console.log(e.target.value )
+        //         props.handleSubmit({...timeState, [e.target.id]:e.target.value})
+        // setTimeState({...timeState, [e.target.id]:e.target.value})
+        //     // function handleSelectMinute(e) {
+        //     //     console.log("SELECTING...")
+        //     //     console.log(e.target.value + "minutes")
+        //     //     setTimeState({...timeState, [e.target.id]:e.target.value})
+        //     // }
+        //     // function handleSelectAMPM(e) {
+        //     //     console.log("SELECTING...")
+        //     //     console.log(e.target.value)
+        //     // }
+        //     console.log(timeState)
     }
 
     let timesList = [];
@@ -38,7 +38,7 @@ function TimeDives(props) {
     })
 
     return (
-            timesList.map((item, i) => {
+        timesList.map((item, i) => {
             return <div key={i}>
                 <br />
                 <p> {countNum[i]} Time </p>
@@ -79,7 +79,7 @@ function TimeDives(props) {
             </div>
         })
     )
-        
+
 
 }
 export default TimeDives;

@@ -11,7 +11,7 @@ function MedicationForm() {
         selectValue: "1",
     });
 
-  
+
 
     const medicinename = useRef();
     const dose = useRef();
@@ -30,17 +30,17 @@ function MedicationForm() {
 
     function handleSelect(data) {
         console.log("SELECTING...")
-setTimeState({...timeState, [data.key]:data.val})
-    // function handleSelectMinute(e) {
-    //     console.log("SELECTING...")
-    //     console.log(e.target.value + "minutes")
-    //     setTimeState({...timeState, [e.target.id]:e.target.value})
-    // }
-    // function handleSelectAMPM(e) {
-    //     console.log("SELECTING...")
-    //     console.log(e.target.value)
-    // }
-    console.log(timeState)
+        setTimeState({ ...timeState, [data.key]: data.val })
+        // function handleSelectMinute(e) {
+        //     console.log("SELECTING...")
+        //     console.log(e.target.value + "minutes")
+        //     setTimeState({...timeState, [e.target.id]:e.target.value})
+        // }
+        // function handleSelectAMPM(e) {
+        //     console.log("SELECTING...")
+        //     console.log(e.target.value)
+        // }
+        console.log(timeState)
     }
 
     const handleSubmit = (e, data) => {
@@ -65,10 +65,10 @@ setTimeState({...timeState, [data.key]:data.val})
     // }, [state.medroutine]);
 
 
-    const submitAPI = ()=>{
+    const submitAPI = () => {
 
         API.postMedroutine(state.user.id, {
-            
+
             dose: dose.current.value,
             date: date.current.value,
             datecount: datecount.current.value,
@@ -77,26 +77,26 @@ setTimeState({...timeState, [data.key]:data.val})
             medicinename: medicinename.current.value
         }).then(result => {
             console.log("POSTMEDROUTINE", result)
-            dispatch({ 
+            dispatch({
                 type: POST_ROUTINE,
                 medroutine: result
             });
 
             API.getAllRoutines(state.user.id)
-            .then(results => {
-                console.log("run me", results.data)
-                let medroutines = results.data;
-                dispatch({
-                    type: FIND_ALL_ROUTINES,
-                    payload: medroutines
-                })
-                console.log('CURRENT STATE', state)
+                .then(results => {
+                    console.log("run me", results.data)
+                    let medroutines = results.data;
+                    dispatch({
+                        type: FIND_ALL_ROUTINES,
+                        payload: medroutines
+                    })
+                    console.log('CURRENT STATE', state)
 
-            });
+                });
 
 
         })
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
 
         // API.postMedlog({
         //     log: log.current.value
@@ -167,7 +167,7 @@ setTimeState({...timeState, [data.key]:data.val})
                 {/* // type="submit"  */}
                 <Button onClick={handleSubmit} id="bluebtn" className="btn mt-2 mb-4">Add Medication</Button>
                 {/* // /> */}
-                
+
             </div>
 
 
