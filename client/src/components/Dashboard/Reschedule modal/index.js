@@ -23,6 +23,7 @@ function RescheduleModal(props) {
           <div className="row">
                 <div className="col-4">
                     <select className="form-control" id="exampleFormControlSelect1">
+                    <option value="" disabled selected hidden>HOUR</option>
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -39,6 +40,7 @@ function RescheduleModal(props) {
                     </div>
                     <div className="col-4">
                     <select className="form-control" id="exampleFormControlSelect1">
+                    <option value="" disabled selected hidden>MINUTE</option>
                         <option>00</option>
                         <option>15</option>
                         <option>30</option>
@@ -47,6 +49,7 @@ function RescheduleModal(props) {
                     </div>
                     <div className="col-4">
                     <select className="form-control" id="exampleFormControlSelect1">
+                    <option value="" disabled selected hidden>AM/PM</option>
                         <option>AM</option>
                         <option>PM</option>
                     </select>
