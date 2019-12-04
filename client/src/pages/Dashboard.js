@@ -40,7 +40,7 @@ function Dashboard() {
                     <h2 id="medsivetaken" className="text-center mt-3 mb-3 text-color">Medications I've taken</h2>
                     <div id="medstaken">
                     {state.medroutine.map(log =>
-                    (log.MedLogs.status) ?
+                    (log.MedLogs.status === true) ?
                         <Medstaken
                         key={log.id}
                         name={log.medicinename}
