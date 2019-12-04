@@ -134,8 +134,6 @@ function MedicationForm() {
 
             if (timeState.hour3) {
                 console.log("you have 4 logs - insert save code here")
-            } else if (timeState.hour2) {
-                console.log("you have 3 logs - insert save code here")
                 // things we have
                 // timeState.hour0
                 // timeState.hour1
@@ -146,6 +144,99 @@ function MedicationForm() {
                 // timeState.ampm0
                 // timeState.ampm1
                 // timeState.ampm2
+                let hourcomputation0 = timeState.hour0;
+                let time0 = "";
+
+                if (timeState.ampm0 === "PM") {
+                    hourcomputation0 = parseInt(hourcomputation0) + 12;
+                    time0 = hourcomputation0 + ":" + timeState.minute0 + ":" + "00";
+                    console.log("time pm", time0);
+
+                } else if (timeState.ampm0 === "AM") {
+                    time0 = hourcomputation0 + ":" + timeState.minute0 + ":" + "00";
+                    console.log("time am", time0);
+                }
+
+                API.postMedlog(result.data.id,
+                    {
+                        //need to figure out how to rearrange the date format
+                        date: date.current.value,
+                        time: time0,
+                        status: false
+                    }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
+
+                // ---------------------------------------------------- //
+
+                let hourcomputation1 = timeState.hour1;
+                let time1 = "";
+
+                if (timeState.ampm1 === "PM") {
+                    hourcomputation1 = parseInt(hourcomputation1) + 12;
+                    time1 = hourcomputation1 + ":" + timeState.minute1 + ":" + "00";
+                    console.log("time pm", time1);
+
+                } else if (timeState.ampm1 === "AM") {
+                    time1 = hourcomputation1 + ":" + timeState.minute1 + ":" + "00";
+                    console.log("time am", time1);
+                }
+
+                API.postMedlog(result.data.id,
+                    {
+                        //need to figure out how to rearrange the date format
+                        date: date.current.value,
+                        time: time1,
+                        status: false
+                    }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
+
+                // ---------------------------------------------------- //
+
+                let hourcomputation2 = timeState.hour2;
+                let time2 = "";
+
+                if (timeState.ampm2 === "PM") {
+                    hourcomputation2 = parseInt(hourcomputation2) + 12;
+                    time2 = hourcomputation2 + ":" + timeState.minute2 + ":" + "00";
+                    console.log("time pm", time2);
+
+                } else if (timeState.ampm2 === "AM") {
+                    time2 = hourcomputation2 + ":" + timeState.minute2 + ":" + "00";
+                    console.log("time am", time2);
+                }
+
+                API.postMedlog(result.data.id,
+                    {
+                        //need to figure out how to rearrange the date format
+                        date: date.current.value,
+                        time: time2,
+                        status: false
+                    }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
+
+                // ---------------------------------------------------- //
+
+                let hourcomputation3 = timeState.hour3;
+                let time3 = "";
+
+                if (timeState.ampm3 === "PM") {
+                    hourcomputation3 = parseInt(hourcomputation3) + 12;
+                    time3 = hourcomputation3 + ":" + timeState.minute3 + ":" + "00";
+                    console.log("time pm", time3);
+
+                } else if (timeState.ampm3 === "AM") {
+                    time3 = hourcomputation3 + ":" + timeState.minute3 + ":" + "00";
+                    console.log("time am", time3);
+                }
+
+                API.postMedlog(result.data.id,
+                    {
+                        //need to figure out how to rearrange the date format
+                        date: date.current.value,
+                        time: time3,
+                        status: false
+                    }).then(console.log("BOOM!!!! LOG 3 SAVED!!!!"))
+
+            } else if (timeState.hour2) {
+                console.log("you have 3 logs - insert save code here")
+
                 let hourcomputation0 = timeState.hour0;
                 let time0 = "";
 
