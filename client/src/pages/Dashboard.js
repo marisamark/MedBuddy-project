@@ -11,9 +11,9 @@ function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
     console.log("dashboard", state)
     
+    
 
     return (
-        // state.logged ? (
         <div>
             <NavAfterLogin />
             <div className="container">
@@ -53,8 +53,7 @@ function Dashboard() {
             </div>
         </div>
         )
-    //     : (<Redirect to = '/' />)
-    // )
+
 }
 
 export default Dashboard;
