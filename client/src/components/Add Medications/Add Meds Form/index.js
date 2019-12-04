@@ -40,7 +40,8 @@ function MedicationForm() {
         //     console.log("SELECTING...")
         //     console.log(e.target.value)
         // }
-        console.log(timeState)
+        console.log('TIME STATE', timeState)
+        console.log({[data.key]: data.val})
     }
 
     const handleSubmit = (e, data) => {
