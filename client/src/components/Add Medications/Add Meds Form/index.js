@@ -5,6 +5,7 @@ import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
 import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES, UPDATE_ROUTINE } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
+import axios from "axios";
 
 function MedicationForm() {
     const [userState, setUserState] = useState({
@@ -40,9 +41,41 @@ function MedicationForm() {
         //     console.log("SELECTING...")
         //     console.log(e.target.value)
         // }
-        console.log('TIME STATE', timeState)
-        console.log({[data.key]: data.val})
+        //console.log(timeState)
     }
+
+    useEffect(() => {
+        console.log("TIMESTATE", timeState)
+
+        // if(timeState.hour0)
+        // {
+        //     alert(" you have 1 log - insert save code here")
+        // } else
+        // if(timeState.hour1)
+        // {
+        //     alert(" you have 2 logs - insert save code here")
+        // } else
+        // if(timeState.hour2)
+        // {
+        //     alert(" you have 3 logs - insert save code here")
+        // } else
+        // if(timeState.hour3)
+        // {
+        //     alert(" you have 4 logs - insert save code here")
+        // }
+
+
+        // if (timeState.hour3) {
+        //     console.log("useeffect you have 4 logs - insert save code here")
+        // } else if (timeState.hour2) {
+        //     console.log("useeffect you have 3 logs - insert save code here")
+        // } else if (timeState.hour1) {
+        //     console.log("useeffect you have 2 logs - insert save code here")
+        // } else if (timeState.hour0) {
+        //     console.log("useeffect you have 1 log - insert save code here")
+        // }
+
+    }, [timeState])
 
     const handleSubmit = (e, data) => {
         e.preventDefault();
@@ -69,6 +102,39 @@ function MedicationForm() {
             });
             // dispatch({ type: UPDATE_ROUTINE, medroutine : result})
 
+            if (timeState.hour3) {
+                console.log("you have 4 logs - insert save code here")
+            } else if (timeState.hour2) {
+                console.log("you have 3 logs - insert save code here")
+            } else if (timeState.hour1) {
+                console.log("you have 2 logs - insert save code here")
+            } else if (timeState.hour0) {
+                console.log("you have 1 log - insert save code here")
+                //axios.post("/api/medRoutine/" + result.data.id + "/medLog/")
+                let hourcomputation0 = timeState.hour0;
+                let time0 = "";
+
+                if(timeState.ampm0 === "PM")
+                {
+                    hourcomputation0 = parseInt(hourcomputation0) + 12;
+                    time0 = hourcomputation0+":"+timeState.minute0+":"+"00";
+                    console.log("time pm", time0);
+                    
+                } else if(timeState.ampm0 === "AM")
+                {
+                    time0 = hourcomputation0+":"+timeState.minute0+":"+"00";
+                    console.log("time am", time0);
+                    
+                }
+
+                API.postMedlog(result.data.id,
+                    {
+                        //need to figure out how to rearrange the date format
+                        date : date.current.value,
+                        time : time0,
+                        status : false
+                    }).then(console.log("BOOM!!!! ROUTINE SAVED!!!!"))
+            }
 
             API.getAllRoutines(state.user.id)
                 .then(results => {
@@ -79,7 +145,9 @@ function MedicationForm() {
                     dispatch({ type: UPDATE_ROUTINE, medroutine: routines })
 
                     //console.log('CURRENT STATE', state)
-                }).then(() => console.log("state after then then", state));
+                }).then(() => {
+                    console.log("state after then then", state);
+                });
         })
             .catch(err => console.log(err));
 
@@ -111,7 +179,7 @@ function MedicationForm() {
 
             <div className="form-group">
                 <label htmlFor="exampleFormControlInput1">When should you start to take it?</label>
-                <input type="text" className="form-control" required ref={date} placeholder="MM/DD/YYY" />
+                <input type="text" className="form-control" required ref={date} placeholder="YYYY/MM/DD" />
             </div>
 
             <div className="form-group">
