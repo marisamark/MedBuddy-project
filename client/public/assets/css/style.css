@@ -19,7 +19,7 @@
   #button-blue {
  background-color: #2e3192;
   }
-#bluebtn {
+#bluebtn{
   background-color: #2e3192;
 }
   .text-color {
@@ -76,7 +76,11 @@
   margin-left: 5px;
 }
 
-#medsihavetotakecard, #medstakencard, #healthcards {
+#medsihavetotakecard, #medstakencard, #healthcards, #bluecard {
+  background-color: #dbdfeb;
+}
+#margin,  #bluecard{
+  margin: 0px;
   background-color: #dbdfeb;
 }
 /* Large devices (laptops/desktops, 992px and up) */
