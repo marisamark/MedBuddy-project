@@ -3,7 +3,7 @@ import TimeDives from "../StartTimes/index";
 // import ToastMeds from "../Toast/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
-import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES } from "../../../utils/actions";
+import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES, UPDATE_ROUTINE } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 
 function MedicationForm() {
@@ -11,7 +11,7 @@ function MedicationForm() {
         selectValue: "1",
     });
 
-  
+
 
     const medicinename = useRef();
     const dose = useRef();
@@ -30,17 +30,17 @@ function MedicationForm() {
 
     function handleSelect(data) {
         console.log("SELECTING...")
-setTimeState({...timeState, [data.key]:data.val})
-    // function handleSelectMinute(e) {
-    //     console.log("SELECTING...")
-    //     console.log(e.target.value + "minutes")
-    //     setTimeState({...timeState, [e.target.id]:e.target.value})
-    // }
-    // function handleSelectAMPM(e) {
-    //     console.log("SELECTING...")
-    //     console.log(e.target.value)
-    // }
-    console.log(timeState)
+        setTimeState({ ...timeState, [data.key]: data.val })
+        // function handleSelectMinute(e) {
+        //     console.log("SELECTING...")
+        //     console.log(e.target.value + "minutes")
+        //     setTimeState({...timeState, [e.target.id]:e.target.value})
+        // }
+        // function handleSelectAMPM(e) {
+        //     console.log("SELECTING...")
+        //     console.log(e.target.value)
+        // }
+        console.log(timeState)
     }
 
     const handleSubmit = (e, data) => {
@@ -64,11 +64,10 @@ setTimeState({...timeState, [data.key]:data.val})
     //     //     }).catch(error => console.log(error));
     // }, [state.medroutine]);
 
-
-    const submitAPI = ()=>{
+    const submitAPI = () => {
 
         API.postMedroutine(state.user.id, {
-            
+
             dose: dose.current.value,
             date: date.current.value,
             datecount: datecount.current.value,
@@ -77,26 +76,25 @@ setTimeState({...timeState, [data.key]:data.val})
             medicinename: medicinename.current.value
         }).then(result => {
             console.log("POSTMEDROUTINE", result)
-            dispatch({ 
+            dispatch({
                 type: POST_ROUTINE,
                 medroutine: result
             });
+            // dispatch({ type: UPDATE_ROUTINE, medroutine : result})
+
 
             API.getAllRoutines(state.user.id)
-            .then(results => {
-                console.log("run me", results.data)
-                let medroutines = results.data;
-                dispatch({
-                    type: FIND_ALL_ROUTINES,
-                    medroutines
-                })
-                console.log('CURRENT STATE', state)
+                .then(results => {
+                    console.log("run me", results.data)
+                    let routines = results.data;
+                    console.log("hey! this is your updated routines", routines)
+                    // dispatch({ type: FIND_ALL_ROUTINES, payload: routines })
+                    dispatch({ type: UPDATE_ROUTINE, medroutine: routines })
 
-            });
-
-
+                    //console.log('CURRENT STATE', state)
+                }).then(() => console.log("state after then then", state));
         })
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
 
         // API.postMedlog({
         //     log: log.current.value
@@ -167,7 +165,7 @@ setTimeState({...timeState, [data.key]:data.val})
                 {/* // type="submit"  */}
                 <Button onClick={handleSubmit} id="bluebtn" className="btn mt-2 mb-4">Add Medication</Button>
                 {/* // /> */}
-                
+
             </div>
 
 
