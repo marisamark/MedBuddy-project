@@ -55,11 +55,7 @@ const reducer = (state, action) => {
                 medroutine: [action.MedLogs, ...state.medroutine]
             };
 
-        case GET_NOT_TAKEN_LOGS:
-            return {
-                ...state,
-                medroutine: 
-            }
+
 
         case LOGGED_TO_TRUE:
             return {

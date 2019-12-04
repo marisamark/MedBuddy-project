@@ -11,10 +11,18 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
     console.log("dashboard", state)
-    // useEffect(() => {
-    //     console.log('this is your med routine', state)
-    // }, [state])
 
+    let log = state.medroutine.map(log =>
+        log.MedLogs.map(medlogs =>
+            console.log("MAPPED LOG", medlogs)
+        )
+    )
+
+
+    // useEffect(() => {
+        
+    // }, [])
+// time, name of drug, dose
     return (
         // state.logged ? (
         <div>
@@ -24,10 +32,22 @@ function Dashboard() {
                
                 <Row>
                     <Col lg={true} >
-                        <Medsnottaken />
+                    {state.medroutine.map(log =>
+                        <Medsnottaken 
+                        key={log.id}
+                        name={log.medicinename}
+                        MedLogs={log.MedLogs}
+                        />
+                        )}
                     </Col>
                     <Col lg={true} >
-                        <Medstaken />
+                    {state.medroutine.map(log =>
+                        <Medstaken
+                        key={log.id}
+                        name={log.medicinename}
+                        MedLogs={log.MedLogs}
+                        />
+                    )}
                     </Col>
                 </Row>
             </div>
