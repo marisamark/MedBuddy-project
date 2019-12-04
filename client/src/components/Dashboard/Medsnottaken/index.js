@@ -7,7 +7,7 @@ function Medsnottaken(props){
         <>
             <div className="container">
             {props.MedLogs.map(log =>
-                    log.status === props.status ?
+            log.status === props.status ?
 
                 <MedsCard
                     {...props}

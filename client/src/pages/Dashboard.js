@@ -1,10 +1,9 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import NavAfterLogin from "../components/Nav (afterlogin)/index";
 import Calendarbar from "../components/Dashboard/Calendarbar";
-import Medstaken from "../components/Dashboard/Medstaken/index";
 import Medsnottaken from "../components/Dashboard/Medsnottaken/index";
 import { Row, Col } from 'react-bootstrap';
-import { StoreContext } from './../utils/GlobalState'
+import { StoreContext } from './../utils/GlobalState';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 
@@ -24,15 +23,14 @@ function Dashboard() {
                     <Col lg={true} >
                     <h2 id="medsihavetotake" className="text-center mt-3 mb-3 text-color">Medications I have to take</h2>
                     <div id="medsnottaken">
-                    {
-                    state.medroutine.map(log =>
+                    {state.medroutine.map(log =>
                         <Medsnottaken 
                         key={log.id}
                         name={log.medicinename}
                         dose={log.dose}
                         MedLogs={log.MedLogs}
                         status={false}
-                        />                      
+                        />
                     )}
                     </div>
                     </Col>
