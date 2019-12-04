@@ -30,6 +30,7 @@ function MyMedications() {
         <>
             <NavAfterLogin></NavAfterLogin>
             <div className="container text-center text-color" id="meddata">
+            <a name="top"></a>
                 <h2 className="mt-4">My Medications</h2>
                 <br></br>
                 {/* {!state.medroutine[0].id ?  */}
@@ -45,6 +46,7 @@ function MyMedications() {
                 )}
                  {/* : <h1>No routines yet!</h1>
                 } */}
+                  <a href="#top">Back to top</a>
             </div>
         </>
     )
