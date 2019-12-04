@@ -207,6 +207,10 @@
 font-size: 18pt;
 }
 
+#currenttime {
+  margin-right: -30px;
+  margin-bottom: -20px;
+}
 #medsihavetotake {
   font-size: 18pt;
 }
