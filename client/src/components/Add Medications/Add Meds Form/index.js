@@ -387,11 +387,16 @@ function MedicationForm() {
                 let deconstructMyDateYEAR = date.current.value.slice(0, 4);
                 let deconstructMyDateMONTH = date.current.value.slice(5, 7);
                 let deconstructMyDateDAY = date.current.value.slice(8, 11);
+                let parseday = parse(deconstructMyDateDAY);
                 for (let i = 0; i < myloop; i++) {
+                    parseday = parseday + i
+                    // let parseDay = parseInt(deconstructMyDateDAY);
+                    // let mydate = deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseDay +1 ;
                     API.postMedlog(result.data.id,
                         {
+                            
                             //need to figure out how to rearrange the date format
-                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseday,
                             time: time0,
                             status: false
                         }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
