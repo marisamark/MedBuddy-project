@@ -13,7 +13,10 @@ function MedLog(props) {
                 <span className="font-weight-bold mr-2"> Time: </span>{props.time}
                 </div>
                 <div class="row">
-                <span className="font-weight-bold mr-2"> Status: </span> {props.status}
+                <span className="font-weight-bold mr-2"> Status: </span> {!props.status ?
+                <p>Not Taken</p> :
+                <p>Taken</p>
+                }
                 </div>
             </div>
         </div>

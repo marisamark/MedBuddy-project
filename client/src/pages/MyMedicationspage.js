@@ -2,6 +2,8 @@ import React from "react";
 import NavAfterLogin from "../components/Nav (afterlogin)/index";
 import Meddata from "../components/My Medications/Med data/index";
 import { useStoreContext } from "../utils/GlobalState";
+// import API from "../utils/API";
+// import { FIND_ALL_ROUTINES } from "../utils/actions";
 
 
 function MyMedications() {
@@ -9,21 +11,19 @@ function MyMedications() {
     const [state, dispatch] = useStoreContext();
 
     // useEffect(() => {
-    //     console.log("use effect")
         
-    //     // API.getAllRoutines()
-    //     //     .then(results => {
-    //     //         let routines = results.data;
-    //     //         console.log('All Routine Results', routines);
-    //     //         dispatch({
-    //     //             type: FIND_ALL_ROUTINES,
-    //     //             ...state,
-    //     //             routines
-    //     //         });
-    //     //     }).catch(error => console.log(error));
-    // }, [state.medroutine.id]);
+    //     API.getAllRoutines(state.user.id)
+    //         .then(results => {
+    //             let medroutines = results.data;
+    //             console.log('All Routine Results', medroutines);
+    //             dispatch({
+    //                 type: FIND_ALL_ROUTINES,
+    //                 medroutines
+    //             });
+    //         }).catch(error => console.log(error));
+    // }, []);
 
-    // console.log('MEDROUTINE STATE', state);
+    console.log('MEDROUTINE STATE', state);
 
 
     return (

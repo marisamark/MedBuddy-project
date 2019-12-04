@@ -55,6 +55,8 @@ const reducer = (state, action) => {
                 medroutine: [action.MedLogs, ...state.medroutine]
             };
 
+
+
         case LOGGED_TO_TRUE:
             return {
                 ...state,
