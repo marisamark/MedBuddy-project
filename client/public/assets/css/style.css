@@ -32,6 +32,7 @@
 #bluebtn{
   background-color: #2e3192;
 }
+
   .text-color {
     color: #2e3192;
   }
@@ -93,6 +94,25 @@
   margin: 0px;
   background-color: #dbdfeb;
 }
+#bluebtn-addmed{
+  background-color: #2e3192;
+  margin-left: -13px;
+  color: white;
+  outline: none !important;
+  display:block;
+}
+#addmed{
+  background-color: transparent;
+  border-color: transparent;
+  border: none;
+  outline: none !important;
+  /* border:0px solid transparent; */
+  display:block;
+}
+#toast-alert{
+  margin-bottom: 0;
+}
+
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (max-width: 992px) {
   #welcometo {
