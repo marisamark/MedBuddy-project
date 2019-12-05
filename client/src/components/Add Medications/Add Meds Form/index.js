@@ -6,7 +6,7 @@ import API from "../../../utils/API";
 import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES, UPDATE_ROUTINE } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 import axios from "axios";
-
+import ToastMeds from "../Toast/index";
 function MedicationForm() {
     const [userState, setUserState] = useState({
         selectValue: "1",
@@ -139,12 +139,14 @@ function MedicationForm() {
                 let deconstructMyDateYEAR = date.current.value.slice(0, 4);
                 let deconstructMyDateMONTH = date.current.value.slice(5, 7);
                 let deconstructMyDateDAY = date.current.value.slice(8, 11);
+                let baseday = parseInt(deconstructMyDateDAY);
 
                 for(let i =0 ; i < myloop; i++){
+                    let daytobesave = baseday + i
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                         time: time0,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
@@ -164,10 +166,11 @@ function MedicationForm() {
                     console.log("time am", time1);
                 }
                 for(let i =0 ; i < myloop; i++){
+                    let daytobesave = baseday + i
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                         time: time1,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
@@ -187,10 +190,11 @@ function MedicationForm() {
                     console.log("time am", time2);
                 }
                 for(let i =0 ; i < myloop; i++){
+                    let daytobesave = baseday + i
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                         time: time2,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
@@ -210,10 +214,11 @@ function MedicationForm() {
                     console.log("time am", time3);
                 }
                 for(let i =0 ; i < myloop; i++){
+                    let daytobesave = baseday + i
                 API.postMedlog(result.data.id,
                     {
                         //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                         time: time3,
                         status: false
                     }).then(console.log("BOOM!!!! LOG 3 SAVED!!!!"))
@@ -237,12 +242,14 @@ function MedicationForm() {
                 let deconstructMyDateYEAR = date.current.value.slice(0, 4);
                 let deconstructMyDateMONTH = date.current.value.slice(5, 7);
                 let deconstructMyDateDAY = date.current.value.slice(8, 11);
+                let baseday = parseInt(deconstructMyDateDAY);
 
                 for (let i = 0; i < myloop; i++) {
+                    let daytobesave = baseday + i
                     API.postMedlog(result.data.id,
                         {
                             //need to figure out how to rearrange the date format
-                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                             time: time0,
                             status: false
                         }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
@@ -263,10 +270,11 @@ function MedicationForm() {
                 }
 
                 for (let i = 0; i < myloop; i++) {
+                    let daytobesave = baseday + i
                     API.postMedlog(result.data.id,
                         {
                             //need to figure out how to rearrange the date format
-                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                             time: time1,
                             status: false
                         }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
@@ -287,11 +295,11 @@ function MedicationForm() {
                 }
 
                 for (let i = 0; i < myloop; i++) {
-
+                    let daytobesave = baseday + i
                     API.postMedlog(result.data.id,
                         {
                             //need to figure out how to rearrange the date format
-                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                             time: time2,
                             status: false
                         }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
@@ -316,14 +324,14 @@ function MedicationForm() {
                 let deconstructMyDateYEAR = date.current.value.slice(0, 4);
                 let deconstructMyDateMONTH = date.current.value.slice(5, 7);
                 let deconstructMyDateDAY = date.current.value.slice(8, 11);
-
+                let baseday = parseInt(deconstructMyDateDAY);
 
                 for (let i = 0; i < myloop; i++) {
-
+                    let daytobesave = baseday + i
                     API.postMedlog(result.data.id,
                         {
                             //need to figure out how to rearrange the date format
-                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                             time: time0,
                             status: false
                         }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
@@ -344,11 +352,11 @@ function MedicationForm() {
                 }
 
                 for (let i = 0; i < myloop; i++) {
-
+                    let daytobesave = baseday + i
                     API.postMedlog(result.data.id,
                         {
                             //need to figure out how to rearrange the date format
-                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                             time: time1,
                             status: false
                         }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
@@ -373,11 +381,17 @@ function MedicationForm() {
                 let deconstructMyDateYEAR = date.current.value.slice(0, 4);
                 let deconstructMyDateMONTH = date.current.value.slice(5, 7);
                 let deconstructMyDateDAY = date.current.value.slice(8, 11);
+                let baseday = parseInt(deconstructMyDateDAY);
+
                 for (let i = 0; i < myloop; i++) {
+                    let daytobesave = baseday + i
+                    // let parseDay = parseInt(deconstructMyDateDAY);
+                    // let mydate = deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseDay +1 ;
                     API.postMedlog(result.data.id,
                         {
+                            
                             //need to figure out how to rearrange the date format
-                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseInt(deconstructMyDateDAY) + i,
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                             time: time0,
                             status: false
                         }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
@@ -452,16 +466,8 @@ function MedicationForm() {
                 <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
                 {console.log("secondory ", userState.selectValue)}
 
-            </div>
-            <div>
-                {/* // <ToastMeds  */}
-                {/* // type="submit"  */}
-                <Button onClick={handleSubmit} id="bluebtn" className="btn mt-2 mb-4">Add Medication</Button>
-                {/* // /> */}
-
-            </div>
-
-
+            </div>    
+                    <Button id="addmed"  onClick={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>         
         </ form >
 
     )
