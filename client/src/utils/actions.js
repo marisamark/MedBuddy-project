@@ -12,3 +12,4 @@ export const POST_LOG = "POST_LOG";
 export const LOGGED_TO_TRUE = "LOGGED_TO_TRUE";
 export const UPDATE_ROUTINE = "UPDATE_ROUTINE";
 export const UPDATE_STATUS = "UPDATE_STATUS";
+export const UPDATE_TIME = "UPDATE_TIME"
