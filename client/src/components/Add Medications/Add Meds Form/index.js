@@ -81,7 +81,7 @@ function MedicationForm() {
 
     const handleSubmit = (e, data) => {
         e.preventDefault();
-        console.log('DOSAGE', dosage.current.value)
+        //console.log('DOSAGE', dosage.current.value)
         submitAPI();
 
     }

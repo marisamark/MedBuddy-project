@@ -3,9 +3,10 @@ import Reschedule from "../Reschedule modal/index";
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "react-bootstrap";
 import API from "../../../utils/API";
-import { UPDATE_STATUS, UPDATE_ROUTINE } from "../../../utils/actions";
+import { UPDATE_STATUS, UPDATE_ROUTINE, GRAB_USER_ROUTINE } from "../../../utils/actions";
 import { StoreContext } from "../../../utils/GlobalState";
 import { tsPropertySignature } from "@babel/types";
+import axios from 'axios';
 
 function MedsCard(props) {
   console.log("medscard", props.logId)
@@ -14,28 +15,51 @@ function MedsCard(props) {
   const handleSubmit = e => {
     e.preventDefault();
     API.updateStatus(props.logId, {
-        status: true
+      status: true
     }).then(result => {
-        console.log("COMPLETE BUTTON", result)
-        dispatch({
-            type: UPDATE_STATUS,
-            medroutine: result
-        });
+      console.log("COMPLETE BUTTON", result)
+      // dispatch({
+      //     type: UPDATE_STATUS,
+      //     medroutine: result
+      getUserRoutine(state.user.id)
+    });
+    function getUserRoutine(id) {
+      // console.log(currentUser)
+      axios.get("/api/user/" + id + "/medRoutine").then(function (usersRoutine) {
+        console.log("user routine", usersRoutine.data.length);
+        //let transferMyRoutine = usersRoutine.data
+        //dispatch({ type: GRAB_USER_ROUTINE, transferMyRoutine })
+        grabLog(usersRoutine.data);
 
-        API.getAllRoutines(state.user.id)
-        .then(results => {
-            console.log("run me", results.data)
-            let routines = results.data;
-            console.log("hey! this is your updated routines", routines)
-            // dispatch({ type: FIND_ALL_ROUTINES, payload: routines })
-            dispatch({ type: UPDATE_ROUTINE, medroutine: routines })
+      })
+    }
+    function grabLog(routineid) {
+      for (let i = 0; i < routineid.length; i++) {
+        axios.get("/api/medRoutine/" + routineid[i].id + "/medLog").then(function (results) {
+          console.log(results.data)
+          routineid[i].medlog = results.data
+          // console.log("myroutine", myroutine)
+          console.log(state.logged)
+          if (i === routineid.length - 1) {
+            dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
+          }
+        })
+      }
+    }
+    // API.getAllRoutines(state.user.id)
+    // .then(results => {
+    //     console.log("run me", results.data)
+    //     let routines = results.data;
+    //     console.log("hey! this is your updated routines", routines)
+    //     // dispatch({ type: FIND_ALL_ROUTINES, payload: routines })
+    //     dispatch({ type: UPDATE_ROUTINE, medroutine: routines })
 
-            //console.log('CURRENT STATE', state)
-        }).then(() => {
-            console.log("state after then then", state);
-        });
-    })
-};
+    //     //console.log('CURRENT STATE', state)
+    // }).then(() => {
+    //     console.log("state after then then", state);
+    // });
+    // })
+  };
 
   return (
     <div className="card mt-4 text-color">
@@ -47,12 +71,12 @@ function MedsCard(props) {
         <div className="row justify-content-center">
 
           {!props.status ?
-          <Button onClick={handleSubmit} className="mr-2 ml-2 complete1" id="button-blue" >Complete</Button>
-          : <></>
+            <Button onClick={handleSubmit} className="mr-2 ml-2 complete1" id="button-blue" >Complete</Button>
+            : <></>
           }
           {!props.status ?
-          <Reschedule transferdown = {props.logId}/> 
-          : <></>
+            <Reschedule transferdown={props.logId} />
+            : <></>
           }
         </div>
       </div>

@@ -6,7 +6,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import { StoreContext } from '../../../utils/GlobalState';
 import axios from 'axios';
 import API from "../../../utils/API";
-import {UPDATE_TIME, GRAB_USER_ROUTINE} from "../../../utils/actions";
+import { UPDATE_TIME, GRAB_USER_ROUTINE } from "../../../utils/actions";
 //import { thisExpression } from "@babel/types";
 
 // require("react-bootstrap/ModalHeader")
@@ -95,18 +95,17 @@ function RescheduleModal(props) {
     }
     function grabLog(routineid) {
       for (let i = 0; i < routineid.length; i++) {
-          axios.get("/api/medRoutine/" + routineid[i].id + "/medLog").then(function (results) {
-              console.log(results.data)
-              routineid[i].medlog = results.data
-              // console.log("myroutine", myroutine)
-              console.log(state.logged)
-              if (i === routineid.length - 1) {
-                  dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
-              }
-          })
+        axios.get("/api/medRoutine/" + routineid[i].id + "/medLog").then(function (results) {
+          console.log(results.data)
+          routineid[i].medlog = results.data
+          // console.log("myroutine", myroutine)
+          console.log(state.logged)
+          if (i === routineid.length - 1) {
+            dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
+          }
+        })
       }
-
-  }
+    }
 
   }
 
