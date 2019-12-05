@@ -118,7 +118,7 @@ function RescheduleModal(props) {
     >
       <Modal.Header closeButton>
         <Modal.Title className="text-color" id="contained-modal-title-vcenter">
-          Reschedule Time {props.passdown}
+          Reschedule Time 
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -162,7 +162,7 @@ function RescheduleModal(props) {
 
       </Modal.Body>
       <Modal.Footer>
-        <Button className="button-blue" onClick={props.onHide, updateTime} id={props.passdown} >Reschedule {props.passdown}</Button>
+        <Button className="button-blue" onClick={props.onHide, updateTime} id={props.passdown} >Reschedule </Button>
       </Modal.Footer>
     </Modal>
   );
@@ -178,7 +178,7 @@ function Reschedule(props) {
   return (
     <ButtonToolbar>
       <Button className="mr-2 ml-2 complete1" id="button-blue" onClick={() => setModalShow(true)} >
-        Reschedule {props.transferdown}
+        Reschedule 
       </Button>
 
       <RescheduleModal
