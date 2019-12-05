@@ -64,7 +64,7 @@ const reducer = (state, action) => {
         case UPDATE_ROUTINE:
             return {
                 ...state,
-                medroutine: [...state.medroutine, action.MedLogs]
+                medroutine: [...action.medroutine]
             };
         case UPDATE_STATUS:
             console.log('UPDATES STATUS', action)
