@@ -4,9 +4,10 @@ import TimeDives from "../StartTimes/index";
 import { useStoreContext } from "../../../utils/GlobalState";
 import API from "../../../utils/API";
 import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES, UPDATE_ROUTINE } from "../../../utils/actions";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import axios from "axios";
 import ToastMeds from "../Toast/index";
+
 function MedicationForm() {
     const [userState, setUserState] = useState({
         selectValue: "1",
@@ -415,7 +416,7 @@ function MedicationForm() {
 
     }
 
-    
+
     return (
         <form>
 
@@ -467,8 +468,53 @@ function MedicationForm() {
                 {console.log("secondory ", userState.selectValue)}
 
             </div>
-            <Button id="addmed" className="form-control" Click={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>
+            <Button id="addmed" className= "form-control" onClick={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>
         </ form >
+
+        // <Form>
+        //     <Form.Group controlId="exampleForm.ControlInput1">"
+        //         <Form.Label>Medication Name</Form.Label>
+        //         <Form.Control type="text" required ref={medicinename} placeholder="Add the name of your medication..." />
+        //     </Form.Group>
+        //     <Form.Group>
+        //         <Form.Label>Dose</Form.Label>
+        //         <Form.Control type="text" required ref={dose} placeholder="1 tablet..." />
+        //     </Form.Group>
+        //     <Form.Group>
+        //         <Form.Label>When should you start to take it?</Form.Label>
+        //         <Form.Control type="text" required ref={date} placeholder="YYYY/MM/DD" />
+        //     </Form.Group>
+        //     <Form.Group>
+        //         <Form.Label>How many consecutive days do you need to take it?</Form.Label>
+        //         <Form.Control type="text" required ref={datecount} placeholder="10" />
+        //     </Form.Group>
+        //     {/* <div className="form-group">
+        //         <label htmlFor="exampleFormControlSelect1">How often should you take it?</label>
+        //         <select className="form-control" id="exampleFormControlSelect1">
+        //             <option>everyday</option>
+        //             <option>every other day</option>
+        //         </select>
+        //     </div> */}
+        //     <Form.Group>
+        //         <Form.Label>How many times a day do you need to take it?</Form.Label>
+        //         <Form.Control as="select"
+        //             value={userState.selectValue}
+        //             onChange={handleChange}
+        //             className="form-control" ref={dosage} id="timesaday">
+        //             <option value="1">1</option>
+        //             <option value="2">2</option>
+        //             <option value="3">3</option>
+        //             <option value="4">4</option>
+        //         </Form.Control>
+        //     </Form.Group>
+        //     <Form.Group>
+        //         <Form.Label>What time do you want to start taking it?</Form.Label>
+        //         <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
+        //         {console.log("secondory ", userState.selectValue)}
+        //     </Form.Group>
+        //     <Button Click={handleSubmit}> <ToastMeds>Add Medication </ToastMeds></Button>
+        // </Form>
+
 
     )
 }

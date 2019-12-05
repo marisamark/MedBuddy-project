@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import NavAfterLogin from "../components/Nav (afterlogin)/index";
 import Calendarbar from "../components/Dashboard/Calendarbar";
 import Medsnottaken from "../components/Dashboard/Medsnottaken/index";
@@ -11,6 +11,13 @@ function Dashboard() {
     const [state, dispatch] = useContext(StoreContext);
     console.log("dashboard", state)
     
+
+//     useEffect(()=>{
+// const user = localStorage.getItem('user')? JSON.parse(localStorage.getItem('user')) : null
+// if(user){
+
+// }
+//     },[])
 
     return (
         <div>
