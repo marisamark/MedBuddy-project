@@ -3,18 +3,18 @@ import React, { useState, useContext } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import { useStoreContext } from '../../../utils/GlobalState';
+import { StoreContext } from '../../../utils/GlobalState';
 import axios from 'axios';
 import API from "../../../utils/API";
-import UPDATE_TIME from "../../../utils/actions";
+import {UPDATE_TIME, GRAB_USER_ROUTINE} from "../../../utils/actions";
 //import { thisExpression } from "@babel/types";
 
 // require("react-bootstrap/ModalHeader")
 
 function RescheduleModal(props) {
 
-  //const [state, dispatch] = useContext(useStoreContext);
-
+  const [state, dispatch] = useContext(StoreContext);
+  console.log("reshed", state);
   //console.log("passdown", props.passdown);
 
   const [timeUpdate, setTimeUpdate] = useState({
@@ -67,7 +67,8 @@ function RescheduleModal(props) {
         console.log(result)
         // alert("time update ", result);
         // console.log(result);
-        //dispatch ({type: UPDATE_TIME, yehey : constructTime })
+        //dispatch ({type: UPDATE_TIME })
+        getUserRoutine(state.user.id)
       })
     } else {
       constructTime = timeUpdate.HR + ":" + timeUpdate.MN + ":00";
@@ -78,11 +79,34 @@ function RescheduleModal(props) {
         //alert("time update ", constructTime);
         console.log(result)
         //dispatch ({})
+        getUserRoutine(state.user.id)
       })
     }
 
+    function getUserRoutine(id) {
+      // console.log(currentUser)
+      axios.get("/api/user/" + id + "/medRoutine").then(function (usersRoutine) {
+        console.log("user routine", usersRoutine.data.length);
+        //let transferMyRoutine = usersRoutine.data
+        //dispatch({ type: GRAB_USER_ROUTINE, transferMyRoutine })
+        grabLog(usersRoutine.data);
 
+      })
+    }
+    function grabLog(routineid) {
+      for (let i = 0; i < routineid.length; i++) {
+          axios.get("/api/medRoutine/" + routineid[i].id + "/medLog").then(function (results) {
+              console.log(results.data)
+              routineid[i].medlog = results.data
+              // console.log("myroutine", myroutine)
+              console.log(state.logged)
+              if (i === routineid.length - 1) {
+                  dispatch({ type: GRAB_USER_ROUTINE, payload: routineid })
+              }
+          })
+      }
 
+  }
 
   }
 

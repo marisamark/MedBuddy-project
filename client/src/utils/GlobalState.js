@@ -73,10 +73,11 @@ const reducer = (state, action) => {
                 ...state,
                 medroutine: [action.MedLogs]
             }
-            // case UPDATE_TIME:
-            //     return {
-            //         ...state.
-            //     }
+        case UPDATE_TIME:
+            return {
+                ...state,
+                medroutine : [...state.medroutine]
+                }
 
 
         default: throw new Error("action doesnt exist")
