@@ -11,6 +11,8 @@ function Medsnottaken(props){
 
                 <MedsCard
                     {...props}
+                    logId={log.id}
+                    date={log.date}
                     time={log.time}
                     status={log.status}
                 />

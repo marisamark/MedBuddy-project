@@ -13,7 +13,6 @@ function Dashboard() {
     
 
     return (
-        // state.logged ? (
         <div>
             <NavAfterLogin />
             <div className="container">
@@ -26,6 +25,7 @@ function Dashboard() {
                     {state.medroutine.map(log =>
                         <Medsnottaken 
                         key={log.id}
+                        id={log.id}
                         name={log.medicinename}
                         dose={log.dose}
                         MedLogs={log.MedLogs}
@@ -53,8 +53,7 @@ function Dashboard() {
             </div>
         </div>
         )
-    //     : (<Redirect to = '/' />)
-    // )
+
 }
 
 export default Dashboard;

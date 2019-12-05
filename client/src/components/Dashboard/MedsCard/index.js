@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useContext } from "react";
 import Reschedule from "../Reschedule modal/index";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "react-bootstrap";
+import API from "../../../utils/API";
+import { UPDATE_STATUS, UPDATE_ROUTINE } from "../../../utils/actions";
+import { StoreContext } from "../../../utils/GlobalState";
 
 function MedsCard(props) {
+
+  const [state, dispatch] = useContext(StoreContext);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    API.updateStatus(props.logId, {
+        status: true
+    }).then(result => {
+        console.log("COMPLETE BUTTON", result)
+        dispatch({
+            type: UPDATE_STATUS,
+            medroutine: result
+        });
+
+        API.getAllRoutines(state.user.id)
+        .then(results => {
+            console.log("run me", results.data)
+            let routines = results.data;
+            console.log("hey! this is your updated routines", routines)
+            // dispatch({ type: FIND_ALL_ROUTINES, payload: routines })
+            dispatch({ type: UPDATE_ROUTINE, medroutine: routines })
+
+            //console.log('CURRENT STATE', state)
+        }).then(() => {
+            console.log("state after then then", state);
+        });
+    })
+};
 
   return (
     <div className="card mt-4 text-color">
@@ -14,7 +45,7 @@ function MedsCard(props) {
         <div className="row justify-content-center">
 
           {!props.status ?
-          <Button className="mr-2 ml-2 complete1" id="button-blue" >Complete</Button>
+          <Button onClick={handleSubmit} className="mr-2 ml-2 complete1" id="button-blue" >Complete</Button>
           : <></>
           }
           {!props.status ?

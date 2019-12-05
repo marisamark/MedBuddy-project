@@ -26,6 +26,10 @@ export default {
 
     postMedlog: function (id, log) {
         return axios.post("/api/medRoutine/" + id + "/medLog/", log)
+    },
+
+    updateStatus: function (logId, status) {
+        return axios.put("/api/medLog/" + logId, status)
     }
 
 };
