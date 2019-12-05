@@ -17,7 +17,7 @@ document.getElementById("clickedday")
 
 var update = function () {
     document.getElementById("currenttime")
-        .innerHTML = "Today: " + moment().format('MMMM Do YYYY, h:mm:ss a');
+        .innerHTML = "Today: " + moment().format('lll');
 }
     
 
@@ -37,7 +37,7 @@ useEffect(() => {
                         <thead>
                             <tr>
                                 <th id="currenttime" scope="col"></th>
-                                <th id="clickedday" scope="col"></th>
+                                {/* <th id="clickedday" scope="col"></th> */}
                             </tr>
 
                         </thead>
@@ -69,7 +69,9 @@ useEffect(() => {
 
                         </thead>
                     </table>
+                    <h2 className="text-center text-color mx-auto mt-4 mb-4"><div id="clickedday"></div></h2>
                 </div>
+              
             </div>
         )
     }

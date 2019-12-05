@@ -14,9 +14,10 @@ function ToastMeds() {
                 top: 0,
                 right: 0,
                 variant: "success"
+                
            }}>
    
-                <Alert variant="success">
+                <Alert variant="success" id="toast-alert">
                 {/* <Toast.Header>
                 
                 <strong className="mr-auto">Add Medicatoin</strong>
@@ -26,7 +27,7 @@ function ToastMeds() {
                 </Alert>
           </Toast>
         
-          <Button  id="button-blue" onClick={() => setShow(true)}>Add</Button>
+          <button  id="bluebtn-addmed" className="btn mt-2 mb-4" onClick={() => setShow(true)}>Add Medication</button>
           
           </>
     );
