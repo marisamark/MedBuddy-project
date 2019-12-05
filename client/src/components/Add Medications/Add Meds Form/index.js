@@ -6,7 +6,7 @@ import API from "../../../utils/API";
 import { POST_ROUTINE, GRAB_USER_ROUTINE, FIND_ALL_ROUTINES, UPDATE_ROUTINE } from "../../../utils/actions";
 import { Button } from "react-bootstrap";
 import axios from "axios";
-
+import ToastMeds from "../Toast/index";
 function MedicationForm() {
     const [userState, setUserState] = useState({
         selectValue: "1",
@@ -466,16 +466,8 @@ function MedicationForm() {
                 <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
                 {console.log("secondory ", userState.selectValue)}
 
-            </div>
-            <div>
-                {/* // <ToastMeds  */}
-                {/* // type="submit"  */}
-                <Button onClick={handleSubmit} id="bluebtn" className="btn mt-2 mb-4">Add Medication</Button>
-                {/* // /> */}
-
-            </div>
-
-
+            </div>    
+                    <Button id="addmed"  onClick={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>         
         </ form >
 
     )
