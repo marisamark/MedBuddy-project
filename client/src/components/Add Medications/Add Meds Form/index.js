@@ -141,15 +141,15 @@ function MedicationForm() {
                 let deconstructMyDateDAY = date.current.value.slice(8, 11);
                 let baseday = parseInt(deconstructMyDateDAY);
 
-                for(let i =0 ; i < myloop; i++){
+                for (let i = 0; i < myloop; i++) {
                     let daytobesave = baseday + i
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
-                        time: time0,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
+                            time: time0,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 0 SAVED!!!!"))
                 }
                 // ---------------------------------------------------- //
 
@@ -165,15 +165,15 @@ function MedicationForm() {
                     time1 = hourcomputation1 + ":" + timeState.minute1 + ":" + "00";
                     console.log("time am", time1);
                 }
-                for(let i =0 ; i < myloop; i++){
+                for (let i = 0; i < myloop; i++) {
                     let daytobesave = baseday + i
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
-                        time: time1,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
+                            time: time1,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 1 SAVED!!!!"))
                 }
                 // ---------------------------------------------------- //
 
@@ -189,15 +189,15 @@ function MedicationForm() {
                     time2 = hourcomputation2 + ":" + timeState.minute2 + ":" + "00";
                     console.log("time am", time2);
                 }
-                for(let i =0 ; i < myloop; i++){
+                for (let i = 0; i < myloop; i++) {
                     let daytobesave = baseday + i
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
-                        time: time2,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
+                            time: time2,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 2 SAVED!!!!"))
                 }
                 // ---------------------------------------------------- //
 
@@ -213,15 +213,15 @@ function MedicationForm() {
                     time3 = hourcomputation3 + ":" + timeState.minute3 + ":" + "00";
                     console.log("time am", time3);
                 }
-                for(let i =0 ; i < myloop; i++){
+                for (let i = 0; i < myloop; i++) {
                     let daytobesave = baseday + i
-                API.postMedlog(result.data.id,
-                    {
-                        //need to figure out how to rearrange the date format
-                        date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
-                        time: time3,
-                        status: false
-                    }).then(console.log("BOOM!!!! LOG 3 SAVED!!!!"))
+                    API.postMedlog(result.data.id,
+                        {
+                            //need to figure out how to rearrange the date format
+                            date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
+                            time: time3,
+                            status: false
+                        }).then(console.log("BOOM!!!! LOG 3 SAVED!!!!"))
                 }
             } else if (timeState.hour2) {
                 console.log("you have 3 logs - insert save code here")
@@ -389,7 +389,7 @@ function MedicationForm() {
                     // let mydate = deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + parseDay +1 ;
                     API.postMedlog(result.data.id,
                         {
-                            
+
                             //need to figure out how to rearrange the date format
                             date: deconstructMyDateYEAR + "/" + deconstructMyDateMONTH + "/" + daytobesave,
                             time: time0,
@@ -466,8 +466,8 @@ function MedicationForm() {
                 <TimeDives handleSelect={handleSelect} selectValue={userState.selectValue} />
                 {console.log("secondory ", userState.selectValue)}
 
-            </div>    
-                    <Button id="addmed"  onClick={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>         
+            </div>
+            <Button id="addmed" onClick={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>
         </ form >
 
     )
