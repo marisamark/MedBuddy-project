@@ -9,7 +9,8 @@ import {
     POST_ROUTINE,
     LOGGED_TO_TRUE,
     UPDATE_ROUTINE,
-    UPDATE_STATUS
+    UPDATE_STATUS,
+    UPDATE_TIME
 } from "./actions";
 
 const StoreContext = createContext();
@@ -72,6 +73,10 @@ const reducer = (state, action) => {
                 ...state,
                 medroutine: [action.MedLogs]
             }
+            // case UPDATE_TIME:
+            //     return {
+            //         ...state.
+            //     }
 
 
         default: throw new Error("action doesnt exist")

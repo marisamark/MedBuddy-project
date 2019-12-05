@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import Reschedule from "../Reschedule modal/index";
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button } from "react-bootstrap";
 import API from "../../../utils/API";
 import { UPDATE_STATUS, UPDATE_ROUTINE } from "../../../utils/actions";
 import { StoreContext } from "../../../utils/GlobalState";
+import { tsPropertySignature } from "@babel/types";
 
 function MedsCard(props) {
-
+  console.log("medscard", props.logId)
   const [state, dispatch] = useContext(StoreContext);
 
   const handleSubmit = e => {
@@ -39,6 +40,7 @@ function MedsCard(props) {
   return (
     <div className="card mt-4 text-color">
       <div id="medsihavetotakecard" className="card-body">
+        <h1>{props.logId}</h1>
         <h4 id="time" className="card-title text-center">{props.time}</h4>
         <h5 id="drugname" className="text-center">{props.name} </h5>
         <h5 id="drugcon" className="text-center">{props.dose}</h5>
@@ -49,7 +51,7 @@ function MedsCard(props) {
           : <></>
           }
           {!props.status ?
-          <Reschedule /> 
+          <Reschedule transferdown = {props.logId}/> 
           : <></>
           }
         </div>
