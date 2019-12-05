@@ -415,7 +415,7 @@ function MedicationForm() {
 
     }
 
-
+    
     return (
         <form>
 
@@ -467,10 +467,12 @@ function MedicationForm() {
                 {console.log("secondory ", userState.selectValue)}
 
             </div>
-            <Button id="addmed" onClick={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>
+            <Button id="addmed" className="form-control" Click={handleSubmit}> <ToastMeds  >Add Medication </ToastMeds></Button>
         </ form >
 
     )
 }
+
+
 
 export default MedicationForm;
