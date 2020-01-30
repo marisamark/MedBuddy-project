@@ -20,10 +20,10 @@ Terminal: npm i react, react-dom, react-router-dom
 We recommend using Heroku to deploy this project.
 
 ## Built With
-*[React Bootstrap](https://react-bootstrap.github.io/) - The CSS framework used
-*[MySQL](https://www.mysql.com/) - The database used 
-*[Passport.js](http://www.passportjs.org/) - The authentication middeware used
-*[Express.js](https://expressjs.com/en/guide/routing.html) - Routing method used
+* [React Bootstrap](https://react-bootstrap.github.io/) - The CSS framework used
+* [MySQL](https://www.mysql.com/) - The database used 
+* [Passport.js](http://www.passportjs.org/) - The authentication middeware used
+* [Express.js](https://expressjs.com/en/guide/routing.html) - Routing method used
 
 
 ## Contributing
