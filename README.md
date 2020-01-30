@@ -28,7 +28,7 @@ We recommend using Heroku to deploy this project.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://github.com/marisamark/MedBuddy-project/graphs/contributors) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING](https://github.com/marisamark/MedBuddy-project/graphs/contributors) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Acknowledgments
 
